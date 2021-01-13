@@ -1,0 +1,4564 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Engineering Example 2
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="13_2_definite_integrals-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse4.html">
+      next
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse2.html#tail13_2_definite_integrals-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail13_2_definite_integrals-webse3.html">
+      tail
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-web.html#13_2_definite_integrals-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      3
+     </span>
+     <a href="13_2_definite_integrals-web.html#QQ2-6-21" id="x6-210003">
+      Engineering Example 2
+     </a>
+    </h3>
+    <!--l. 242
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      3.1
+     </span>
+     <a href="13_2_definite_integrals-web.html#QQ2-6-22" id="x6-220003.1">
+      Torsion of a mild-steel bar
+     </a>
+    </h4>
+    <!--l. 246
+-->
+    <p class="noindent">
+     <strong>
+      Introduction
+     </strong>
+    </p>
+    <!--l. 247
+-->
+    <p class="noindent">
+     For materials such as mild-steel, the relationship between applied shear stress and shear strain (deformation) can be described as follows.
+    </p>
+    <ul class="itemize1">
+     <li class="itemize">
+      For small values of the shear strain, the shear stress (
+      <!--l. 252
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         τ
+        </mi>
+       </mrow>
+      </math>
+      ) and shear strain (
+      <!--l. 252
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         ω
+        </mi>
+       </mrow>
+      </math>
+      ) are proportional to one another, i.e.
+      <!--l. 254
+-->
+      <p class="noindent">
+       <!--l. 254
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mi>
+          ω
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            G
+           </mi>
+          </mrow>
+         </mfrac>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mi>
+          τ
+         </mi>
+        </mrow>
+       </math>
+       (1)
+      </p>
+      <!--l. 257
+-->
+      <p class="noindent">
+       (where
+       <!--l. 257
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mi>
+          G
+         </mi>
+        </mrow>
+       </math>
+       is the
+       <strong>
+        shear modulus
+       </strong>
+       ). This is known as
+       <strong>
+        elastic behaviour
+       </strong>
+       .
+      </p>
+     </li>
+     <li class="itemize">
+      There is a maximum shear stress that the material is capable of supporting. If the shear strain is increased further, the shear stress remains roughly constant. This is known as
+      <strong>
+       plastic behaviour
+      </strong>
+      .
+     </li>
+    </ul>
+    <!--l. 264
+-->
+    <p class="noindent">
+     Figure 3 summarises the relationship between shear stress and shear strain; the point
+     <!--l. 265
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     is known as the
+     <strong>
+      yield point
+     </strong>
+     .
+    </p>
+    <!--l. 268
+-->
+    <p class="noindent">
+     <strong>
+      Figure 3
+     </strong>
+    </p>
+    <div class="center">
+     <!--l. 270
+-->
+     <!--l. 272
+-->
+     <p class="center">
+      <img alt="PICT" src="13_2_definite_integrals-web0x.svg"/>
+     </p>
+    </div>
+    <!--l. 289
+-->
+    <p class="noindent">
+     Now suppose that one end of a bar of circular cross section is twisted through an angle
+     <!--l. 290
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     , then the shear strain on the surface is given by
+    </p>
+    <!--l. 292
+-->
+    <p class="noindent">
+     <!--l. 292
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          ω
+         </mi>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              S
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          R
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     (2)
+    </p>
+    <!--l. 295
+-->
+    <p class="noindent">
+     (where
+     <!--l. 295
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        R
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 295
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     are the radius and length of the bar respectively), while the shear strain, at a distance
+     <!--l. 296
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     from the central core, is given by
+    </p>
+    <!--l. 298
+-->
+    <p class="noindent">
+     <!--l. 298
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        ω
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          r
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     (3)
+    </p>
+    <!--l. 301
+-->
+    <p class="noindent">
+     The torque transmitted by a bar is given by the integral
+    </p>
+    <!--l. 302
+-->
+    <p class="noindent">
+     <!--l. 302
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        T
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+       </msubsup>
+       <mn>
+        2
+       </mn>
+       <mi>
+        π
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        τ
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     (4)
+    </p>
+    <!--l. 305
+-->
+    <p class="noindent">
+     As the shear strain is a function of distance from the central axis of the bar, it may be that the shear strain on the surface is greater than the critical shear strain
+     <!--l. 307
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          ω
+         </mi>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     . In this scenario the shear stress is given by
+    </p>
+    <!--l. 309
+-->
+    <p class="noindent">
+     <!--l. 309
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        τ
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="" open="{" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <mfrac>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 τ
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <mi>
+                   Y
+                  </mi>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 ω
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <msub>
+                   <mrow>
+                   </mrow>
+                   <mrow>
+                    <mi>
+                     Y
+                    </mi>
+                   </mrow>
+                  </msub>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mi>
+             ω
+            </mi>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mi>
+             ω
+            </mi>
+            <mo class="MathClass-rel">
+             ≤
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               ω
+              </mi>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <mi>
+                   Y
+                  </mi>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <mtr class="vspace" style="font-size:19.0pt">
+           <mtd>
+           </mtd>
+           <mtd>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <msub>
+             <mrow>
+              <mi>
+               τ
+              </mi>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mi>
+             ω
+            </mi>
+            <mo class="MathClass-rel">
+             &gt;
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               ω
+              </mi>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <mi>
+                   Y
+                  </mi>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <!--ll
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     (5)
+    </p>
+    <!--l. 318
+-->
+    <p class="noindent">
+     i.e. the regions near the central axis exhibit elasticity, but in those regions near the surface the elastic limit has been exceeded and the metal exhibits plasticity (see Figure 4).
+    </p>
+    <!--l. 322
+-->
+    <p class="noindent">
+     <strong>
+      Figure 4
+     </strong>
+    </p>
+    <!--l. 324
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/twist.svg"/>
+    </p>
+    <!--l. 326
+-->
+    <p class="noindent">
+     <strong>
+      Problem in words
+     </strong>
+    </p>
+    <!--l. 327
+-->
+    <p class="noindent">
+     Find an expression for the torque transmitted by a bar as a function of the angle
+     <!--l. 328
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     through which one end is turned.
+    </p>
+    <!--l. 329
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical statement of problem
+     </strong>
+    </p>
+    <!--l. 330
+-->
+    <p class="noindent">
+     Using Equations (3) to (5), find a formula for
+     <!--l. 331
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        T
+       </mi>
+      </mrow>
+     </math>
+     in terms of the variable
+     <!--l. 331
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 332
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical analysis
+     </strong>
+    </p>
+    <!--l. 333
+-->
+    <p class="noindent">
+     Substituting (3) into (5)
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 334
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mi>
+         τ
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfenced close="" open="{" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <mfrac>
+              <mrow>
+               <msub>
+                <mrow>
+                 <mi>
+                  τ
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <mi>
+                    Y
+                   </mi>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                 <mi>
+                  ω
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <msub>
+                    <mrow>
+                    </mrow>
+                    <mrow>
+                     <mi>
+                      Y
+                     </mi>
+                    </mrow>
+                   </msub>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+             </mfrac>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mfrac>
+              <mrow>
+               <mi>
+                r
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+             </mfrac>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mfrac>
+              <mrow>
+               <mi>
+                r
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+             </mfrac>
+             <mo class="MathClass-rel">
+              ≤
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                ω
+               </mi>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <mi>
+                    Y
+                   </mi>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr class="vspace" style="font-size:19.0pt">
+            <mtd>
+            </mtd>
+            <mtd>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <msub>
+              <mrow>
+               <mi>
+                τ
+               </mi>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                </mrow>
+                <mrow>
+                 <mi>
+                  Y
+                 </mi>
+                </mrow>
+               </msub>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mfrac>
+              <mrow>
+               <mi>
+                r
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+             </mfrac>
+             <mo class="MathClass-rel">
+              &gt;
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                ω
+               </mi>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <mi>
+                    Y
+                   </mi>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <!--ll
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfenced close="" open="{" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <mfrac>
+              <mrow>
+               <msub>
+                <mrow>
+                 <mi>
+                  τ
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <mi>
+                    Y
+                   </mi>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                 <mi>
+                  ω
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <msub>
+                    <mrow>
+                    </mrow>
+                    <mrow>
+                     <mi>
+                      Y
+                     </mi>
+                    </mrow>
+                   </msub>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+             </mfrac>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mfrac>
+              <mrow>
+               <mi>
+                r
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+             </mfrac>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mi>
+              r
+             </mi>
+             <mo class="MathClass-rel">
+              ≤
+             </mo>
+             <mfrac>
+              <mrow>
+               <mi>
+                L
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <msub>
+                <mrow>
+                 <mi>
+                  ω
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <msub>
+                    <mrow>
+                    </mrow>
+                    <mrow>
+                     <mi>
+                      Y
+                     </mi>
+                    </mrow>
+                   </msub>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+              <mrow>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+             </mfrac>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                r
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                e
+               </mi>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr class="vspace" style="font-size:19.0pt">
+            <mtd>
+            </mtd>
+            <mtd>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <msub>
+              <mrow>
+               <mi>
+                τ
+               </mi>
+              </mrow>
+              <mrow>
+               <msub>
+                <mrow>
+                </mrow>
+                <mrow>
+                 <mi>
+                  Y
+                 </mi>
+                </mrow>
+               </msub>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mi>
+              r
+             </mi>
+             <mo class="MathClass-rel">
+              &gt;
+             </mo>
+             <mfrac>
+              <mrow>
+               <mi>
+                L
+               </mi>
+               <mspace class="thinspace" width="0.3em">
+               </mspace>
+               <msub>
+                <mrow>
+                 <mi>
+                  ω
+                 </mi>
+                </mrow>
+                <mrow>
+                 <msub>
+                  <mrow>
+                  </mrow>
+                  <mrow>
+                   <msub>
+                    <mrow>
+                    </mrow>
+                    <mrow>
+                     <mi>
+                      Y
+                     </mi>
+                    </mrow>
+                   </msub>
+                  </mrow>
+                 </msub>
+                </mrow>
+               </msub>
+              </mrow>
+              <mrow>
+               <mi>
+                θ
+               </mi>
+              </mrow>
+             </mfrac>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                r
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                e
+               </mi>
+              </mrow>
+             </msub>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+             <mspace class="qquad" width="2em">
+             </mspace>
+            </mtd>
+           </mtr>
+           <!--ll
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 350
+-->
+    <p class="nopar">
+     For small values of
+     <!--l. 351
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     ,
+     <!--l. 351
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        ≥
+       </mo>
+       <mi>
+        R
+       </mi>
+      </mrow>
+     </math>
+     so that the whole of the bar will be in the elastic region, i.e.
+    </p>
+    <!--l. 353
+-->
+    <p class="noindent">
+     <!--l. 353
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        τ
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          r
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 356
+-->
+    <p class="noindent">
+     Now (4) becomes
+    </p>
+    <!--l. 357
+-->
+    <p class="noindent">
+     <!--l. 357
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        T
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+       </msubsup>
+       <mn>
+        2
+       </mn>
+       <mi>
+        π
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          r
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi>
+        π
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi>
+        π
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mfenced close="]" open="[" separators="">
+          <mrow>
+           <mfrac>
+            <mrow>
+             <msup>
+              <mrow>
+               <mi>
+                r
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                4
+               </mn>
+              </mrow>
+             </msup>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </mfrac>
+          </mrow>
+         </mfenced>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+       </msubsup>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          π
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     (6)
+    </p>
+    <!--l. 362
+-->
+    <p class="noindent">
+     i.e. the torque is directly proportional to the twist,
+     <!--l. 362
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 364
+-->
+    <p class="noindent">
+     For larger
+     <!--l. 364
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     ,
+     <!--l. 364
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mi>
+        R
+       </mi>
+      </mrow>
+     </math>
+     , so that (4) becomes
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 365
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mi>
+         T
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msubsup>
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           r
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           r
+          </mi>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         r
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+        </msubsup>
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           r
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         r
+        </mi>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </mfrac>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msubsup>
+        <msup>
+         <mrow>
+          <mi>
+           r
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </msup>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         r
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+        </msubsup>
+        <msup>
+         <mrow>
+          <mi>
+           r
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         r
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </mfrac>
+        <msubsup>
+         <mrow>
+          <mfenced close="]" open="[" separators="">
+           <mrow>
+            <mfrac>
+             <mrow>
+              <msup>
+               <mrow>
+                <mi>
+                 r
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 4
+                </mn>
+               </mrow>
+              </msup>
+             </mrow>
+             <mrow>
+              <mn>
+               4
+              </mn>
+             </mrow>
+            </mfrac>
+           </mrow>
+          </mfenced>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msubsup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         π
+        </mi>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <msubsup>
+         <mrow>
+          <mfenced close="]" open="[" separators="">
+           <mrow>
+            <mfrac>
+             <mrow>
+              <msup>
+               <mrow>
+                <mi>
+                 r
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 3
+                </mn>
+               </mrow>
+              </msup>
+             </mrow>
+             <mrow>
+              <mn>
+               3
+              </mn>
+             </mrow>
+            </mfrac>
+           </mrow>
+          </mfenced>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+        </msubsup>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msubsup>
+         <mrow>
+          <mi>
+           r
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           e
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msubsup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mfenced close=")" open="(" separators="">
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             R
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msubsup>
+           <mrow>
+            <mi>
+             r
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msubsup>
+         </mrow>
+        </mfenced>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 374
+-->
+    <p class="nopar">
+     But
+     <!--l. 375
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          ω
+         </mi>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     , so
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 376
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mi>
+         T
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             L
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msubsup>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msubsup>
+         </mrow>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             L
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msubsup>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msubsup>
+         </mrow>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         π
+        </mi>
+        <mfenced close=")" open="(" separators="">
+         <mrow>
+          <mfrac>
+           <mrow>
+            <mn>
+             1
+            </mn>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </mfrac>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mfrac>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </mfrac>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msub>
+           <mrow>
+            <mi>
+             τ
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <mi>
+               Y
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfenced>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             L
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msubsup>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msubsup>
+         </mrow>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           R
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mfrac>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           6
+          </mn>
+         </mrow>
+        </mfrac>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <msub>
+         <mrow>
+          <mi>
+           τ
+          </mi>
+         </mrow>
+         <mrow>
+          <msub>
+           <mrow>
+           </mrow>
+           <mrow>
+            <mi>
+             Y
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+        </msub>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             L
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+          <mspace class="thinspace" width="0.3em">
+          </mspace>
+          <msubsup>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <msub>
+             <mrow>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msubsup>
+         </mrow>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mstyle class="text">
+         <mtext>
+          (7)
+         </mtext>
+        </mstyle>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 386
+-->
+    <p class="nopar">
+     Equation (6) will apply when
+     <!--l. 387
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        ≥
+       </mo>
+       <mi>
+        R
+       </mi>
+      </mrow>
+     </math>
+     , i.e.
+     <!--l. 388
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          L
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+         <mo class="MathClass-bin">
+          ∕
+         </mo>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        ≥
+       </mo>
+       <mi>
+        R
+       </mi>
+      </mrow>
+     </math>
+     or
+     <!--l. 389
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+       <mo class="MathClass-rel">
+        ≤
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          L
+         </mi>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+         <mo class="MathClass-bin">
+          ∕
+         </mo>
+         <mi>
+          R
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     , so that combining (6) and (7) gives overall
+    </p>
+    <!--l. 390
+-->
+    <p class="noindent">
+     <!--l. 390
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        T
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="" open="{" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <mfrac>
+             <mrow>
+              <mi>
+               π
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               2
+              </mn>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mfrac>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 τ
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <mi>
+                   Y
+                  </mi>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 ω
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <msub>
+                   <mrow>
+                   </mrow>
+                   <mrow>
+                    <mi>
+                     Y
+                    </mi>
+                   </mrow>
+                  </msub>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mfrac>
+             <mrow>
+              <mi>
+               θ
+              </mi>
+             </mrow>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <msup>
+             <mrow>
+              <mi>
+               R
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               4
+              </mn>
+             </mrow>
+            </msup>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mi>
+             θ
+            </mi>
+            <mo class="MathClass-rel">
+             ≤
+            </mo>
+            <mfrac>
+             <mrow>
+              <mi>
+               L
+              </mi>
+              <mspace class="thinspace" width="0.3em">
+              </mspace>
+              <msub>
+               <mrow>
+                <mi>
+                 ω
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <msub>
+                   <mrow>
+                   </mrow>
+                   <mrow>
+                    <mi>
+                     Y
+                    </mi>
+                   </mrow>
+                  </msub>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+             <mrow>
+              <mi>
+               R
+              </mi>
+             </mrow>
+            </mfrac>
+           </mtd>
+          </mtr>
+          <mtr class="vspace" style="font-size:19.0pt">
+           <mtd>
+           </mtd>
+           <mtd>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <mfrac>
+             <mrow>
+              <mn>
+               2
+              </mn>
+              <mi>
+               π
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               3
+              </mn>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               τ
+              </mi>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <msup>
+             <mrow>
+              <mi>
+               R
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               3
+              </mn>
+             </mrow>
+            </msup>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mfrac>
+             <mrow>
+              <mi>
+               π
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               6
+              </mn>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               τ
+              </mi>
+             </mrow>
+             <mrow>
+              <msub>
+               <mrow>
+               </mrow>
+               <mrow>
+                <mi>
+                 Y
+                </mi>
+               </mrow>
+              </msub>
+             </mrow>
+            </msub>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mfrac>
+             <mrow>
+              <msup>
+               <mrow>
+                <mi>
+                 L
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 3
+                </mn>
+               </mrow>
+              </msup>
+              <mspace class="thinspace" width="0.3em">
+              </mspace>
+              <msubsup>
+               <mrow>
+                <mi>
+                 ω
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <msub>
+                   <mrow>
+                   </mrow>
+                   <mrow>
+                    <mi>
+                     Y
+                    </mi>
+                   </mrow>
+                  </msub>
+                 </mrow>
+                </msub>
+               </mrow>
+               <mrow>
+                <mn>
+                 3
+                </mn>
+               </mrow>
+              </msubsup>
+             </mrow>
+             <mrow>
+              <msup>
+               <mrow>
+                <mi>
+                 θ
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 3
+                </mn>
+               </mrow>
+              </msup>
+             </mrow>
+            </mfrac>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mi>
+             θ
+            </mi>
+            <mo class="MathClass-rel">
+             &gt;
+            </mo>
+            <mfrac>
+             <mrow>
+              <mi>
+               L
+              </mi>
+              <mspace class="thinspace" width="0.3em">
+              </mspace>
+              <msub>
+               <mrow>
+                <mi>
+                 ω
+                </mi>
+               </mrow>
+               <mrow>
+                <msub>
+                 <mrow>
+                 </mrow>
+                 <mrow>
+                  <msub>
+                   <mrow>
+                   </mrow>
+                   <mrow>
+                    <mi>
+                     Y
+                    </mi>
+                   </mrow>
+                  </msub>
+                 </mrow>
+                </msub>
+               </mrow>
+              </msub>
+             </mrow>
+             <mrow>
+              <mi>
+               R
+              </mi>
+             </mrow>
+            </mfrac>
+           </mtd>
+          </mtr>
+          <!--ll
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     (8)
+    </p>
+    <!--l. 401
+-->
+    <p class="noindent">
+     <strong>
+      Interpretation and further comment
+     </strong>
+    </p>
+    <!--l. 402
+-->
+    <p class="noindent">
+     At the critical value of
+     <!--l. 402
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     , i.e. when the outer edge begins to exhibit plasticity, both formulae in (8) give
+    </p>
+    <!--l. 404
+-->
+    <p class="noindent">
+     <!--l. 404
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          T
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          c
+         </mi>
+         <mi>
+          r
+         </mi>
+         <mi>
+          i
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          π
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          τ
+         </mi>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+          </mrow>
+          <mrow>
+           <mi>
+            Y
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+       </msub>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 407
+-->
+    <p class="noindent">
+     Furthermore, the first derivatives are both
+    </p>
+    <!--l. 408
+-->
+    <p class="noindent">
+     <!--l. 408
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          T
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          π
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            τ
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <mi>
+              Y
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            ω
+           </mi>
+          </mrow>
+          <mrow>
+           <msub>
+            <mrow>
+            </mrow>
+            <mrow>
+             <msub>
+              <mrow>
+              </mrow>
+              <mrow>
+               <mi>
+                Y
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+           </msub>
+          </mrow>
+         </msub>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            R
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 412
+-->
+    <p class="noindent">
+     i.e. the curves join smoothly.
+    </p>
+    <!--l. 412
+-->
+    <p class="noindent">
+     The second derivatives, though, are not equal (zero in one case). In the theoretical limit as
+     <!--l. 413
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+       <mo class="MathClass-rel">
+        →
+       </mo>
+       <mi>
+        ∞
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 415
+-->
+    <p class="noindent">
+     <!--l. 415
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        T
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          π
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </mfrac>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          τ
+         </mi>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+          </mrow>
+          <mrow>
+           <mi>
+            Y
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+       </msub>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          R
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 418
+-->
+    <p class="noindent">
+     so this is the total torsional torque which can be carried by the bar. (The critical torque above is three-quarters of this value.) However, clearly
+     <!--l. 420
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+       <mo class="MathClass-rel">
+        →
+       </mo>
+       <mi>
+        ∞
+       </mi>
+      </mrow>
+     </math>
+     is merely a theoretical limit since the bar would, in fact, shear at a finite value of
+     <!--l. 422
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="13_2_definite_integrals-webse4.html">
+      next
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse2.html#tail13_2_definite_integrals-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-webse3.html">
+      front
+     </a>
+     ] [
+     <a href="13_2_definite_integrals-web.html#13_2_definite_integrals-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail13_2_definite_integrals-webse3.html">
+   </a>
+  </div>
+ </body>
+</html>

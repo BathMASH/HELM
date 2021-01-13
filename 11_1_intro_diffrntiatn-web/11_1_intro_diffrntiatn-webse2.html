@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Finding the gradient at a specific point
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="11_1_intro_diffrntiatn-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse3.html">
+      next
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse1.html">
+      prev
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse1.html#tail11_1_intro_diffrntiatn-webse1.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail11_1_intro_diffrntiatn-webse2.html">
+      tail
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-web.html#11_1_intro_diffrntiatn-webse2.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      2
+     </span>
+     <a href="11_1_intro_diffrntiatn-web.html#QQ2-5-9" id="x5-90002">
+      Finding the gradient at a specific point
+     </a>
+    </h3>
+    <!--l. 178
+-->
+    <p class="noindent">
+     In this subsection we shall consider a simple function to illustrate the calculation of a gradient. Look at the graph of the function
+     <!--l. 179
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     shown in Figure 4. Notice that the gradient of the graph changes as we move from point to point. In some places the gradient is positive; at others it is negative. The gradient is greater at some points than at others. In fact the gradient changes from point to point as we move along the curve.
+    </p>
+    <!--l. 186
+-->
+    <p class="noindent">
+     <strong>
+      Figure 4
+     </strong>
+    </p>
+    <!--l. 188
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/temp1a.svg"/>
+    </p>
+    <!--l. 193
+-->
+    <p class="noindent">
+     Inspect the graph carefully and make the following observations:
+    </p>
+    <!--l. 196
+-->
+    <p class="noindent">
+     (a)
+     <!--l. 196
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     is the point with coordinates
+     <!--l. 196
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 198
+-->
+    <p class="noindent">
+     (b)
+     <!--l. 198
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        B
+       </mi>
+      </mrow>
+     </math>
+     is the point with coordinates
+     <!--l. 198
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          4
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          16
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 200
+-->
+    <p class="noindent">
+     (c) We can calculate the gradient of the line
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mi>
+        B
+       </mi>
+      </mrow>
+     </math>
+     from the formula
+    </p>
+    <div class="math-block" custom-style="Normal">
+     <!--l. 201
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mstyle class="text">
+        <mtext>
+         gradient
+        </mtext>
+       </mstyle>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           difference between
+          </mtext>
+         </mstyle>
+         <mi>
+          y
+         </mi>
+         <mstyle class="text">
+          <mtext>
+           coordinates
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           difference between
+          </mtext>
+         </mstyle>
+         <mi>
+          x
+         </mi>
+         <mstyle class="text">
+          <mtext>
+           coordinates
+          </mtext>
+         </mstyle>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </div>
+    Therefore the gradient of chord
+    <!--l. 204
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mi>
+       A
+      </mi>
+      <mi>
+       B
+      </mi>
+     </mrow>
+    </math>
+    is equal to
+    <!--l. 205
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>
+         16
+        </mn>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+       <mrow>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </mfrac>
+      <mo class="MathClass-rel">
+       =
+      </mo>
+      <mfrac>
+       <mrow>
+        <mn>
+         15
+        </mn>
+       </mrow>
+       <mrow>
+        <mn>
+         3
+        </mn>
+       </mrow>
+      </mfrac>
+      <mo class="MathClass-rel">
+       =
+      </mo>
+      <mn>
+       5
+      </mn>
+     </mrow>
+    </math>
+    . The gradient of
+    <!--l. 205
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mi>
+       A
+      </mi>
+      <mi>
+       B
+      </mi>
+     </mrow>
+    </math>
+    is not the same as the gradient of the graph at
+    <!--l. 206
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mi>
+       A
+      </mi>
+     </mrow>
+    </math>
+    but we can regard it as an approximation, or estimate of the gradient at
+    <!--l. 207
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mi>
+       A
+      </mi>
+     </mrow>
+    </math>
+    . Is it an over-estimate or under-estimate ?
+    <!--l. 211
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x5-100002" id="x5-100002">
+      Task!
+     </a>
+    </h5>
+    <!--l. 212
+-->
+    <p class="noindent">
+     Add the point
+     <!--l. 212
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     to the graph in Figure 4 where
+     <!--l. 213
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     has coordinates
+     <!--l. 213
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          3
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          9
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . Draw the line
+     <!--l. 213
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     and calculate its gradient.
+    </p>
+    <!--l. 220
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x5-110002" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x5-110002" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x5-110002">
+     <!--l. 220
+-->
+     <p class="noindent">
+      <!--l. 220
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mn>
+           9
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         4
+        </mn>
+       </mrow>
+      </math>
+      . Would you agree that this is a better estimate of the gradient at
+      <!--l. 220
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         A
+        </mi>
+       </mrow>
+      </math>
+      than using
+      <!--l. 220
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         A
+        </mi>
+        <mi>
+         B
+        </mi>
+       </mrow>
+      </math>
+      ?
+     </p>
+    </div>
+    <!--l. 225
+-->
+    <p class="noindent">
+     We now carry the last task further by introducing point
+     <!--l. 225
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     at
+     <!--l. 226
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          4
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     and point
+     <!--l. 226
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        E
+       </mi>
+      </mrow>
+     </math>
+     at
+     <!--l. 226
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          1.5
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          2.25
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     as shown in Figure 5. The gradient of
+     <!--l. 226
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     is found to be 3 and the gradient of
+     <!--l. 226
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mi>
+        E
+       </mi>
+      </mrow>
+     </math>
+     is 2.5.
+    </p>
+    <!--l. 228
+-->
+    <p class="noindent">
+     <strong>
+      Figure 5
+     </strong>
+    </p>
+    <!--l. 230
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/temp2.svg"/>
+    </p>
+    <!--l. 236
+-->
+    <p class="noindent">
+     Observe that each time we carry out this procedure, and move the second point closer to
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     , the gradient of the line drawn is getting closer and closer to the gradient of the tangent at
+     <!--l. 239
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     . If we continue, the value we eventually obtain is the gradient of the tangent at
+     <!--l. 240
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     whose value is 2 as we will see shortly. This procedure illustrates how we define the gradient of the curve at
+     <!--l. 241
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="11_1_intro_diffrntiatn-webse3.html">
+      next
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse1.html">
+      prev
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse1.html#tail11_1_intro_diffrntiatn-webse1.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-webse2.html">
+      front
+     </a>
+     ] [
+     <a href="11_1_intro_diffrntiatn-web.html#11_1_intro_diffrntiatn-webse2.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail11_1_intro_diffrntiatn-webse2.html">
+   </a>
+  </div>
+ </body>
+</html>

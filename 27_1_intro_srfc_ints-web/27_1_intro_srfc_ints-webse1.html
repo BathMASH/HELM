@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   An example of a surface integral
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="27_1_intro_srfc_ints-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webli2.html#tail27_1_intro_srfc_ints-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail27_1_intro_srfc_ints-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-web.html#27_1_intro_srfc_ints-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="27_1_intro_srfc_ints-web.html#QQ2-4-5" id="x4-50001">
+      An example of a surface integral
+     </a>
+    </h3>
+    <!--l. 86
+-->
+    <p class="noindent">
+     An engineer involved with the construction of a dam to hold back the water in a reservoir needs to be able to calculate the total force the water exerts on the dam so that the dam is built with sufficient strength.
+     <br class="newline"/>
+     <br/>
+     In order to calculate this force, two results are required:
+    </p>
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-5002x1">
+      The pressure
+      <!--l. 90
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         p
+        </mi>
+       </mrow>
+      </math>
+      of the water is proportional to the depth. That is
+      <!--l. 91
+-->
+      <p class="noindent">
+       <!--l. 91
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mi>
+          p
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          k
+         </mi>
+         <mi>
+          d
+         </mi>
+        </mrow>
+       </math>
+       (1)
+      </p>
+      <!--l. 92
+-->
+      <p class="noindent">
+       where
+       <!--l. 92
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mi>
+          k
+         </mi>
+        </mrow>
+       </math>
+       is a constant.
+      </p>
+     </li>
+     <li class="enumerate" id="x4-5004x2">
+      The force on an area subjected to constant pressure is given by
+      <!--l. 93
+-->
+      <p class="noindent">
+       force
+       <!--l. 93
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mrow>
+       </math>
+       pressure
+       <!--l. 95
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+        </mrow>
+       </math>
+       area (2)
+      </p>
+     </li>
+    </ol>
+    <!--l. 97
+-->
+    <p class="noindent">
+     The diagram shows the face of the dam. The depth of water is
+     <!--l. 97
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        h
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 97
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     is a small area in the face of the dam with coordinates
+     <!--l. 98
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 100
+-->
+    <p class="noindent">
+     <strong>
+      Figure 1
+     </strong>
+    </p>
+    <!--l. 102
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/Fig361a.svg"/>
+    </p>
+    <!--l. 104
+-->
+    <p class="noindent">
+     Using (1), the pressure at
+     <!--l. 104
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        ∼
+       </mo>
+       <mi>
+        k
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          h
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . Using (2), the force on an area
+     <!--l. 104
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        ∼
+       </mo>
+       <mi>
+        k
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          h
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     .
+     <br class="newline"/>
+     <br/>
+     Both of these expressions are approximate as
+     <!--l. 105
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+     </math>
+     is slightly different at the top of
+     <!--l. 105
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     to the bottom.
+     <br class="newline"/>
+     <br/>
+     Now
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 107
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mstyle class="text">
+         <mtext>
+          Total force on dam
+         </mtext>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mstyle class="text">
+         <mtext>
+          sum of forces on all areas
+         </mtext>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mi>
+         δ
+        </mi>
+        <mi>
+         A
+        </mi>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mstyle class="text">
+         <mtext>
+          making up the face of the dam
+         </mtext>
+        </mstyle>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <munder class="msub">
+         <mrow>
+          <mo mathsize="normal">
+           ∑
+          </mo>
+         </mrow>
+         <mrow>
+          <mstyle class="text">
+           <mtext>
+            all
+           </mtext>
+          </mstyle>
+          <mspace class="nbsp" width="1em">
+          </mspace>
+          <mi>
+           δ
+          </mi>
+          <mi>
+           A
+          </mi>
+         </mrow>
+        </munder>
+        <mi>
+         k
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           h
+          </mi>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mi>
+         δ
+        </mi>
+        <mi>
+         A
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 110
+-->
+    <p class="nopar">
+     For a better approximation let
+     <!--l. 111
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     become smaller, and for the exact result find the limit as
+     <!--l. 111
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        →
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     . Then
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 112
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mstyle class="text">
+         <mtext>
+          Total force on the dam
+         </mtext>
+        </mstyle>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <munder class="msub">
+         <mrow>
+          <mo class="qopname">
+           lim
+          </mo>
+         </mrow>
+         <mrow>
+          <mi>
+           δ
+          </mi>
+          <mi>
+           A
+          </mi>
+          <mo class="MathClass-rel">
+           →
+          </mo>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </munder>
+        <mo mathsize="normal">
+         ∑
+        </mo>
+        <mi>
+         k
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           h
+          </mi>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mi>
+         δ
+        </mi>
+        <mi>
+         A
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mi>
+           A
+          </mi>
+         </mrow>
+        </msub>
+        <mi>
+         k
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           h
+          </mi>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         A
+        </mi>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 115
+-->
+    <p class="nopar">
+     where
+     <!--l. 116
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mi>
+          A
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        k
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          h
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     stands for the
+     <strong>
+      surface integral
+     </strong>
+     of
+     <!--l. 116
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        k
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          h
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     over the area
+     <!--l. 116
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     . Surface integrals are evaluated using
+     <span class="phvb8t-x-x-120">
+      double integrals
+     </span>
+     . The following Section shows a double integral being developed in the case of the volume under a surface.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="27_1_intro_srfc_ints-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webli2.html#tail27_1_intro_srfc_ints-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="27_1_intro_srfc_ints-web.html#27_1_intro_srfc_ints-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail27_1_intro_srfc_ints-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Approximating partial derivatives
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="32_4_prblc_pde-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse4.html">
+      next
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse2.html#tail32_4_prblc_pde-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail32_4_prblc_pde-webse3.html">
+      tail
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-web.html#32_4_prblc_pde-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      3
+     </span>
+     <a href="32_4_prblc_pde-web.html#QQ2-6-7" id="x6-70003">
+      Approximating partial derivatives
+     </a>
+    </h3>
+    <!--l. 168
+-->
+    <p class="noindent">
+     Earlier, in
+     <strong>
+      HELM booklet
+     </strong>
+     31.3, we saw methods for approximating first and second derivatives of a function of one variable. We review some of that material here. If
+     <!--l. 169
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     then the forward and central difference approximations to the first derivative are:
+    </p>
+    <!--l. 171
+-->
+    <p class="noindent">
+     <!--l. 171
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≈
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≈
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 176
+-->
+    <p class="noindent">
+     and the central difference approximation to the second derivative is:
+    </p>
+    <!--l. 178
+-->
+    <p class="noindent">
+     <!--l. 178
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≈
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <msup>
+          <mrow>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              δ
+             </mi>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 182
+-->
+    <p class="noindent">
+     in which
+     <!--l. 182
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     is a small
+     <!--l. 182
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     -increment. The quantity
+     <!--l. 182
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     is what we previously referred to as
+     <!--l. 183
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        h
+       </mi>
+      </mrow>
+     </math>
+     , but it is now convenient to use a notation which is more closely related to the independent variable (in this case
+     <!--l. 184
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     ). (Examples implementing the difference approximations for derivatives can be found in
+     <strong>
+      HELM booklet
+     </strong>
+     31.)
+    </p>
+    <!--l. 187
+-->
+    <p class="noindent">
+     We now return to the subject of this Section, that of
+     <strong>
+      partial
+     </strong>
+     derivatives. The PDE
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        α
+       </mi>
+       <msub>
+        <mrow>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     involves the first derivative
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     and the second derivative
+     <!--l. 189
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            ∂
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     . We now adapt the ideas used for functions of one variable to the present case involving
+     <!--l. 190
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 192
+-->
+    <p class="noindent">
+     Let
+     <!--l. 192
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     be a small increment of
+     <!--l. 192
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     , then the partial derivative
+     <!--l. 192
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     may be approximated by:
+    </p>
+    <!--l. 193
+-->
+    <p class="noindent">
+     <!--l. 193
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≈
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          u
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mi>
+            t
+           </mi>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          u
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 197
+-->
+    <p class="noindent">
+     Let
+     <!--l. 197
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     be a small increment of
+     <!--l. 197
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     , then the partial derivative
+     <!--l. 197
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            ∂
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     may be approximated by:
+    </p>
+    <!--l. 198
+-->
+    <p class="noindent">
+     <!--l. 198
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            ∂
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≈
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          u
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mi>
+          u
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mi>
+          u
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            δ
+           </mi>
+           <mi>
+            x
+           </mi>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <msup>
+          <mrow>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              δ
+             </mi>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 202
+-->
+    <p class="noindent">
+     The two difference approximations above are the ones we will use later in this Section. Example 14 below refers to these and others.
+    </p>
+    <!--l. 205
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x6-80003" id="x6-80003">
+      Example 14
+     </a>
+    </h5>
+    <!--l. 206
+-->
+    <p class="noindent">
+     Consider the function
+     <!--l. 206
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+      </mrow>
+     </math>
+     defined by
+    </p>
+    <!--l. 206
+-->
+    <p class="noindent">
+     <!--l. 206
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="qopname">
+        sin
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 208
+-->
+    <p class="noindent">
+     Using increments of
+     <!--l. 208
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.004
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 209
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        δ
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.04
+       </mn>
+      </mrow>
+     </math>
+     , and working to 8 decimal places, approximate
+    </p>
+    <ol class="enumerate1">
+     <li class="enumerate" id="x6-8001x3">
+      <!--l. 211
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      with a one-sided forward difference
+     </li>
+     <li class="enumerate" id="x6-8002x3">
+      <!--l. 213
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      with a central difference
+     </li>
+     <li class="enumerate" id="x6-8003x3">
+      <!--l. 214
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      with a one-sided forward difference
+     </li>
+     <li class="enumerate" id="x6-8004x3">
+      <!--l. 215
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      with a central difference.
+     </li>
+    </ol>
+    <!--l. 216
+-->
+    <p class="noindent">
+     Enter your approximate derivatives to 3 decimal places.
+    </p>
+    <!--l. 238
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x6-90003" id="x6-90003">
+      Solution
+     </a>
+    </h5>
+    <!--l. 238
+-->
+    <p class="noindent">
+     The evaluations of
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+      </mrow>
+     </math>
+     we will need are
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        0.54402111
+       </mn>
+      </mrow>
+     </math>
+     ,
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        0.55738933
+       </mn>
+      </mrow>
+     </math>
+     ,
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        0.53054047
+       </mn>
+      </mrow>
+     </math>
+     ,
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        0.60933532
+       </mn>
+      </mrow>
+     </math>
+     ,
+     <!--l. 238
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          δ
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        0
+       </mn>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+       <mn>
+        47522703
+       </mn>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+     It follows that
+    </p>
+    <ol class="enumerate1">
+     <li class="enumerate" id="x6-9001x3">
+      <!--l. 238
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+        <mfrac>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0.55738933
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           0.54402111
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           0.004
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         3.342
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x6-9002x3">
+      <!--l. 238
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+        <mfrac>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0.55738933
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           0.54402111
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0.53054047
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           0.00
+          </mn>
+          <msup>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         7.026
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x6-9003x3">
+      <!--l. 238
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+        <mfrac>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0.60933532
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           0.54402111
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           0.04
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1.633
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x6-9004x3">
+      <!--l. 238
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </msub>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+        <mfrac>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0.60933532
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           0.47522703
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           0.04
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1.676
+        </mn>
+       </mrow>
+      </math>
+     </li>
+    </ol>
+    <!--l. 238
+-->
+    <p class="noindent">
+     to 3 decimal places. (Workings shown to 8 decimal places.)
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="32_4_prblc_pde-webse4.html">
+      next
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse2.html#tail32_4_prblc_pde-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-webse3.html">
+      front
+     </a>
+     ] [
+     <a href="32_4_prblc_pde-web.html#32_4_prblc_pde-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail32_4_prblc_pde-webse3.html">
+   </a>
+  </div>
+ </body>
+</html>

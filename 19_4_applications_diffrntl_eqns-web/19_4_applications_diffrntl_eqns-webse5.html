@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Engineering Example 3
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="19_4_applications_diffrntl_eqns-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse6.html">
+      next
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse4.html">
+      prev
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse4.html#tail19_4_applications_diffrntl_eqns-webse4.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail19_4_applications_diffrntl_eqns-webse5.html">
+      tail
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-web.html#19_4_applications_diffrntl_eqns-webse5.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      5
+     </span>
+     <a href="19_4_applications_diffrntl_eqns-web.html#QQ2-8-41" id="x8-410005">
+      Engineering Example 3
+     </a>
+    </h3>
+    <!--l. 583
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      5.1
+     </span>
+     <a href="19_4_applications_diffrntl_eqns-web.html#QQ2-8-42" id="x8-420005.1">
+      Shear force and bending moment of a beam
+     </a>
+    </h4>
+    <!--l. 585
+-->
+    <p class="noindent">
+     <strong>
+      Introduction
+     </strong>
+    </p>
+    <!--l. 585
+-->
+    <p class="noindent">
+     The beam is a fundamental part of most structures we see around us. It may be used in many ways depending as how its ends are fixed. One end may be rigidly fixed and the other free (called
+     <strong>
+      cantilevered
+     </strong>
+     ) or both ends may be resting on supports (called
+     <strong>
+      simply supported
+     </strong>
+     ). Other combinations are possible. There are three basic quantities of interest in the deformation of beams, the deflection, the shear force and the bending moment.
+    </p>
+    <!--l. 589
+-->
+    <p class="noindent">
+     For a beam which is supporting a load of
+     <!--l. 590
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        w
+       </mi>
+      </mrow>
+     </math>
+     (measured in
+     <!--l. 591
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mstyle class="text">
+        <mtext>
+         N
+        </mtext>
+       </mstyle>
+       <msup>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           m
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     and which may represent the self-weight of the beam or may be an external load), the shear force is denoted by
+     <!--l. 592
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        S
+       </mi>
+      </mrow>
+     </math>
+     and measured in
+     <!--l. 592
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mstyle class="text">
+        <mtext>
+         N
+        </mtext>
+       </mstyle>
+       <msup>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           m
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     and the bending moment is denoted by
+     <!--l. 592
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     and measured in
+     <!--l. 594
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mstyle class="text">
+        <mtext>
+         N
+        </mtext>
+       </mstyle>
+       <msup>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           m
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 596
+-->
+    <p class="noindent">
+     The quantities
+     <!--l. 596
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     ,
+     <!--l. 596
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        S
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 596
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        w
+       </mi>
+      </mrow>
+     </math>
+     are related by
+    </p>
+    <!--l. 597
+-->
+    <p class="noindent">
+     <!--l. 597
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          M
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          z
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        S
+       </mi>
+      </mrow>
+     </math>
+     (1)
+    </p>
+    <!--l. 599
+-->
+    <p class="noindent">
+     and
+    </p>
+    <!--l. 600
+-->
+    <p class="noindent">
+     <!--l. 600
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          S
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          z
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mi>
+        w
+       </mi>
+      </mrow>
+     </math>
+     (2)
+    </p>
+    <!--l. 602
+-->
+    <p class="noindent">
+     where
+     <!--l. 602
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        z
+       </mi>
+      </mrow>
+     </math>
+     measures the position along the beam. If one of the quantities is known, the others can be calculated from the Equations (1) and (2). In words, the shear force is the negative of the derivative (with respect to position) of the bending moment and the load is the derivative of the shear force. Alternatively, the shear force is the negative of the integral (with respect to position) of the load and the bending moment is the integral of the shear force. The negative sign in Equation (2) reflects the fact that the load is normally measured positively in the downward direction while a positive shear force refers to an upward force.
+    </p>
+    <!--l. 613
+-->
+    <p class="noindent">
+     <strong>
+      Problem posed in words
+     </strong>
+    </p>
+    <!--l. 614
+-->
+    <p class="noindent">
+     A beam is fixed rigidly at one end and free to move at the other end (like a diving board). It only has to support its own weight. Find the shear force and the bending moment along its length.
+    </p>
+    <!--l. 617
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical statement of problem
+     </strong>
+    </p>
+    <!--l. 618
+-->
+    <p class="noindent">
+     A uniform beam of length
+     <!--l. 618
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     , supports its own weight
+     <!--l. 618
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     (a constant). At one end
+     <!--l. 619
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     , the beam is fixed rigidly while the other end
+     <!--l. 620
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfenced close=")" open="(" separators="">
+        <mrow>
+         <mi>
+          z
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     is free to move. Find the shear force
+     <!--l. 621
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        S
+       </mi>
+      </mrow>
+     </math>
+     and the bending moment
+     <!--l. 621
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     as functions of
+     <!--l. 621
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 623
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical analysis
+     </strong>
+    </p>
+    <!--l. 624
+-->
+    <p class="noindent">
+     As
+     <!--l. 624
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        w
+       </mi>
+      </mrow>
+     </math>
+     is a constant, Equation (2) gives
+    </p>
+    <!--l. 625
+-->
+    <p class="noindent">
+     <!--l. 625
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        S
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mo class="MathClass-op">
+        ∫
+        <!--nolimits
+-->
+       </mo>
+       <!--nolimits
+-->
+       <mi>
+        w
+       </mi>
+       <mi>
+        d
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mo class="MathClass-op">
+        ∫
+        <!--nolimits
+-->
+       </mo>
+       <!--nolimits
+-->
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        d
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 625
+-->
+    <p class="noindent">
+     At the free end
+     <!--l. 625
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfenced close=")" open="(" separators="">
+        <mrow>
+         <mi>
+          z
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+      </mrow>
+     </math>
+     the shear force
+     <!--l. 626
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        S
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     so
+     <!--l. 626
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     giving
+    </p>
+    <!--l. 627
+-->
+    <p class="noindent">
+     <!--l. 627
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        S
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mfenced close=")" open="(" separators="">
+        <mrow>
+         <mi>
+          L
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          z
+         </mi>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 630
+-->
+    <p class="noindent">
+     This expression can be substituted into Equation (1) to give
+    </p>
+    <!--l. 631
+-->
+    <p class="noindent">
+     <!--l. 631
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        M
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-op">
+        ∫
+        <!--nolimits
+-->
+       </mo>
+       <!--nolimits
+-->
+       <mi>
+        S
+       </mi>
+       <mi>
+        d
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-op">
+        ∫
+        <!--nolimits
+-->
+       </mo>
+       <!--nolimits
+-->
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mfenced close=")" open="(" separators="">
+        <mrow>
+         <mi>
+          L
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          z
+         </mi>
+        </mrow>
+       </mfenced>
+       <mi>
+        d
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-op">
+        ∫
+        <!--nolimits
+-->
+       </mo>
+       <!--nolimits
+-->
+       <mfenced close=")" open="(" separators="">
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+         <mi>
+          L
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+         <mi>
+          z
+         </mi>
+        </mrow>
+       </mfenced>
+       <mi>
+        d
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        L
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        K
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 633
+-->
+    <p class="noindent">
+     Once again,
+     <!--l. 633
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     at the free end
+     <!--l. 634
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     so
+     <!--l. 634
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        K
+       </mi>
+      </mrow>
+     </math>
+     is given by
+     <!--l. 634
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        K
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+     Thus
+    </p>
+    <!--l. 635
+-->
+    <p class="noindent">
+     <!--l. 635
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        M
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          w
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          o
+         </mi>
+        </mrow>
+       </msub>
+       <mi>
+        L
+       </mi>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            w
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            o
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 638
+-->
+    <p class="noindent">
+     The diagrams in Figure 8 show the load
+     <!--l. 638
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        w
+       </mi>
+      </mrow>
+     </math>
+     (Figure 8a), the shear force
+     <!--l. 639
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        S
+       </mi>
+      </mrow>
+     </math>
+     (Figure 8b) and the bending moment
+     <!--l. 639
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     (Figure 8c) as functions of position
+     <!--l. 640
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        z
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 642
+-->
+    <p class="noindent">
+     <strong>
+      Figure 8
+     </strong>
+     :
+    </p>
+    <!--l. 644
+-->
+    <p class="noindent">
+     <img alt="{ The loading (a), shear force (b) and bending moment (c) as functions of position z}" src="./figures/pdf/Fig1(BendM).svg"/>
+    </p>
+    <!--l. 646
+-->
+    <p class="noindent">
+     <strong>
+      Interpretation
+     </strong>
+    </p>
+    <!--l. 647
+-->
+    <p class="noindent">
+     The beam deforms (as we might have expected) with the shear force and bending moments having maximum values at the fixed end and minimum (zero) values at the free end. You can easily experience this for yourselves: simply hold a wooden plank (not too heavy) at one end with both hands so that it is horizontal. As you try this with planks of increasing length (and hence weight) you will find it increasingly difficult to support the weight of the plank (this is the shear force) and increasingly difficult to keep the plank horizontal (this is the bending moment).
+    </p>
+    <!--l. 652
+-->
+    <p class="noindent">
+     This mathematical model is an excellent description of real beams.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="19_4_applications_diffrntl_eqns-webse6.html">
+      next
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse4.html">
+      prev
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse4.html#tail19_4_applications_diffrntl_eqns-webse4.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-webse5.html">
+      front
+     </a>
+     ] [
+     <a href="19_4_applications_diffrntl_eqns-web.html#19_4_applications_diffrntl_eqns-webse5.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail19_4_applications_diffrntl_eqns-webse5.html">
+   </a>
+  </div>
+ </body>
+</html>

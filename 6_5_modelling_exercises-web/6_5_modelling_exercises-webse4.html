@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Engineering Example 2
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="6_5_modelling_exercises-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+"fast-preview": {disabled: true}, 
+explorer:{ subtitle: true }, 
+displayAlign: "center",  
+MatchWebFonts: { 
+matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+fontCheckDelay: 2000, 
+fontCheckTimeout: 30 * 1000 
+}, 
+"HTML-CSS": { 
+preferredFont: "STIX",  
+availableFonts: ["STIX","TeX"],  
+webFont: "STIX-Web",  
+linebreaks: { automatic: true, width: "90% container" } 
+}, 
+SVG: {  
+font: "STIX-Web", 
+linebreaks: { automatic: false, width: "90% container" } 
+}, 
+menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+});
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+while (nodes.length) { 
+nodes.shift().removeAttribute('id'); 
+} 
+}, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse5.html">
+      next
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse3.html">
+      prev
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse3.html#tail6_5_modelling_exercises-webse3.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail6_5_modelling_exercises-webse4.html">
+      tail
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-web.html#6_5_modelling_exercises-webse4.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      4
+     </span>
+     <a href="6_5_modelling_exercises-web.html#QQ2-7-18" id="x7-180004">
+      Engineering Example 2
+     </a>
+    </h3>
+    <!--l. 334
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      4.1
+     </span>
+     <a href="6_5_modelling_exercises-web.html#QQ2-7-19" id="x7-190004.1">
+      Exponential decay of sound intensity
+     </a>
+    </h4>
+    <!--l. 336
+-->
+    <p class="noindent">
+     <strong>
+      Introduction
+     </strong>
+    </p>
+    <!--l. 337
+-->
+    <p class="noindent">
+     The rate at which a quantity decays is important in many branches of engineering and
+science. A particular example of this is exponential decay. Ideally the sound level in a room
+where there are substantial contributions from reflections at the walls, floor and ceiling will
+decay exponentially once the source of sound is stopped. The decay in the sound
+intensity is due to absorbtion of sound at the room surfaces and air absorption
+although the latter is significant only when the room is very large. The contributions
+from reflection are known as
+     <strong>
+      reverberation
+     </strong>
+     . A measurement of reverberation in a
+room of known volume and surface area can be used to indicate the amount of
+absorption.
+    </p>
+    <!--l. 345
+-->
+    <p class="noindent">
+     <strong>
+      Problem in words
+     </strong>
+    </p>
+    <!--l. 346
+-->
+    <p class="noindent">
+     As part of an emergency test of the acoustics of a concert hall during an orchestral
+rehearsal, consultants asked the principal trombone to play a single note at maximum
+volume. Once the sound had reached its maximum intensity the player stopped and
+the sound intensity was measured for the next 0.2 seconds at regular intervals of
+0.02 seconds. The initial maximum intensity at time 0 was 1. The readings were as
+follows:
+    </p>
+    <div class="tabular">
+     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-4" rules="groups">
+      <colgroup id="TBL-4-1g">
+       <col id="TBL-4-1"/>
+      </colgroup>
+      <colgroup id="TBL-4-2g">
+       <col id="TBL-4-2"/>
+      </colgroup>
+      <colgroup id="TBL-4-3g">
+       <col id="TBL-4-3"/>
+      </colgroup>
+      <colgroup id="TBL-4-4g">
+       <col id="TBL-4-4"/>
+      </colgroup>
+      <colgroup id="TBL-4-5g">
+       <col id="TBL-4-5"/>
+      </colgroup>
+      <colgroup id="TBL-4-6g">
+       <col id="TBL-4-6"/>
+      </colgroup>
+      <colgroup id="TBL-4-7g">
+       <col id="TBL-4-7"/>
+      </colgroup>
+      <colgroup id="TBL-4-8g">
+       <col id="TBL-4-8"/>
+      </colgroup>
+      <colgroup id="TBL-4-9g">
+       <col id="TBL-4-9"/>
+      </colgroup>
+      <colgroup id="TBL-4-10g">
+       <col id="TBL-4-10"/>
+      </colgroup>
+      <colgroup id="TBL-4-11g">
+       <col id="TBL-4-11"/>
+      </colgroup>
+      <colgroup id="TBL-4-12g">
+       <col id="TBL-4-12"/>
+      </colgroup>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-4-1-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-4-1-1" style="text-align:left; white-space:nowrap;">
+        time
+       </td>
+       <td class="td11" id="TBL-4-1-2" style="text-align:left; white-space:nowrap;">
+        0
+       </td>
+       <td class="td11" id="TBL-4-1-3" style="text-align:left; white-space:nowrap;">
+        0.02
+       </td>
+       <td class="td11" id="TBL-4-1-4" style="text-align:left; white-space:nowrap;">
+        0.04
+       </td>
+       <td class="td11" id="TBL-4-1-5" style="text-align:left; white-space:nowrap;">
+        0.06
+       </td>
+       <td class="td11" id="TBL-4-1-6" style="text-align:left; white-space:nowrap;">
+        0.08
+       </td>
+       <td class="td11" id="TBL-4-1-7" style="text-align:left; white-space:nowrap;">
+        0.10
+       </td>
+       <td class="td11" id="TBL-4-1-8" style="text-align:left; white-space:nowrap;">
+        0.12
+       </td>
+       <td class="td11" id="TBL-4-1-9" style="text-align:left; white-space:nowrap;">
+        0.14
+       </td>
+       <td class="td11" id="TBL-4-1-10" style="text-align:left; white-space:nowrap;">
+        0.16
+       </td>
+       <td class="td11" id="TBL-4-1-11" style="text-align:left; white-space:nowrap;">
+        0.18
+       </td>
+       <td class="td11" id="TBL-4-1-12" style="text-align:left; white-space:nowrap;">
+        0.20
+       </td>
+      </tr>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-4-2-" style="vertical-align:baseline;">
+       <td class="td 11" id="TBL-4-2-1" style="text-align:left; white-space:nowrap;">
+        intensity
+       </td>
+       <td class="td11" id="TBL-4-2-2" style="text-align:left; white-space:nowrap;">
+        1
+       </td>
+       <td class="td11" id="TBL-4-2-3" style="text-align:left; white-space:nowrap;">
+        0.63
+       </td>
+       <td class="td11" id="TBL-4-2-4" style="text-align:left; white-space:nowrap;">
+        0.35
+       </td>
+       <td class="td11" id="TBL-4-2-5" style="text-align:left; white-space:nowrap;">
+        0.22
+       </td>
+       <td class="td11" id="TBL-4-2-6" style="text-align:left; white-space:nowrap;">
+        0.13
+       </td>
+       <td class="td11" id="TBL-4-2-7" style="text-align:left; white-space:nowrap;">
+        0.08
+       </td>
+       <td class="td11" id="TBL-4-2-8" style="text-align:left; white-space:nowrap;">
+        0.05
+       </td>
+       <td class="td11" id="TBL-4-2-9" style="text-align:left; white-space:nowrap;">
+        0.03
+       </td>
+       <td class="td11" id="TBL-4-2-10" style="text-align:left; white-space:nowrap;">
+        0.02
+       </td>
+       <td class="td11" id="TBL-4-2-11" style="text-align:left; white-space:nowrap;">
+        0.01
+       </td>
+       <td class="td11" id="TBL-4-2-12" style="text-align:left; white-space:nowrap;">
+        0.005
+       </td>
+      </tr>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-4-3-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-4-3-1" style="text-align:left; white-space:nowrap;">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!--l. 359
+-->
+    <p class="noindent">
+     Draw a graph of intensity against time and, assuming that the relationship is exponential, find
+a function which expresses the relationship between intensity and time.
+    </p>
+    <!--l. 361
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical statement of problem
+     </strong>
+    </p>
+    <!--l. 362
+-->
+    <p class="noindent">
+     If the relationship is exponential then it will be a function of the form
+    </p>
+    <!--l. 363
+-->
+    <p class="noindent">
+     <!--l. 363
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 364
+-->
+    <p class="noindent">
+     and a log-linear graph of the values should lie on a straight line. Therefore we can plot the values
+and find the gradient and the intercept of the resulting straight-line graph in order to find the
+values for
+     <!--l. 366
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     and
+     <!--l. 366
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        k
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 366
+-->
+    <p class="noindent">
+     <!--l. 366
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        k
+       </mi>
+      </mrow>
+     </math>
+     is the
+gradient of the log-linear graph i.e.
+    </p>
+    <!--l. 368
+-->
+    <p class="noindent">
+     <!--l. 368
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        k
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mstyle class="text">
+          <mtext class="textrm" mathvariant="normal">
+           change in
+          </mtext>
+         </mstyle>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <msub>
+          <mrow>
+           <mo class="qopname">
+            log
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            10
+           </mn>
+          </mrow>
+         </msub>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mstyle class="text">
+          <mtext class="textrm" mathvariant="normal">
+           (intensity)
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           change in time
+          </mtext>
+         </mstyle>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 369
+-->
+    <p class="noindent">
+     and
+     <!--l. 369
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     is found from where the graph crosses the vertical axis
+     <!--l. 370
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            I
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        c
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 372
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical analysis
+     </strong>
+    </p>
+    <!--l. 373
+-->
+    <p class="noindent">
+     Figure 9(a) shows the graph of intensity against time.
+    </p>
+    <!--l. 376
+-->
+    <p class="noindent">
+     We calculate the
+     <!--l. 376
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     (intensity) to create the table below:
+    </p>
+    <div class="tabular">
+     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-5" rules="groups">
+      <colgroup id="TBL-5-1g">
+       <col id="TBL-5-1"/>
+      </colgroup>
+      <colgroup id="TBL-5-2g">
+       <col id="TBL-5-2"/>
+      </colgroup>
+      <colgroup id="TBL-5-3g">
+       <col id="TBL-5-3"/>
+      </colgroup>
+      <colgroup id="TBL-5-4g">
+       <col id="TBL-5-4"/>
+      </colgroup>
+      <colgroup id="TBL-5-5g">
+       <col id="TBL-5-5"/>
+      </colgroup>
+      <colgroup id="TBL-5-6g">
+       <col id="TBL-5-6"/>
+      </colgroup>
+      <colgroup id="TBL-5-7g">
+       <col id="TBL-5-7"/>
+      </colgroup>
+      <colgroup id="TBL-5-8g">
+       <col id="TBL-5-8"/>
+      </colgroup>
+      <colgroup id="TBL-5-9g">
+       <col id="TBL-5-9"/>
+      </colgroup>
+      <colgroup id="TBL-5-10g">
+       <col id="TBL-5-10"/>
+      </colgroup>
+      <colgroup id="TBL-5-11g">
+       <col id="TBL-5-11"/>
+      </colgroup>
+      <colgroup id="TBL-5-12g">
+       <col id="TBL-5-12"/>
+      </colgroup>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-5-1-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-5-1-1" style="text-align:left; white-space:nowrap;">
+        time
+       </td>
+       <td class="td11" id="TBL-5-1-2" style="text-align:left; white-space:nowrap;">
+        0
+       </td>
+       <td class="td11" id="TBL-5-1-3" style="text-align:left; white-space:nowrap;">
+        0.02
+       </td>
+       <td class="td11" id="TBL-5-1-4" style="text-align:left; white-space:nowrap;">
+        0.04
+       </td>
+       <td class="td11" id="TBL-5-1-5" style="text-align:left; white-space:nowrap;">
+        0.06
+       </td>
+       <td class="td11" id="TBL-5-1-6" style="text-align:left; white-space:nowrap;">
+        0.08
+       </td>
+       <td class="td11" id="TBL-5-1-7" style="text-align:left; white-space:nowrap;">
+        0.10
+       </td>
+       <td class="td11" id="TBL-5-1-8" style="text-align:left; white-space:nowrap;">
+        0.12
+       </td>
+       <td class="td11" id="TBL-5-1-9" style="text-align:left; white-space:nowrap;">
+        0.14
+       </td>
+       <td class="td11" id="TBL-5-1-10" style="text-align:left; white-space:nowrap;">
+        0.16
+       </td>
+       <td class="td11" id="TBL-5-1-11" style="text-align:left; white-space:nowrap;">
+        0.18
+       </td>
+       <td class="td11" id="TBL-5-1-12" style="text-align:left; white-space:nowrap;">
+        0.20
+       </td>
+      </tr>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-5-2-" style="vertical-align:baseline;">
+       <td class="td 11" id="TBL-5-2-1" style="text-align:left; white-space:nowrap;">
+        <!--l. 382
+-->
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+         <mrow>
+          <msub>
+           <mrow>
+            <mo class="qopname">
+             log
+            </mo>
+            <!--nolimits
+-->
+           </mrow>
+           <mrow>
+            <mn>
+             10
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+        </math>
+        (intensity)
+       </td>
+       <td class="td11" id="TBL-5-2-2" style="text-align:left; white-space:nowrap;">
+        0
+       </td>
+       <td class="td11" id="TBL-5-2-3" style="text-align:left; white-space:nowrap;">
+        -0.22
+       </td>
+       <td class="td11" id="TBL-5-2-4" style="text-align:left; white-space:nowrap;">
+        -0.46
+       </td>
+       <td class="td11" id="TBL-5-2-5" style="text-align:left; white-space:nowrap;">
+        -0.66
+       </td>
+       <td class="td11" id="TBL-5-2-6" style="text-align:left; white-space:nowrap;">
+        -0.89
+       </td>
+       <td class="td11" id="TBL-5-2-7" style="text-align:left; white-space:nowrap;">
+        -1.1
+       </td>
+       <td class="td11" id="TBL-5-2-8" style="text-align:left; white-space:nowrap;">
+        -1.3
+       </td>
+       <td class="td11" id="TBL-5-2-9" style="text-align:left; white-space:nowrap;">
+        -1.5
+       </td>
+       <td class="td11" id="TBL-5-2-10" style="text-align:left; white-space:nowrap;">
+        -1.7
+       </td>
+       <td class="td11" id="TBL-5-2-11" style="text-align:left; white-space:nowrap;">
+        -2.0
+       </td>
+       <td class="td11" id="TBL-5-2-12" style="text-align:left; white-space:nowrap;">
+        -2.2
+       </td>
+      </tr>
+      <table:table-row table:style-name="hline-row">
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+       <table:table-cell table:style-name="hline-cell" table:value-type="string">
+        <text:p text:style-name="hline-p-hr">
+        </text:p>
+       </table:table-cell>
+      </table:table-row>
+      <tr id="TBL-5-3-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-5-3-1" style="text-align:left; white-space:nowrap;">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!--l. 385
+-->
+    <p class="noindent">
+     Figure 9(b) shows the graph of
+     <!--l. 385
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="qopname">
+        log
+       </mo>
+       <!--nolimits
+-->
+      </mrow>
+     </math>
+     (intensity) against time.
+    </p>
+    <!--l. 387
+-->
+    <p class="noindent">
+     <strong>
+      Figure 9
+     </strong>
+     :
+    </p>
+    <!--l. 389
+-->
+    <p class="noindent">
+     <img alt="{(a) Graph of sound intensity against time (b) Graph of $log_{10}$ (intensity) against time and a line fitted by eye to the data. The line goes through the points $(0,0)$ and $(0.2, -2.2)$.}" src="./figures/pdf/trombone.svg"/>
+    </p>
+    <!--l. 392
+-->
+    <p class="noindent">
+     We can see that the second graph is approximately a straight line and therefore we can
+assume that the relationship between the intensity and time is exponential and can be
+expressed as
+    </p>
+    <!--l. 394
+-->
+    <p class="noindent">
+     <!--l. 394
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 395
+-->
+    <p class="noindent">
+     The
+     <!--l. 395
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     of
+this gives
+    </p>
+    <!--l. 396
+-->
+    <p class="noindent">
+     <!--l. 396
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            I
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        k
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 397
+-->
+    <p class="noindent">
+     From the graph (b) we can measure the gradient,
+     <!--l. 397
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        k
+       </mi>
+      </mrow>
+     </math>
+     using
+    </p>
+    <!--l. 398
+-->
+    <p class="noindent">
+     <!--l. 398
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        k
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           change in
+          </mtext>
+         </mstyle>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <msub>
+          <mrow>
+           <mo class="qopname">
+            log
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            10
+           </mn>
+          </mrow>
+         </msub>
+         <mstyle class="text">
+          <mtext>
+           (intensity)
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           change in time
+          </mtext>
+         </mstyle>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 399
+-->
+    <p class="noindent">
+     giving
+     <!--l. 399
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        k
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          2.2
+         </mn>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          0.2
+         </mn>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        11
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 401
+-->
+    <p class="noindent">
+     The point at which it crosses the vertical axis gives
+    </p>
+    <!--l. 402
+-->
+    <p class="noindent">
+     <!--l. 402
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mo class="qopname">
+          log
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            I
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+       <mo class="MathClass-rel">
+        ⇒
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 403
+-->
+    <p class="noindent">
+     Therefore the expression
+     <!--l. 403
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     becomes
+    </p>
+    <!--l. 404
+-->
+    <p class="noindent">
+     <!--l. 404
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          11
+         </mn>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 407
+-->
+    <p class="noindent">
+     <strong>
+      Interpretation
+     </strong>
+    </p>
+    <!--l. 409
+-->
+    <p class="noindent">
+     The data recorded for the sound intensity fit exponential decaying with time. We have used a
+log-linear plot to obtain the approximate function:
+    </p>
+    <!--l. 411
+-->
+    <p class="noindent">
+     <!--l. 411
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          11
+         </mn>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="6_5_modelling_exercises-webse5.html">
+      next
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse3.html">
+      prev
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse3.html#tail6_5_modelling_exercises-webse3.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-webse4.html">
+      front
+     </a>
+     ] [
+     <a href="6_5_modelling_exercises-web.html#6_5_modelling_exercises-webse4.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail6_5_modelling_exercises-webse4.html">
+   </a>
+  </div>
+ </body>
+</html>

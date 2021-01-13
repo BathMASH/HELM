@@ -1,0 +1,4697 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Engineering Example 2
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="20_4_solving_diffrntl_equatins-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-webse4.html">
+      prev
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-webse4.html#tail20_4_solving_diffrntl_equatins-webse4.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail20_4_solving_diffrntl_equatins-webse5.html">
+      tail
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-web.html#20_4_solving_diffrntl_equatins-webse5.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      5
+     </span>
+     <a href="20_4_solving_diffrntl_equatins-web.html#QQ2-8-41" id="x8-410005">
+      Engineering Example 2
+     </a>
+    </h3>
+    <!--l. 528
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      5.1
+     </span>
+     <a href="20_4_solving_diffrntl_equatins-web.html#QQ2-8-42" id="x8-420005.1">
+      Deflection of a uniformly loaded beam
+     </a>
+    </h4>
+    <!--l. 531
+-->
+    <p class="noindent">
+     <strong>
+      Introduction
+     </strong>
+    </p>
+    <!--l. 533
+-->
+    <p class="noindent">
+     A uniformly loaded beam of length
+     <!--l. 533
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     is supported at both ends. The deflection
+     <!--l. 533
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     is a function of horizontal position
+     <!--l. 533
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     and obeys the differential equation
+    </p>
+    <!--l. 535
+-->
+    <p class="noindent">
+     <!--l. 535
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mi>
+        q
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     (1)
+    </p>
+    <!--l. 535
+-->
+    <p class="noindent">
+     where
+     <!--l. 535
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        E
+       </mi>
+      </mrow>
+     </math>
+     is Young’s modulus,
+     <!--l. 535
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        I
+       </mi>
+      </mrow>
+     </math>
+     is the moment of inertia and
+     <!--l. 536
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        q
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     is the load per unit length at point
+     <!--l. 536
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     . We assume in this problem that
+     <!--l. 536
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        q
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        q
+       </mi>
+      </mrow>
+     </math>
+     (a constant). The boundary conditions are (i) no deflection at
+     <!--l. 537
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 537
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     (ii) no curvature of the beam at
+     <!--l. 537
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 537
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 539
+-->
+    <p class="noindent">
+     <strong>
+      Figure 20
+     </strong>
+    </p>
+    <!--l. 541
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/beam.svg"/>
+    </p>
+    <!--l. 546
+-->
+    <p class="noindent">
+     <strong>
+      Problem in words
+     </strong>
+    </p>
+    <!--l. 548
+-->
+    <p class="noindent">
+     In addition to being subject to a uniformly distributed load, a beam is supported so that there is no deflection and no curvature of the beam at its ends. Applying a Laplace Transform to the differential equation (1), find the deflection of the beam as function of horizontal position along the beam.
+    </p>
+    <!--l. 553
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical formulation of the problem
+     </strong>
+    </p>
+    <!--l. 555
+-->
+    <p class="noindent">
+     Find the equation of the curve
+     <!--l. 555
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     assumed by the bending beam that solves (1). Use the coordinate system shown in Figure 1 where the origin is at the left extremity of the beam. In this coordinate system, the mathematical formulations of the boundary conditions which require that there is no deflection at
+     <!--l. 557
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 557
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     , and that there is no curvature of the beam at
+     <!--l. 558
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 558
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+      </mrow>
+     </math>
+     are
+    </p>
+    <ol class="enumerate1">
+     <li class="enumerate" id="x8-42002x1">
+      <!--l. 560
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x8-42004x2">
+      <!--l. 562
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x8-42006x3">
+      <!--l. 565
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             d
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <msub>
+         <mrow>
+          <mstyle mathsize="1.19em">
+           <mfenced close="" open="|" separators="">
+            <mrow>
+            </mrow>
+           </mfenced>
+          </mstyle>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+       </mrow>
+      </math>
+     </li>
+     <li class="enumerate" id="x8-42008x4">
+      <!--l. 568
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             d
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <msub>
+         <mrow>
+          <mstyle mathsize="1.19em">
+           <mfenced close="" open="|" separators="">
+            <mrow>
+            </mrow>
+           </mfenced>
+          </mstyle>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <mi>
+           L
+          </mi>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+       </mrow>
+      </math>
+     </li>
+    </ol>
+    <!--l. 572
+-->
+    <p class="noindent">
+     Note that
+     <!--l. 572
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     and
+     <!--l. 572
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     are respectively the slope and the radius of curvature of the curve at point
+     <!--l. 573
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 576
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical analysis
+     </strong>
+    </p>
+    <!--l. 578
+-->
+    <p class="noindent">
+     The following Laplace transform properties are needed:
+    </p>
+    <!--l. 580
+-->
+    <p class="noindent">
+     <!--l. 580
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              d
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msup>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              t
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+          <mrow>
+           <mi>
+            d
+           </mi>
+           <msup>
+            <mrow>
+             <mi>
+              t
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msup>
+       <mi>
+        F
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∑
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+         <mi>
+          f
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     (P1)
+    </p>
+    <!--l. 583
+-->
+    <p class="noindent">
+     <!--l. 583
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mi>
+        s
+       </mi>
+      </mrow>
+     </math>
+     (P2)
+    </p>
+    <!--l. 585
+-->
+    <p class="noindent">
+     <!--l. 585
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            t
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     (P3)
+    </p>
+    <!--l. 588
+-->
+    <p class="noindent">
+     <!--l. 588
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+         <mfenced close="}" open="{" separators="">
+          <mrow>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              t
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+         </mfenced>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     (P4)
+    </p>
+    <!--l. 590
+-->
+    <p class="noindent">
+     To solve a differential equation involving the unknown function
+     <!--l. 590
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     using Laplace transforms
+    </p>
+    <!--l. 592
+-->
+    <ol class="enumerate1">
+     <li class="enumerate" id="x8-42010x1">
+      Write the Laplace transform of the differential equation using property (P1)
+     </li>
+     <li class="enumerate" id="x8-42012x2">
+      Solve for the function
+      <!--l. 594
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi mathvariant="bold-script">
+         L
+        </mi>
+        <mfenced close="}" open="{" separators="">
+         <mrow>
+          <mi>
+           f
+          </mi>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             t
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+      using properties (P2) and (P3)
+     </li>
+     <li class="enumerate" id="x8-42014x3">
+      Use the inverse Laplace transform to obtain
+      <!--l. 595
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      using property (P4)
+     </li>
+    </ol>
+    <!--l. 598
+-->
+    <p class="noindent">
+     Using the linearity properties of the Laplace transform, (1) becomes
+    </p>
+    <!--l. 599
+-->
+    <p class="noindent">
+     <!--l. 599
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              d
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msup>
+           <mi>
+            y
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            d
+           </mi>
+           <msup>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mfrac>
+          <mrow>
+           <mi>
+            q
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            E
+           </mi>
+           <mi>
+            I
+           </mi>
+          </mrow>
+         </mfrac>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 599
+-->
+    <p class="noindent">
+     Using (P1) and (P2)
+    </p>
+    <!--l. 600
+-->
+    <p class="noindent">
+     <!--l. 600
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∑
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+     (2)
+    </p>
+    <!--l. 603
+-->
+    <p class="noindent">
+     The four terms of the sum are
+    </p>
+    <!--l. 605
+-->
+    <p class="noindent">
+     <!--l. 605
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∑
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            k
+           </mi>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        d
+       </mi>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 608
+-->
+    <p class="noindent">
+     The boundary conditions give
+     <!--l. 608
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 608
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+     So (2) becomes
+    </p>
+    <!--l. 609
+-->
+    <p class="noindent">
+     <!--l. 609
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mi>
+        L
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          s
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+     (3)
+    </p>
+    <!--l. 612
+-->
+    <p class="noindent">
+     Here
+     <!--l. 612
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     and
+     <!--l. 612
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     are unknown
+     <strong>
+      constants
+     </strong>
+     , but they can be determined by using the remaining two boundary conditions
+     <!--l. 613
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 613
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 615
+-->
+    <p class="noindent">
+     Solving for
+     <!--l. 615
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     , (3) leads to
+    </p>
+    <!--l. 617
+-->
+    <p class="noindent">
+     <!--l. 617
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi mathvariant="bold-script">
+        L
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi>
+          y
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            s
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            s
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            s
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            5
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 621
+-->
+    <p class="noindent">
+     Using the linearity of the Laplace transform, the inverse Laplace transform of this equation gives
+    </p>
+    <!--l. 623
+-->
+    <p class="noindent">
+     <!--l. 623
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           {
+          </mo>
+          <mrow>
+           <mi>
+            y
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+          <mo class="MathClass-close">
+           }
+          </mo>
+         </mrow>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              5
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 625
+-->
+    <p class="noindent">
+     Hence
+    </p>
+    <!--l. 626
+-->
+    <p class="noindent">
+     <!--l. 626
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mn>
+          3
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mfenced close="}" open="{" separators="">
+        <mrow>
+         <mn>
+          4
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              s
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              5
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 630
+-->
+    <p class="noindent">
+     So using (P3)
+    </p>
+    <!--l. 632
+-->
+    <p class="noindent">
+     <!--l. 632
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           {
+          </mo>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+          <mo class="MathClass-close">
+           }
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        6
+       </mn>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           {
+          </mo>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+          <mo class="MathClass-close">
+           }
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mi mathvariant="bold-script">
+          L
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           {
+          </mo>
+          <mrow>
+           <msup>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+          <mo class="MathClass-close">
+           }
+          </mo>
+         </mrow>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        24.
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 633
+-->
+    <p class="noindent">
+     Simplifying by means of (P4)
+    </p>
+    <!--l. 634
+-->
+    <p class="noindent">
+     <!--l. 634
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        6
+       </mn>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        24.
+       </mn>
+      </mrow>
+     </math>
+     (4)
+    </p>
+    <!--l. 638
+-->
+    <p class="noindent">
+     To use the boundary condition
+     <!--l. 638
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     , take the second derivative of (4), to obtain
+    </p>
+    <!--l. 639
+-->
+    <p class="noindent">
+     <!--l. 639
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 641
+-->
+    <p class="noindent">
+     The boundary condition
+     <!--l. 641
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mi>
+          L
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     implies
+    </p>
+    <!--l. 642
+-->
+    <p class="noindent">
+     <!--l. 642
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mi>
+        L
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+     (5)
+    </p>
+    <!--l. 642
+-->
+    <p class="noindent">
+     Using the last boundary condition
+     <!--l. 643
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          L
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     with (5) in (4)
+    </p>
+    <!--l. 644
+-->
+    <p class="noindent">
+     <!--l. 644
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <msub>
+        <mrow>
+         <mstyle mathsize="2.45em">
+          <mfenced close="" open="|" separators="">
+           <mrow>
+           </mrow>
+          </mfenced>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            L
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          24
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     (6)
+    </p>
+    <!--l. 644
+-->
+    <p class="noindent">
+     Finally substituting (5) and (6) in (4) gives
+    </p>
+    <!--l. 647
+-->
+    <p class="noindent">
+     <!--l. 647
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          24
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+         <mi>
+          L
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          12
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          q
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            L
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          24
+         </mn>
+         <mi>
+          E
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+       </mfrac>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 650
+-->
+    <p class="noindent">
+     <strong>
+      Interpretation
+     </strong>
+    </p>
+    <!--l. 652
+-->
+    <p class="noindent">
+     The predicted deflection is zero at both ends as required.
+    </p>
+    <!--l. 653
+-->
+    <p class="noindent">
+     <strong>
+      Note
+     </strong>
+     This problem was solved by an entirely different means (integrating the ODE) in
+     <strong>
+      HELM booklet
+     </strong>
+     19.4, page 65.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="20_4_solving_diffrntl_equatins-webse4.html">
+      prev
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-webse4.html#tail20_4_solving_diffrntl_equatins-webse4.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-webse5.html">
+      front
+     </a>
+     ] [
+     <a href="20_4_solving_diffrntl_equatins-web.html#20_4_solving_diffrntl_equatins-webse5.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail20_4_solving_diffrntl_equatins-webse5.html">
+   </a>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Numerical solutions
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="32_1_init_val_probs-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse3.html">
+      next
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse1.html">
+      prev
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse1.html#tail32_1_init_val_probs-webse1.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail32_1_init_val_probs-webse2.html">
+      tail
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-web.html#32_1_init_val_probs-webse2.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      2
+     </span>
+     <a href="32_1_init_val_probs-web.html#QQ2-5-7" id="x5-70002">
+      Numerical solutions
+     </a>
+    </h3>
+    <!--l. 255
+-->
+    <p class="noindent">
+     We suppose that the initial value problem
+    </p>
+    <!--l. 256
+-->
+    <p class="noindent">
+     <!--l. 256
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 257
+-->
+    <p class="noindent">
+     is such that we are unable (or unwilling) to seek a solution analytically (that is, by hand) and that we prefer to use a computer to approximate
+     <!--l. 258
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+     </math>
+     instead. We begin by asking what we expect a numerical solution to look like.
+    </p>
+    <!--l. 261
+-->
+    <p class="noindent">
+     Numerical solutions to initial value problems discussed in this Workbook will be in the form of a sequence of numbers approximating
+     <!--l. 263
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     at a sequence of values of
+     <!--l. 263
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     . The simplest methods choose the
+     <!--l. 263
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     -values to be equally spaced, and we will stick to these methods. We denote the common distance between consecutive
+     <!--l. 265
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     -values as
+     <!--l. 265
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        h
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <div class="framed">
+     <!--l. 274
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x5-80002" id="x5-80002">
+       Key Point 2
+      </a>
+     </h5>
+     <!--l. 274
+-->
+     <p class="noindent">
+      A numerical approximation to the initial value problem
+     </p>
+     <!--l. 274
+-->
+     <p class="noindent">
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           t
+          </mi>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 274
+-->
+     <p class="noindent">
+      is a sequence of numbers
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ,
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ,
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ,
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ,
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mo class="MathClass-op">
+         …
+        </mo>
+       </mrow>
+      </math>
+      .
+      <br class="newline"/>
+      <br/>
+      The value
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      will be exact, because it is defined by the initial condition.
+      <br class="newline"/>
+      <br/>
+      For
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         n
+        </mi>
+        <mo class="MathClass-rel">
+         ≥
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </math>
+      ,
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           n
+          </mi>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      is the approximation to the exact value
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      at
+      <!--l. 274
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         t
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         n
+        </mi>
+        <mi>
+         h
+        </mi>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 275
+-->
+    <p class="noindent">
+     In Figure 1 the exact solution
+     <!--l. 275
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     is shown as a thick curve and approximations to
+     <!--l. 275
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     are shown as crosses.
+    </p>
+    <!--l. 277
+-->
+    <p class="noindent">
+     <strong>
+      Figure 1
+     </strong>
+    </p>
+    <!--l. 279
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/ivpplot.svg"/>
+    </p>
+    <!--l. 283
+-->
+    <p class="noindent">
+     The general idea is to take the given initial condition
+     <!--l. 283
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     and then use it together with what we know about the physical process (from the differential equation) to obtain an approximation
+     <!--l. 286
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     to
+     <!--l. 286
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . We will have then carried out the first
+     <span class="ec-lmssbx-10x-x-120">
+      time step
+     </span>
+     .
+    </p>
+    <!--l. 288
+-->
+    <p class="noindent">
+     Then we use the differential equation to obtain
+     <!--l. 288
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     , an approximation to
+     <!--l. 288
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . Thus the second time step is completed.
+    </p>
+    <!--l. 291
+-->
+    <p class="noindent">
+     And so on, at the
+     <!--l. 291
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           th
+          </mtext>
+         </mstyle>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     time step we find
+     <!--l. 291
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     , an approximation to
+     <!--l. 291
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+    <div class="framed">
+     <!--l. 294
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x5-90002" id="x5-90002">
+       Key Point 3
+      </a>
+     </h5>
+     <!--l. 294
+-->
+     <p class="noindent">
+      A
+      <span class="ec-lmssbx-10x-x-120">
+       time step
+      </span>
+      is the procedure carried out to move a numerical approximation one increment forward in time.
+     </p>
+    </div>
+    <!--l. 296
+-->
+    <p class="noindent">
+     The way in which we choose to “use the differential equation" will define a particular numerical method, and some ways are better than others. We begin by looking at the simplest method.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="32_1_init_val_probs-webse3.html">
+      next
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse1.html">
+      prev
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse1.html#tail32_1_init_val_probs-webse1.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-webse2.html">
+      front
+     </a>
+     ] [
+     <a href="32_1_init_val_probs-web.html#32_1_init_val_probs-webse2.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail32_1_init_val_probs-webse2.html">
+   </a>
+  </div>
+ </body>
+</html>

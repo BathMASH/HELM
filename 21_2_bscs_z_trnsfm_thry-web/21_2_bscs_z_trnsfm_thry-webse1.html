@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   The z-transform
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="21_2_bscs_z_trnsfm_thry-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webli2.html#tail21_2_bscs_z_trnsfm_thry-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail21_2_bscs_z_trnsfm_thry-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-web.html#21_2_bscs_z_trnsfm_thry-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="21_2_bscs_z_trnsfm_thry-web.html#QQ2-4-5" id="x4-50001">
+      The z-transform
+     </a>
+    </h3>
+    <!--l. 113
+-->
+    <p class="noindent">
+     If you have studied the Laplace transform either in a Mathematics course for Engineers and Scientists or have applied it in, for example, an analog control course you may recall that
+    </p>
+    <!--l. 116
+-->
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-5002x1">
+      the Laplace transform definition involves an
+      <strong>
+       integral
+      </strong>
+     </li>
+     <li class="enumerate" id="x4-5004x2">
+      applying the Laplace transform to certain ordinary differential equations turns them into simpler (algebraic) equations
+     </li>
+     <li class="enumerate" id="x4-5006x3">
+      use of the Laplace transform gives rise to the basic concept of the
+      <strong>
+       transfer function
+      </strong>
+      of a continuous (or analog) system.
+     </li>
+    </ol>
+    <!--l. 126
+-->
+    <p class="noindent">
+     The z-transform plays a similar role for
+     <strong>
+      discrete
+     </strong>
+     systems, i.e. ones where
+     <strong>
+      sequences
+     </strong>
+     are involved, to that played by the Laplace transform for systems where the basic variable
+     <!--l. 127
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     is continuous. Specifically:
+    </p>
+    <!--l. 129
+-->
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-5008x1">
+      the z-transform definition involves a
+      <strong>
+       summation
+      </strong>
+     </li>
+     <li class="enumerate" id="x4-5010x2">
+      the z-transform converts certain difference equations to algebraic equations
+     </li>
+     <li class="enumerate" id="x4-5012x3">
+      use of the z-transform gives rise to the concept of the transfer function of discrete (or digital) systems.
+     </li>
+    </ol>
+    <div class="framed">
+     <!--l. 138
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x4-60001" id="x4-60001">
+       Key Point 1
+      </a>
+     </h5>
+     <!--l. 138
+-->
+     <p class="noindent">
+      <strong>
+       Definition:
+      </strong>
+     </p>
+     <!--l. 138
+-->
+     <p class="noindent">
+      For a sequence
+      <!--l. 138
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mrow>
+         <mo class="MathClass-open">
+          {
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             y
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             n
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          }
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      the z-transform denoted by
+      <!--l. 138
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         Y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      is given by the
+      <strong>
+       infinite series
+      </strong>
+     </p>
+     <!--l. 138
+-->
+     <p class="noindent">
+      <!--l. 138
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         Y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msub>
+        <msup>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <msup>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="MathClass-op">
+         …
+        </mo>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∑
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mi>
+           n
+          </mi>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mi>
+           ∞
+          </mi>
+         </mrow>
+        </msubsup>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           n
+          </mi>
+         </mrow>
+        </msub>
+        <msup>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           n
+          </mi>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      (1)
+     </p>
+    </div>
+    <!--l. 139
+-->
+    <p class="noindent">
+     <strong>
+      Notes:
+     </strong>
+    </p>
+    <!--l. 140
+-->
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-6002x1">
+      The z-transform only involves the terms
+      <!--l. 141
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           n
+          </mi>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ,
+      <!--l. 141
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         n
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <mo class="MathClass-op">
+         …
+        </mo>
+       </mrow>
+      </math>
+      of the sequence. Terms
+      <!--l. 141
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+        <mo class="MathClass-op">
+         …
+        </mo>
+       </mrow>
+      </math>
+      whether zero or non-zero, are not involved.
+     </li>
+     <li class="enumerate" id="x4-6004x2">
+      The infinite series in (1)
+      <strong>
+       must converge
+      </strong>
+      for
+      <!--l. 144
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         Y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      to be defined as a precise function of
+      <!--l. 144
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         z
+        </mi>
+       </mrow>
+      </math>
+      . We shall discuss this point further with specific examples shortly.
+     </li>
+     <li class="enumerate" id="x4-6006x3">
+      The precise significance of the quantity (strictly the ‘variable’)
+      <!--l. 146
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         z
+        </mi>
+       </mrow>
+      </math>
+      need not concern us except to note that it is complex and, unlike
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         n
+        </mi>
+       </mrow>
+      </math>
+      , is continuous.
+     </li>
+    </ol>
+    <div class="framed">
+     <!--l. 152
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x4-70001" id="x4-70001">
+       Key Point 2
+      </a>
+     </h5>
+     <!--l. 152
+-->
+     <p class="noindent">
+      We use the notation
+      <!--l. 152
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mi>
+         ℤ
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          {
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             y
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             n
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          }
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         Y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      to mean that the z-transform of the sequence
+      <!--l. 152
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mrow>
+         <mo class="MathClass-open">
+          {
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             y
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             n
+            </mi>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          }
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      is
+      <!--l. 152
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         Y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           z
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 154
+-->
+    <p class="noindent">
+     Less strictly one might write
+     <!--l. 155
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        ℤ
+       </mi>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        Y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . Some texts use the notation
+     <!--l. 156
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        ↔
+       </mo>
+       <mi>
+        Y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     to denote that (the sequence)
+     <!--l. 157
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     and (the function)
+     <!--l. 157
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        Y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     form a z-transform pair.
+    </p>
+    <!--l. 159
+-->
+    <p class="noindent">
+     We shall also call
+     <!--l. 159
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            y
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     the
+     <strong>
+      inverse z-transform
+     </strong>
+     of
+     <!--l. 159
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        Y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     and write symbolically
+    </p>
+    <!--l. 160
+-->
+    <p class="noindent">
+     <!--l. 160
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            y
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          ℤ
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msup>
+       <mi>
+        Y
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          z
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     .
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="21_2_bscs_z_trnsfm_thry-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webli2.html#tail21_2_bscs_z_trnsfm_thry-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="21_2_bscs_z_trnsfm_thry-web.html#21_2_bscs_z_trnsfm_thry-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail21_2_bscs_z_trnsfm_thry-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

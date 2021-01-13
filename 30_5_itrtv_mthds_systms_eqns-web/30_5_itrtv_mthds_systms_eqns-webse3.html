@@ -1,0 +1,4532 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Engineering Example 1
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="30_5_itrtv_mthds_systms_eqns-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-webse2.html#tail30_5_itrtv_mthds_systms_eqns-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail30_5_itrtv_mthds_systms_eqns-webse3.html">
+      tail
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-web.html#30_5_itrtv_mthds_systms_eqns-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      3
+     </span>
+     <a href="30_5_itrtv_mthds_systms_eqns-web.html#QQ2-6-33" id="x6-330003">
+      Engineering Example 1
+     </a>
+    </h3>
+    <!--l. 708
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      3.1
+     </span>
+     <a href="30_5_itrtv_mthds_systms_eqns-web.html#QQ2-6-34" id="x6-340003.1">
+      Detecting a train on a track
+     </a>
+    </h4>
+    <!--l. 710
+-->
+    <p class="noindent">
+     <strong>
+      Introduction
+     </strong>
+    </p>
+    <!--l. 711
+-->
+    <p class="noindent">
+     One means of detecting trains is the ‘track circuit’ which uses current fed along the rails to detect the presence of a train. A voltage is applied to the rails at one end of a section of track and a relay is attached across the other end, so that the relay is energised if no train is present, whereas the wheels of a train will short circuit the relay, causing it to de-energise. Any failure in the power supply or a breakage in a wire will also cause the relay to de-energise, for the system is Òfail safeÓ. Unfortunately, there is always leakage between the rails, so this arrangement is slightly complicated to analyse.
+    </p>
+    <!--l. 717
+-->
+    <p class="noindent">
+     <strong>
+      Problem in words
+     </strong>
+    </p>
+    <!--l. 718
+-->
+    <p class="noindent">
+     A 1000 m track circuit is modelled as ten sections each 100 m long. The resistance of 100 m of one rail may be taken to be 0.017 ohms, and the leakage resistance across a 100 m section taken to be 30 ohms. The detecting relay and the wires to it have a resistance of 10 ohms, and the wires from the supply to the rail connection have a resistance of 5 ohms for the pair. The voltage applied at the supply is 4
+     <!--l. 720
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        V
+       </mi>
+      </mrow>
+     </math>
+     . See diagram below. What is the current in the relay?
+    </p>
+    <!--l. 723
+-->
+    <p class="noindent">
+     <strong>
+      Figure 1
+     </strong>
+    </p>
+    <!--l. 725
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/circuit.svg"/>
+    </p>
+    <!--l. 727
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical statement of problem
+     </strong>
+    </p>
+    <!--l. 728
+-->
+    <p class="noindent">
+     There are many ways to apply Kirchhoff’s laws to solve this, but one which gives a simple set of equations in a suitable form to solve is shown below.
+     <!--l. 729
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     is the current in the first section of rail (i.e. the one close to the supply),
+     <!--l. 729
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     ,
+     <!--l. 729
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mo class="MathClass-op">
+        …
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          10
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     , the current in the successive sections of rail and
+     <!--l. 731
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          11
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     the current in the wires to the relay. The leakage current between the first and second sections of rail is
+     <!--l. 732
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     so that the voltage across the rails there is
+     <!--l. 732
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        30
+       </mn>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            i
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            i
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     volts. The first equation below uses this and the voltage drop in the feed wires, the next nine equations compare the voltage drop across successive sections of track with the drop in the (two) rails, and the last equation compares the voltage drop across the last section with that in the relay wires.
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 735
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             1
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           5.034
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <msub>
+         <mrow>
+          <mi>
+           i
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msub>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         4
+        </mn>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             1
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         0.034
+        </mn>
+        <msub>
+         <mrow>
+          <mi>
+           i
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         0.034
+        </mn>
+        <msub>
+         <mrow>
+          <mi>
+           i
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-op">
+         ⋮
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             9
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             10
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         0.034
+        </mn>
+        <msub>
+         <mrow>
+          <mi>
+           i
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           10
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             10
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             11
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mn>
+         30
+        </mn>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             10
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             i
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             11
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         10
+        </mn>
+        <msub>
+         <mrow>
+          <mi>
+           i
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 740
+-->
+    <p class="nopar">
+     These can be reformulated in matrix form as
+     <!--l. 741
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          v
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     , where
+     <!--l. 741
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          v
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     is the
+     <!--l. 741
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        11
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     column vector with first entry
+     <!--l. 742
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        4
+       </mn>
+      </mrow>
+     </math>
+     and the other entries zero,
+     <!--l. 742
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     is the column vector with entries
+     <!--l. 742
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mo class="MathClass-op">
+        …
+       </mo>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          11
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     and
+     <!--l. 743
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     is the matrix
+    </p>
+    <!--l. 745
+-->
+    <p class="noindent">
+     <!--l. 745
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             35.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             60.034
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             40
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccccccccccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 760
+-->
+    <p class="noindent">
+     Find the current
+     <!--l. 760
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     in the relay when the input is 4
+     <!--l. 760
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        V
+       </mi>
+      </mrow>
+     </math>
+     , by Gaussian elimination or by performing an L-U decomposition of
+     <!--l. 760
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 763
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical analysis
+     </strong>
+    </p>
+    <!--l. 764
+-->
+    <p class="noindent">
+     We solve
+     <!--l. 764
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          v
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     as above, although actually we only want to know
+     <!--l. 764
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          11
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     . Letting
+     <!--l. 765
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     be the matrix
+     <!--l. 765
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     with the column
+     <!--l. 765
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          v
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     added at the right, as in Section 30.2, then performing Gaussian elimination on
+     <!--l. 766
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+      </mrow>
+     </math>
+     , working to four decimal places gives
+    </p>
+    <!--l. 768
+-->
+    <p class="noindent">
+     <!--l. 768
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mspace class="thinspace" width="0.3em">
+            </mspace>
+            <mn>
+             35.0340
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4.0000
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             34.3447
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3.4252
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.8291
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.9919
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.4297
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.6532
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.1118
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.3810
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.8534
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.1572
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.6396
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.9698
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.4601
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.8105
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.3077
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.6733
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.1769
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.5538
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             12.0296
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.4487
+            </mn>
+           </mtd>
+          </mtr>
+          <!--cccccccccccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 783
+-->
+    <p class="noindent">
+     from which we can calculate that the solution
+     <!--l. 783
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     is
+    </p>
+    <!--l. 784
+-->
+    <p class="noindent">
+     <!--l. 784
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.5356
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4921
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4492
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4068
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.3649
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.3234
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2822
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2414
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2008
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.1605
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.1204
+            </mn>
+           </mtd>
+          </mtr>
+          <!--*\c@MaxMatrixCols c
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 797
+-->
+    <p class="noindent">
+     so the current in the relay is
+     <!--l. 797
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        0.1204
+       </mn>
+      </mrow>
+     </math>
+     amps, or
+     <!--l. 797
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        0.12
+       </mn>
+      </mrow>
+     </math>
+     A to two decimal places.
+    </p>
+    <!--l. 799
+-->
+    <p class="noindent">
+     You can alternatively solve this problem by an L-U decomposition by finding matrices
+     <!--l. 799
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 799
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     such that
+     <!--l. 799
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        M
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     . Here we have
+    </p>
+    <!--l. 802
+-->
+    <p class="noindent">
+     <!--l. 802
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.8563
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.8735
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.8868
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.8974
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9060
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9131
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9191
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9242
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9286
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             0.9323
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.0000
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccccccccccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 817
+-->
+    <p class="noindent">
+     and
+    </p>
+    <!--l. 820
+-->
+    <p class="noindent">
+     <!--l. 820
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             35.0340
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             34.3447
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.8291
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.4297
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             33.1118
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.8534
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.6395
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.4601
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.3076
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             32.1768
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             30.0000
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             12.0295
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccccccccccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 835
+-->
+    <p class="noindent">
+     Therefore
+     <!--l. 835
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4.0000
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3.4240
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.9892
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.6514
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.3783
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2.1547
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.9673
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.8079
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.6705
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.5519
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1.4464
+            </mn>
+           </mtd>
+          </mtr>
+          <!--*\c@MaxMatrixCols c
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     and hence
+     <!--l. 848
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.5352
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4917
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4487
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.4064
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.3644
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.3230
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2819
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2411
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.2006
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.1603
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0.1202
+            </mn>
+           </mtd>
+          </mtr>
+          <!--*\c@MaxMatrixCols c
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     and again the current is found to be
+     <!--l. 860
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        0.12
+       </mn>
+      </mrow>
+     </math>
+     amps.
+    </p>
+    <!--l. 861
+-->
+    <p class="noindent">
+     <strong>
+      Mathematical comment
+     </strong>
+    </p>
+    <!--l. 862
+-->
+    <p class="noindent">
+     You can try to solve the equation
+     <!--l. 862
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          i
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <munder accentunder="false" class="mml-underline">
+        <mrow>
+         <mi>
+          v
+         </mi>
+        </mrow>
+        <mo accent="true">
+         ̲
+        </mo>
+       </munder>
+      </mrow>
+     </math>
+     by Jacobi or Gauss-Seidel iteration but in both cases it will take very many iterations (over
+     <!--l. 863
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        200
+       </mn>
+      </mrow>
+     </math>
+     to get four decimal places). Convergence is very slow because the norms of the relevant matrices in the iteration are only just less than 1. Convergence is nevertheless assured because the matrix
+     <!--l. 865
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     is diagonally dominant.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="30_5_itrtv_mthds_systms_eqns-webse2.html">
+      prev
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-webse2.html#tail30_5_itrtv_mthds_systms_eqns-webse2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-webse3.html">
+      front
+     </a>
+     ] [
+     <a href="30_5_itrtv_mthds_systms_eqns-web.html#30_5_itrtv_mthds_systms_eqns-webse3.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail30_5_itrtv_mthds_systms_eqns-webse3.html">
+   </a>
+  </div>
+ </body>
+</html>

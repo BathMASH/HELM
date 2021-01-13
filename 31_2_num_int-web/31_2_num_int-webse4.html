@@ -1,0 +1,4833 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Other methods for approximating integrals
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="31_2_num_int-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="31_2_num_int-webse5.html">
+      next
+     </a>
+     ] [
+     <a href="31_2_num_int-webse3.html">
+      prev
+     </a>
+     ] [
+     <a href="31_2_num_int-webse3.html#tail31_2_num_int-webse3.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail31_2_num_int-webse4.html">
+      tail
+     </a>
+     ] [
+     <a href="31_2_num_int-web.html#31_2_num_int-webse4.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      4
+     </span>
+     <a href="31_2_num_int-web.html#QQ2-7-40" id="x7-400004">
+      Other methods for approximating integrals
+     </a>
+    </h3>
+    <!--l. 689
+-->
+    <p class="noindent">
+     Here we briefly describe other methods that you may have heard, or get to hear, about. In the end they all amount to the same sort of thing, that is we sample the integrand
+     <!--l. 690
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+      </mrow>
+     </math>
+     at a few points in the integration interval and then take a weighted average of all these
+     <!--l. 691
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+      </mrow>
+     </math>
+     values. All that is needed to implement any of these methods is the list of sampling points and the weight that should be attached to each evaluation. Lists of these points and weights can be found in many books on the subject.
+    </p>
+    <!--l. 695
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      4.1
+     </span>
+     <a href="31_2_num_int-web.html#QQ2-7-41" id="x7-410004.1">
+      Simpson’s rule
+     </a>
+    </h4>
+    <!--l. 697
+-->
+    <p class="noindent">
+     This is based on passing a quadratic through three equally spaced points, rather than passing a straight line through two points as we did for the simple trapezium rule. The composite Simpson’s rule is given in the following Key Point.
+    </p>
+    <div class="framed">
+     <!--l. 713
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x7-420004.1" id="x7-420004.1">
+       Key Point 9
+      </a>
+     </h5>
+     <!--l. 713
+-->
+     <p class="noindent">
+      <strong>
+       Composite Simpson’s Rule
+      </strong>
+     </p>
+     <!--l. 713
+-->
+     <p class="noindent">
+      The composite Simpson’s rule for approximating
+      <!--l. 713
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mi>
+           a
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           b
+          </mi>
+         </mrow>
+        </msubsup>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      is carried out as follows:
+     </p>
+     <ol class="enumerate1">
+      <li class="enumerate" id="x7-42002x1">
+       Choose
+       <!--l. 713
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <mi>
+          N
+         </mi>
+        </mrow>
+       </math>
+       , which must be an
+       <strong>
+        even
+       </strong>
+       number of subintervals,
+      </li>
+      <li class="enumerate" id="x7-42004x2">
+       Calculate
+       <!--l. 713
+-->
+       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mi>
+            a
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            b
+           </mi>
+          </mrow>
+         </msubsup>
+         <mi>
+          f
+         </mi>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </math>
+       <!--l. 713
+-->
+       <p class="noindent">
+        <!--l. 713
+-->
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+         <mrow>
+          <mspace class="qquad" width="2em">
+          </mspace>
+          <mspace class="qquad" width="2em">
+          </mspace>
+          <mo class="MathClass-rel">
+           ≈
+          </mo>
+          <mstyle class="text">
+           <mtext>
+           </mtext>
+           <mstyle class="math">
+            <mfrac>
+             <mrow>
+              <mn>
+               1
+              </mn>
+             </mrow>
+             <mrow>
+              <mn>
+               3
+              </mn>
+             </mrow>
+            </mfrac>
+           </mstyle>
+           <mtext>
+           </mtext>
+          </mstyle>
+          <mi>
+           h
+          </mi>
+          <mfenced close=")" open="(" separators="">
+           <mrow>
+            <msub>
+             <mrow>
+              <mi>
+               f
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               0
+              </mn>
+             </mrow>
+            </msub>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <mn>
+             4
+            </mn>
+            <mrow>
+             <mo class="MathClass-open">
+              {
+             </mo>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 1
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 3
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 5
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <mo class="MathClass-rel">
+               ⋯
+              </mo>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mi>
+                 N
+                </mi>
+                <mo class="MathClass-bin">
+                 −
+                </mo>
+                <mn>
+                 1
+                </mn>
+               </mrow>
+              </msub>
+             </mrow>
+             <mo class="MathClass-close">
+              }
+             </mo>
+            </mrow>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <mn>
+             2
+            </mn>
+            <mrow>
+             <mo class="MathClass-open">
+              {
+             </mo>
+             <mrow>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 2
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 4
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mn>
+                 6
+                </mn>
+               </mrow>
+              </msub>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <mo class="MathClass-rel">
+               ⋯
+              </mo>
+              <mo class="MathClass-bin">
+               +
+              </mo>
+              <msub>
+               <mrow>
+                <mi>
+                 f
+                </mi>
+               </mrow>
+               <mrow>
+                <mi>
+                 N
+                </mi>
+                <mo class="MathClass-bin">
+                 −
+                </mo>
+                <mn>
+                 2
+                </mn>
+               </mrow>
+              </msub>
+             </mrow>
+             <mo class="MathClass-close">
+              }
+             </mo>
+            </mrow>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               f
+              </mi>
+             </mrow>
+             <mrow>
+              <mi>
+               N
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+          </mfenced>
+         </mrow>
+        </math>
+        <br class="newline"/>
+        <br/>
+        <br class="newline"/>
+        <br/>
+        where
+        <!--tex4ht:inline
+-->
+       </p>
+       <!--l. 713
+-->
+       <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+         <mtr>
+          <mtd class="eqnarray-1">
+           <mi>
+            h
+           </mi>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mfrac>
+            <mrow>
+             <mi>
+              b
+             </mi>
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mi>
+              a
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              N
+             </mi>
+            </mrow>
+           </mfrac>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mspace class="qquad" width="2em">
+           </mspace>
+          </mtd>
+          <mtd class="eqnarray-2">
+          </mtd>
+          <mtd class="eqnarray-3">
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              0
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              a
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mspace class="quad" width="1em">
+           </mspace>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              a
+             </mi>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <mi>
+              h
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mo class="MathClass-op">
+            …
+           </mo>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              a
+             </mi>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <mi>
+              n
+             </mi>
+             <mi>
+              h
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+           <mo class="MathClass-op">
+            …
+           </mo>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+          <mtd class="eqnarray-4">
+           <mtext class="eqnarray">
+           </mtext>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="eqnarray-1">
+          </mtd>
+          <mtd class="eqnarray-2">
+          </mtd>
+          <mtd class="eqnarray-3">
+           <mstyle class="text">
+            <mtext>
+             and
+            </mtext>
+           </mstyle>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              N
+             </mi>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              a
+             </mi>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <mi>
+              N
+             </mi>
+             <mi>
+              h
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mi>
+            f
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              b
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+           <mo class="MathClass-punc">
+            .
+           </mo>
+          </mtd>
+          <mtd class="eqnarray-4">
+           <mtext class="eqnarray">
+           </mtext>
+          </mtd>
+         </mtr>
+        </mtable>
+       </math>
+       <!--l. 713
+-->
+      </li>
+     </ol>
+    </div>
+    <!--l. 715
+-->
+    <p class="noindent">
+     The formula in Key Point 9 is slightly more complicated than the corresponding one for composite trapezium rule. One way of remembering the rule is the learn the pattern
+    </p>
+    <!--l. 717
+-->
+    <p class="noindent">
+     <!--l. 717
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mn>
+        1
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        2
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        2
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        2
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="MathClass-op">
+        …
+       </mo>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        2
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        2
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 720
+-->
+    <p class="noindent">
+     which show that the end point values are multiplied by 1, the values with odd-numbered subscripts are multiplied by 4 and the
+     <strong>
+      interior
+     </strong>
+     values with even subscripts are multiplied by 2.
+    </p>
+    <!--l. 725
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-430004.1" id="x7-430004.1">
+      Example 15
+     </a>
+    </h5>
+    <!--l. 726
+-->
+    <p class="noindent">
+     Using 4 subintervals in the composite Simpson’s rule approximate
+    </p>
+    <!--l. 727
+-->
+    <p class="noindent">
+     <!--l. 727
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msubsup>
+       <mo class="qopname">
+        cosh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 751
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-440004.1" id="x7-440004.1">
+      Solution
+     </a>
+    </h5>
+    <!--l. 751
+-->
+    <p class="noindent">
+     In this case
+     <!--l. 751
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        h
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.5
+       </mn>
+      </mrow>
+     </math>
+     .
+     <br class="newline"/>
+     <br/>
+     We require
+     <!--l. 751
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="qopname">
+        cosh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     evaluated at five
+     <!--l. 751
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     -values and the results are tabulated below to 6 d.p.
+    </p>
+    <!--l. 751
+-->
+    <p class="noindent">
+     <!--l. 751
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mtable align="axis" class="array" columnlines="solid" equalcolumns="false" equalrows="false" style="">
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <msub>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             n
+            </mi>
+           </mrow>
+          </msub>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             n
+            </mi>
+           </mrow>
+          </msub>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <mo class="qopname">
+           cosh
+          </mo>
+          <!--nolimits
+-->
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <msub>
+             <mrow>
+              <mi>
+               x
+              </mi>
+             </mrow>
+             <mrow>
+              <mi>
+               n
+              </mi>
+             </mrow>
+            </msub>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mtd>
+        </mtr>
+        <mtr class="hline">
+         <mtd>
+          <mo>
+           ̲
+          </mo>
+         </mtd>
+         <mtd>
+          <mo>
+           ̲
+          </mo>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <mn>
+           0
+          </mn>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <mn>
+           1.000000
+          </mn>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <mn>
+           0.5
+          </mn>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <mn>
+           1.127626
+          </mn>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <mn>
+           1
+          </mn>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <mn>
+           1.543081
+          </mn>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <mn>
+           1.5
+          </mn>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <mn>
+           2.352410
+          </mn>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd class="array" columnalign="center">
+          <mn>
+           2
+          </mn>
+         </mtd>
+         <mtd class="array" columnalign="center">
+          <mn>
+           3.762196
+          </mn>
+         </mtd>
+        </mtr>
+        <!--c|c
+-->
+       </mtable>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 751
+-->
+    <p class="noindent">
+     It follows that
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 751
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msubsup>
+        <mo class="qopname">
+         cosh
+        </mo>
+        <!--nolimits
+-->
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         x
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         ≈
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mi>
+         h
+        </mi>
+        <mfenced close=")" open="(" separators="">
+         <mrow>
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             0
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           4
+          </mn>
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             1
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           2
+          </mn>
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           4
+          </mn>
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msub>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msub>
+         </mrow>
+        </mfenced>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           0.5
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mfenced close=")" open="(" separators="">
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           4
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           1.127626
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           1.543081
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           4
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2.352410
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mn>
+           3.762196
+          </mn>
+         </mrow>
+        </mfenced>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         3.628083
+        </mn>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 751
+-->
+    <p class="nopar">
+     where this approximation is given to 6 decimal places.
+    </p>
+    <!--l. 753
+-->
+    <p class="noindent">
+     This approximation to
+     <!--l. 753
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msubsup>
+       <mo class="qopname">
+        cosh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     is closer to the true value of
+     <!--l. 754
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="qopname">
+        sinh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     (which is
+     <!--l. 754
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        3.626860
+       </mn>
+      </mrow>
+     </math>
+     to 6 d.p.) than we obtained when using the composite trapezium rule with the same number of subintervals.
+    </p>
+    <!--l. 757
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x7-450004.1" id="x7-450004.1">
+      Task!
+     </a>
+    </h5>
+    <!--l. 758
+-->
+    <p class="noindent">
+     Using 4 subintervals in the composite Simpson’s rule approximate
+    </p>
+    <!--l. 759
+-->
+    <p class="noindent">
+     <!--l. 759
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msubsup>
+       <mo class="qopname">
+        ln
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 784
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x7-4600041" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x7-4600041" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x7-4600041">
+     <!--l. 784
+-->
+     <p class="noindent">
+      In this case
+      <!--l. 784
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         h
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0.25
+        </mn>
+       </mrow>
+      </math>
+      . There will be five
+      <!--l. 784
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      -values and the results are tabulated below to 6 d.p.
+     </p>
+     <!--l. 784
+-->
+     <p class="noindent">
+      <!--l. 784
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mtable align="axis" class="array" columnlines="solid" equalcolumns="false" equalrows="false" style="">
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <msub>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msub>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mo class="qopname">
+            ln
+           </mo>
+           <!--nolimits
+-->
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <msub>
+              <mrow>
+               <mi>
+                x
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                n
+               </mi>
+              </mrow>
+             </msub>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mtd>
+         </mtr>
+         <mtr class="hline">
+          <mtd>
+           <mo>
+            ̲
+           </mo>
+          </mtd>
+          <mtd>
+           <mo>
+            ̲
+           </mo>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            1.00
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.000000
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            1.25
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.223144
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            1.50
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.405465
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            1.75
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.559616
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            2.00
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.693147
+           </mn>
+          </mtd>
+         </mtr>
+         <!--c|c
+-->
+        </mtable>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 784
+-->
+     <p class="noindent">
+      It follows that
+      <!--tex4ht:inline
+-->
+     </p>
+     <!--l. 784
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+       <mtr>
+        <mtd class="eqnarray-1">
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msubsup>
+         <mo class="qopname">
+          ln
+         </mo>
+         <!--nolimits
+-->
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          ≈
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mstyle class="text">
+          <mtext>
+          </mtext>
+          <mstyle class="math">
+           <mfrac>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </mfrac>
+          </mstyle>
+          <mtext>
+          </mtext>
+         </mstyle>
+         <mi>
+          h
+         </mi>
+         <mfenced close=")" open="(" separators="">
+          <mrow>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              0
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            2
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msub>
+          </mrow>
+         </mfenced>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mstyle class="text">
+          <mtext>
+          </mtext>
+          <mstyle class="math">
+           <mfrac>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </mfrac>
+          </mstyle>
+          <mtext>
+          </mtext>
+         </mstyle>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mn>
+            0.25
+           </mn>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mfenced close=")" open="(" separators="">
+          <mrow>
+           <mn>
+            0
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.223144
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            2
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.405465
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.559616
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            0.693147
+           </mn>
+          </mrow>
+         </mfenced>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mn>
+          0.386260
+         </mn>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mstyle class="text">
+          <mtext>
+           to 6 d.p.
+          </mtext>
+         </mstyle>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+      </mtable>
+     </math>
+     <!--l. 784
+-->
+    </div>
+    <!--l. 786
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      4.2
+     </span>
+     <a href="31_2_num_int-web.html#QQ2-7-47" id="x7-470004.2">
+      How good is the composite Simpson’s rule?
+     </a>
+    </h4>
+    <!--l. 787
+-->
+    <p class="noindent">
+     On page 39 (Key Point 8) we saw a formula for an upper bound on the error in the composite trapezium method. A corresponding result for the composite Simpson’s rule exists and is given in the following Key Point.
+    </p>
+    <div class="framed">
+     <!--l. 800
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x7-480004.2" id="x7-480004.2">
+       Key Point 10
+      </a>
+     </h5>
+     <!--l. 800
+-->
+     <p class="noindent">
+      <strong>
+       Error in Composite Simpson’s Rule
+      </strong>
+     </p>
+     <!--l. 800
+-->
+     <p class="noindent">
+      The error in the
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+       </mrow>
+      </math>
+      -subinterval composite Simpson’s rule approximation to
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mi>
+           a
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           b
+          </mi>
+         </mrow>
+        </msubsup>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mspace class="thinspace" width="0.3em">
+        </mspace>
+        <mi>
+         d
+        </mi>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      is bounded above by
+     </p>
+     <!--l. 800
+-->
+     <p class="noindent">
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <munder class="msub">
+         <mrow>
+          <mo class="qopname">
+           max
+          </mo>
+         </mrow>
+         <mrow>
+          <mi>
+           a
+          </mi>
+          <mo class="MathClass-rel">
+           ≤
+          </mo>
+          <mi>
+           x
+          </mi>
+          <mo class="MathClass-rel">
+           ≤
+          </mo>
+          <mi>
+           b
+          </mi>
+         </mrow>
+        </munder>
+        <mfenced close="|" open="|" separators="">
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             f
+            </mi>
+           </mrow>
+           <mrow>
+            <mrow>
+             <mo class="MathClass-open">
+              (
+             </mo>
+             <mrow>
+              <mi>
+               i
+              </mi>
+              <mi>
+               v
+              </mi>
+             </mrow>
+             <mo class="MathClass-close">
+              )
+             </mo>
+            </mrow>
+           </mrow>
+          </msup>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+        </mfenced>
+        <mfrac>
+         <mrow>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             b
+            </mi>
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mi>
+             a
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+          <msup>
+           <mrow>
+            <mi>
+             h
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           180
+          </mn>
+         </mrow>
+        </mfrac>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 800
+-->
+     <p class="noindent">
+      (Here
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msup>
+         <mrow>
+          <mi>
+           f
+          </mi>
+         </mrow>
+         <mrow>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             i
+            </mi>
+            <mi>
+             v
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      is the fourth derivative of
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         f
+        </mi>
+       </mrow>
+      </math>
+      and
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         h
+        </mi>
+       </mrow>
+      </math>
+      is the subinterval width, so
+      <!--l. 800
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mi>
+         h
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         b
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mi>
+         a
+        </mi>
+       </mrow>
+      </math>
+      .)
+     </p>
+    </div>
+    <!--l. 804
+-->
+    <p class="noindent">
+     The formula in Key Point 10 can be used to decide how many subintervals to use to guarantee a specific accuracy.
+    </p>
+    <!--l. 807
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-490004.2" id="x7-490004.2">
+      Example 16
+     </a>
+    </h5>
+    <!--l. 808
+-->
+    <p class="noindent">
+     The function
+     <!--l. 808
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+      </mrow>
+     </math>
+     is known to have a fourth derivative with the property that
+    </p>
+    <!--l. 809
+-->
+    <p class="noindent">
+     <!--l. 809
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfenced close="|" open="|" separators="">
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            f
+           </mi>
+          </mrow>
+          <mrow>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              i
+             </mi>
+             <mi>
+              v
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+         </msup>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        5
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 812
+-->
+    <p class="noindent">
+     for
+     <!--l. 812
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     between 1 and 5. Determine how many subintervals are required so that the composite Simpson’s rule used to approximate
+    </p>
+    <!--l. 816
+-->
+    <p class="noindent">
+     <!--l. 816
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          5
+         </mn>
+        </mrow>
+       </msubsup>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 819
+-->
+    <p class="noindent">
+     incurs an error that is guaranteed less than 0.005 .
+    </p>
+    <!--l. 836
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-500004.2" id="x7-500004.2">
+      Solution
+     </a>
+    </h5>
+    <!--l. 836
+-->
+    <p class="noindent">
+     We require that
+    </p>
+    <!--l. 836
+-->
+    <p class="noindent">
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mn>
+        5
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          4
+         </mn>
+         <msup>
+          <mrow>
+           <mi>
+            h
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            4
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          180
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        0.005
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 836
+-->
+    <p class="noindent">
+     This implies that
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        0.045
+       </mn>
+      </mrow>
+     </math>
+     and therefore
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        h
+       </mi>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        0.460578
+       </mn>
+      </mrow>
+     </math>
+     .
+     <br class="newline"/>
+     <br/>
+     Now
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        N
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-bin">
+        ∕
+       </mo>
+       <mi>
+        h
+       </mi>
+      </mrow>
+     </math>
+     and it follows that
+    </p>
+    <!--l. 836
+-->
+    <p class="noindent">
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        N
+       </mi>
+       <mo class="MathClass-rel">
+        &gt;
+       </mo>
+       <mn>
+        8.684741
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 836
+-->
+    <p class="noindent">
+     For the composite Simpson’s rule
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        N
+       </mi>
+      </mrow>
+     </math>
+     must be an
+     <strong>
+      even
+     </strong>
+     whole number and we conclude that the smallest number of subintervals which
+     <strong>
+      guarantees
+     </strong>
+     an error smaller than 0.005 is
+     <!--l. 836
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        N
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        10
+       </mn>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 839
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x7-510004.2" id="x7-510004.2">
+      Task!
+     </a>
+    </h5>
+    <!--l. 840
+-->
+    <p class="noindent">
+     The function
+     <!--l. 840
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+      </mrow>
+     </math>
+     is known to have a fourth derivative with the property that
+    </p>
+    <!--l. 841
+-->
+    <p class="noindent">
+     <!--l. 841
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfenced close="|" open="|" separators="">
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            f
+           </mi>
+          </mrow>
+          <mrow>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              i
+             </mi>
+             <mi>
+              v
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+         </msup>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        12
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 844
+-->
+    <p class="noindent">
+     for
+     <!--l. 844
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     between 2 and 6. Determine how many subintervals are required so that the composite Simpson’s rule used to approximate
+    </p>
+    <!--l. 848
+-->
+    <p class="noindent">
+     <!--l. 848
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          6
+         </mn>
+        </mrow>
+       </msubsup>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 851
+-->
+    <p class="noindent">
+     incurs an error that is guaranteed less than 0.0005 .
+    </p>
+    <!--l. 868
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x7-5200042" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x7-5200042" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x7-5200042">
+     <!--l. 868
+-->
+     <p class="noindent">
+      We require that
+     </p>
+     <!--l. 868
+-->
+     <p class="noindent">
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mn>
+         12
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           4
+          </mn>
+          <msup>
+           <mrow>
+            <mi>
+             h
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           180
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.0005
+        </mn>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 868
+-->
+     <p class="noindent">
+      This implies that
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msup>
+         <mrow>
+          <mi>
+           h
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.001875
+        </mn>
+       </mrow>
+      </math>
+      and therefore
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         h
+        </mi>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.208090
+        </mn>
+       </mrow>
+      </math>
+      .
+      <br class="newline"/>
+      <br/>
+      Now
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mi>
+         h
+        </mi>
+       </mrow>
+      </math>
+      and it follows that
+     </p>
+     <!--l. 868
+-->
+     <p class="noindent">
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-rel">
+         &gt;
+        </mo>
+        <mn>
+         19.222491
+        </mn>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 868
+-->
+     <p class="noindent">
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+       </mrow>
+      </math>
+      must be an
+      <strong>
+       even
+      </strong>
+      whole number and we conclude that the smallest number of subintervals which
+      <strong>
+       guarantees
+      </strong>
+      an error smaller than 0.0005 is
+      <!--l. 868
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         20
+        </mn>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 870
+-->
+    <p class="noindent">
+     The following Task is similar to one that we saw earlier in this Section (page 42). Using the composite Simpson’s rule we can achieve greater accuracy, for a similar amount of effort, than we managed using the composite trapezium rule.
+    </p>
+    <!--l. 874
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x7-530004.2" id="x7-530004.2">
+      Task!
+     </a>
+    </h5>
+    <!--l. 875
+-->
+    <p class="noindent">
+     It is given that the function
+     <!--l. 875
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mo class="MathClass-bin">
+          ∕
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     has a fourth derivative that is never greater than 3 in absolute value.
+    </p>
+    <!--l. 880
+-->
+    <p class="noindent">
+     (a) Use this fact to determine how many subintervals are required for the composite Simpson’s rule to deliver an approximation to
+    </p>
+    <!--l. 882
+-->
+    <p class="noindent">
+     <!--l. 882
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msubsup>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <msqrt>
+          <mrow>
+           <mn>
+            2
+           </mn>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </msqrt>
+        </mrow>
+       </mfrac>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mo class="MathClass-bin">
+          ∕
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 885
+-->
+    <p class="noindent">
+     that is guaranteed to have an error less than
+     <!--l. 885
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        1
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 891
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x7-5400042" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x7-5400042" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x7-5400042">
+     <!--l. 891
+-->
+     <p class="noindent">
+      We require that
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>
+             2
+            </mn>
+            <mi>
+             π
+            </mi>
+           </mrow>
+          </msqrt>
+         </mrow>
+        </mfrac>
+        <mfrac>
+         <mrow>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             b
+            </mi>
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mi>
+             a
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+          <msup>
+           <mrow>
+            <mi>
+             h
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           180
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.00005
+        </mn>
+       </mrow>
+      </math>
+      .
+     </p>
+     <!--l. 891
+-->
+     <p class="noindent">
+      This means that
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msup>
+         <mrow>
+          <mi>
+           h
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.00751988
+        </mn>
+       </mrow>
+      </math>
+      and therefore
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         h
+        </mi>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         0.294478
+        </mn>
+       </mrow>
+      </math>
+      . Since
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mi>
+         h
+        </mi>
+       </mrow>
+      </math>
+      it is necessary for
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         N
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         4
+        </mn>
+       </mrow>
+      </math>
+      for the error bound to be guaranteed to be less than
+      <!--l. 891
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mo class="MathClass-bin">
+         ±
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <msup>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      . (b) Find an approximation to the integral that is in error by less than
+      <!--l. 893
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <msup>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 917
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x7-5500042" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x7-5500042" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x7-5500042">
+     <!--l. 917
+-->
+     <p class="noindent">
+      In this case
+      <!--l. 917
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         h
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0.25
+        </mn>
+       </mrow>
+      </math>
+      . We require
+      <!--l. 917
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>
+             2
+            </mn>
+            <mi>
+             π
+            </mi>
+           </mrow>
+          </msqrt>
+         </mrow>
+        </mfrac>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mi>
+           e
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+          <mo class="MathClass-bin">
+           ∕
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      evaluated at five
+      <!--l. 917
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      -values and the results are tabulated below to 6 d.p.
+     </p>
+     <!--l. 917
+-->
+     <p class="noindent">
+      <!--l. 917
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mtable align="axis" class="array" columnlines="solid" equalcolumns="false" equalrows="false" style="">
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <msub>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msub>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mfrac>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+            <mrow>
+             <msqrt>
+              <mrow>
+               <mn>
+                2
+               </mn>
+               <mi>
+                π
+               </mi>
+              </mrow>
+             </msqrt>
+            </mrow>
+           </mfrac>
+           <mspace class="nbsp" width="1em">
+           </mspace>
+           <msup>
+            <mrow>
+             <mi>
+              e
+             </mi>
+            </mrow>
+            <mrow>
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <msubsup>
+              <mrow>
+               <mi>
+                x
+               </mi>
+              </mrow>
+              <mrow>
+               <mi>
+                n
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                2
+               </mn>
+              </mrow>
+             </msubsup>
+             <mo class="MathClass-bin">
+              ∕
+             </mo>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msup>
+          </mtd>
+         </mtr>
+         <mtr class="hline">
+          <mtd>
+           <mo>
+            ̲
+           </mo>
+          </mtd>
+          <mtd>
+           <mo>
+            ̲
+           </mo>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.398942
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.25
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.386668
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.5
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.352065
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.75
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.301137
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mn>
+            1
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="center">
+           <mn>
+            0.241971
+           </mn>
+          </mtd>
+         </mtr>
+         <!--c|c
+-->
+        </mtable>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 917
+-->
+     <p class="noindent">
+      It follows that
+      <!--tex4ht:inline
+-->
+     </p>
+     <!--l. 917
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+       <mtr>
+        <mtd class="eqnarray-1">
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+         </msubsup>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <msqrt>
+            <mrow>
+             <mn>
+              2
+             </mn>
+             <mi>
+              π
+             </mi>
+            </mrow>
+           </msqrt>
+          </mrow>
+         </mfrac>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <msup>
+          <mrow>
+           <mi>
+            e
+           </mi>
+          </mrow>
+          <mrow>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <msup>
+            <mrow>
+             <mi>
+              x
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msup>
+           <mo class="MathClass-bin">
+            ∕
+           </mo>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mspace class="thinspace" width="0.3em">
+         </mspace>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          ≈
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mstyle class="text">
+          <mtext>
+          </mtext>
+          <mstyle class="math">
+           <mfrac>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </mfrac>
+          </mstyle>
+          <mtext>
+          </mtext>
+         </mstyle>
+         <mi>
+          h
+         </mi>
+         <mfenced close=")" open="(" separators="">
+          <mrow>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              0
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            2
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <msub>
+            <mrow>
+             <mi>
+              f
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </msub>
+          </mrow>
+         </mfenced>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mstyle class="text">
+          <mtext>
+          </mtext>
+          <mstyle class="math">
+           <mfrac>
+            <mrow>
+             <mn>
+              1
+             </mn>
+            </mrow>
+            <mrow>
+             <mn>
+              3
+             </mn>
+            </mrow>
+           </mfrac>
+          </mstyle>
+          <mtext>
+          </mtext>
+         </mstyle>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mn>
+            0.25
+           </mn>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mfenced close="" open="(" separators="">
+          <mrow>
+           <mn>
+            0.398942
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.386668
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            2
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.352065
+           </mn>
+          </mrow>
+         </mfenced>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mspace class="qquad" width="2em">
+         </mspace>
+         <mfenced close=")" open="" separators="">
+          <mrow>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            4
+           </mn>
+           <mo class="MathClass-bin">
+            ×
+           </mo>
+           <mn>
+            0.301137
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <mn>
+            0.241971
+           </mn>
+          </mrow>
+         </mfenced>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mn>
+          0.341355
+         </mn>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mspace class="nbsp" width="1em">
+         </mspace>
+         <mstyle class="text">
+          <mtext>
+           to 6 d.p.
+          </mtext>
+         </mstyle>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+      </mtable>
+     </math>
+     <!--l. 917
+-->
+     <p class="nopar">
+      We know from part (a) that this approximation is in error by less than
+      <!--l. 917
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <msup>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           4
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 919
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-560004.2" id="x7-560004.2">
+      Example 17
+     </a>
+    </h5>
+    <!--l. 920
+-->
+    <p class="noindent">
+     Find out how many strips are needed to be sure that
+    </p>
+    <!--l. 921
+-->
+    <p class="noindent">
+     <!--l. 921
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msubsup>
+       <mo class="qopname">
+        sinh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="thinspace" width="0.3em">
+       </mspace>
+       <mi>
+        d
+       </mi>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 922
+-->
+    <p class="noindent">
+     is evaluated by Simpson’s rule with error less than
+     <!--l. 922
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="MathClass-bin">
+        ±
+       </mo>
+       <mn>
+        0.0001
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 929
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x7-570004.2" id="x7-570004.2">
+      Solution
+     </a>
+    </h5>
+    <!--l. 929
+-->
+    <p class="noindent">
+     <!--l. 929
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        E
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            b
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            a
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mn>
+          180
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          16
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="qopname">
+        sinh
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mn>
+        0
+       </mn>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        4
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 929
+-->
+    <p class="noindent">
+     <!--l. 929
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfenced close="|" open="|" separators="">
+        <mrow>
+         <mi>
+          E
+         </mi>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        ≤
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          64
+         </mn>
+         <msup>
+          <mrow>
+           <mi>
+            h
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mo class="qopname">
+          sinh
+         </mo>
+         <!--nolimits
+-->
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mn>
+            8
+           </mn>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+        <mrow>
+         <mn>
+          180
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ≤
+       </mo>
+       <mn>
+        0.0001
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 929
+-->
+    <p class="noindent">
+     <!--l. 929
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mo class="MathClass-rel">
+        ⇒
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          h
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-rel">
+        ≤
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          0.0180
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          64
+         </mn>
+         <mo class="qopname">
+          sinh
+         </mo>
+         <!--nolimits
+-->
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mn>
+            8
+           </mn>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ⇒
+       </mo>
+       <mi>
+        h
+       </mi>
+       <mo class="MathClass-rel">
+        ≤
+       </mo>
+       <mn>
+        0.0208421
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 929
+-->
+    <p class="noindent">
+     <!--l. 929
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        n
+       </mi>
+       <mi>
+        h
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        b
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mi>
+        a
+       </mi>
+       <mspace class="quad" width="1em">
+       </mspace>
+       <mo class="MathClass-rel">
+        ⇒
+       </mo>
+       <mspace class="quad" width="1em">
+       </mspace>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-rel">
+        ≥
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          0.0208421
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        191.92
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 929
+-->
+    <p class="noindent">
+     So
+     <!--l. 929
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        192
+       </mn>
+      </mrow>
+     </math>
+     is needed (minimum even number).
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="31_2_num_int-webse5.html">
+      next
+     </a>
+     ] [
+     <a href="31_2_num_int-webse3.html">
+      prev
+     </a>
+     ] [
+     <a href="31_2_num_int-webse3.html#tail31_2_num_int-webse3.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="31_2_num_int-webse4.html">
+      front
+     </a>
+     ] [
+     <a href="31_2_num_int-web.html#31_2_num_int-webse4.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail31_2_num_int-webse4.html">
+   </a>
+  </div>
+ </body>
+</html>

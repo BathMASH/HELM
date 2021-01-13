@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Maclaurin and Taylor series
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="16_5_maclaurin_n_taylor_series-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webli2.html#tail16_5_maclaurin_n_taylor_series-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail16_5_maclaurin_n_taylor_series-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-web.html#16_5_maclaurin_n_taylor_series-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="16_5_maclaurin_n_taylor_series-web.html#QQ2-4-5" id="x4-50001">
+      Maclaurin and Taylor series
+     </a>
+    </h3>
+    <!--l. 72
+-->
+    <p class="noindent">
+     As we shall see, many functions can be represented by power series. In fact we have already seen in earlier Sections examples of such a representation:
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 74
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </mfrac>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="MathClass-rel">
+         ⋯
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mfenced close="|" open="|" separators="">
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <mo class="qopname">
+         ln
+        </mo>
+        <!--nolimits
+-->
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mo class="MathClass-rel">
+         ⋯
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         &lt;
+        </mo>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-rel">
+         ≤
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+        <msup>
+         <mrow>
+          <mi>
+           e
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </msup>
+       </mtd>
+       <mtd class="eqnarray-2">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-3">
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="MathClass-rel">
+         ⋯
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mstyle class="text">
+         <mtext>
+          all
+         </mtext>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mi>
+         x
+        </mi>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 76
+-->
+    <p class="nopar">
+     The first two examples show that, as long as we constrain
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     to lie within the domain
+     <!--l. 80
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfenced close="|" open="|" separators="">
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     (or, equivalently,
+     <!--l. 81
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        &lt;
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     ), then in the first case
+     <!--l. 82
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     has the
+     <strong>
+      same numerical value
+     </strong>
+     as
+     <!--l. 82
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+      </mrow>
+     </math>
+     and in the second case
+     <!--l. 82
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mo class="qopname">
+        ln
+       </mo>
+       <!--nolimits
+-->
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     has the same numerical value as
+     <!--l. 83
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 85
+-->
+    <p class="noindent">
+     In the third example we see that
+     <!--l. 85
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     has the same numerical value as
+     <!--l. 85
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+      </mrow>
+     </math>
+     but in this case there is no restriction to be placed on the value of
+     <!--l. 86
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     since this power series converges for all values of
+     <!--l. 87
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     . Figure 5 shows this situation geometrically. As more and more terms are used from the series
+     <!--l. 89
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+      </mrow>
+     </math>
+     the curve representing
+     <!--l. 89
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     is a better and better approximation. In (a) we show the linear approximation to
+     <!--l. 90
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     . In (b) and (c) we show, respectively, the quadratic and cubic approximations.
+    </p>
+    <!--l. 93
+-->
+    <p class="noindent">
+     <strong>
+      Figure 5
+     </strong>
+     :
+    </p>
+    <!--l. 95
+-->
+    <p class="noindent">
+     <img alt="{ Linear, quadratic and cubic approximations to $e^x$}" src="./figures/pdf/workbook16block5fig1.svg"/>
+    </p>
+    <!--l. 98
+-->
+    <p class="noindent">
+     These power series representations are extremely important, from many points of view. Numerically, we can simply replace the function
+     <!--l. 99
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     by the quadratic expression
+     <!--l. 100
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     as long as
+     <!--l. 100
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     is so small that powers of
+     <!--l. 100
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     greater than or equal to 3 can be ignored in comparison to quadratic terms. This approach can be used to approximate more complicated functions in terms of simpler polynomials. Our aim now is to see how these power series expansions are obtained.
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="16_5_maclaurin_n_taylor_series-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webli2.html#tail16_5_maclaurin_n_taylor_series-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="16_5_maclaurin_n_taylor_series-web.html#16_5_maclaurin_n_taylor_series-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail16_5_maclaurin_n_taylor_series-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

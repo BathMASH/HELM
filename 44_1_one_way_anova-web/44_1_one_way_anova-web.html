@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   One-Way Analysis of Variance
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="44_1_one_way_anova-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <div class="maketitle">
+    <h2 class="titleHead">
+     One-Way Analysis of Variance
+    </h2>
+    <div class="author">
+     <span class="ec-lmss-12x-x-120">
+      HELM
+     </span>
+    </div>
+    <div class="date">
+    </div>
+   </div>
+   <main id="main" role="main">
+    <h3 class="likesectionHead">
+     <a href="44_1_one_way_anova-web.html#QQ2-3-2" id="x3-2000">
+      Introduction
+     </a>
+    </h3>
+    <!--l. 72
+-->
+    <p class="noindent">
+     Problems in engineering often involve the exploration of the relationships between values taken by a variable under different conditions.
+     <strong>
+      HELM booklet
+     </strong>
+     41 introduced hypothesis testing which enables us to compare two population means using hypotheses of the general form
+    </p>
+    <!--l. 77
+-->
+    <p class="noindent">
+     <!--l. 77
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          H
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        :
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 79
+-->
+    <p class="noindent">
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          H
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        :
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        ≠
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 81
+-->
+    <p class="noindent">
+     or, in the case of more than two populations,
+    </p>
+    <!--l. 83
+-->
+    <p class="noindent">
+     <!--l. 83
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          H
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        :
+       </mo>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="MathClass-op">
+        …
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          μ
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          k
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 84
+-->
+    <p class="noindent">
+     <!--l. 84
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          H
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        :
+       </mo>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <msub>
+        <mrow>
+         <mi>
+          H
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     is not true
+    </p>
+    <!--l. 86
+-->
+    <p class="noindent">
+     If we are comparing more than two population means, using the type of hypothesis testing referred to above gets very clumsy and very time consuming. As you will see, the statistical technique called Analysis of Variance (ANOVA) enables us to compare several populations
+     <strong>
+      simultaneously
+     </strong>
+     . We might, for example need to compare the shear strengths of five different adhesives or the surface toughness of six samples of steel which have received different surface hardening treatments.
+    </p>
+    <!--l. 95
+-->
+    <h4 class="likesubsectionHead">
+     <a href="44_1_one_way_anova-web.html#QQ2-3-3" id="x3-3000">
+      Prerequisites
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      be familiar with the general techniques of hypothesis testing
+     </li>
+     <li class="itemize">
+      be familiar with the
+      <!--l. 99
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         F
+        </mi>
+       </mrow>
+      </math>
+      -distribution
+     </li>
+    </ul>
+    <!--l. 105
+-->
+    <h4 class="likesubsectionHead">
+     <a href="44_1_one_way_anova-web.html#QQ2-3-4" id="x3-4000">
+      Learning Outcomes
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      describe what is meant by the term one-way ANOVA.
+     </li>
+     <li class="itemize">
+      perform one-way ANOVA calculations.
+     </li>
+     <li class="itemize">
+      interpret the results of one-way ANOVA calculations
+     </li>
+    </ul>
+    <!--l. 112
+-->
+    <!--l. 116
+-->
+   </main>
+   <div class="tableofcontents">
+    <span class="likesubsectionHead">
+     <h4>
+      <a href="" id="QQ2-2-1">
+       Contents
+      </a>
+     </h4>
+    </span>
+    <span class="sectionToc">
+     1
+     <a href="44_1_one_way_anova-webse1.html#x4-50001" id="QQ2-4-5">
+      One-way ANOVA
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.1
+     <a href="44_1_one_way_anova-webse1.html#x4-60001.1" id="QQ2-4-6">
+      Example of variance in data
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.2
+     <a href="44_1_one_way_anova-webse1.html#x4-70001.2" id="QQ2-4-7">
+      Using the
+      <!--l. 8
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mi>
+        F
+       </mi>
+      </math>
+      -test
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.3
+     <a href="44_1_one_way_anova-webse1.html#x4-80001.3" id="QQ2-4-8">
+      ANOVA tables
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.4
+     <a href="44_1_one_way_anova-webse1.html#x4-90001.4" id="QQ2-4-9">
+      Unequal sample sizes
+     </a>
+    </span>
+    <br/>
+    <br/>
+   </div>
+  </div>
+ </body>
+</html>

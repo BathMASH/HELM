@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Numerical Determination of Eigenvalues and Eigenvectors
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="22_4_numrcl_detrmntn_eignvl_eignvc-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <div class="maketitle">
+    <h2 class="titleHead">
+     Numerical Determination of Eigenvalues and Eigenvectors
+    </h2>
+    <div class="author">
+     <span class="phvr8t-x-x-144">
+      HELM
+     </span>
+    </div>
+    <div class="date">
+    </div>
+   </div>
+   <main id="main" role="main">
+    <h3 class="likesectionHead">
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-web.html#QQ2-3-2" id="x3-2000">
+      Introduction
+     </a>
+    </h3>
+    <!--l. 30
+-->
+    <p class="noindent">
+     In Section 22.1 it was shown how to obtain eigenvalues and eigenvectors for low order matrices,
+     <!--l. 32
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        2
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        2
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 32
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        3
+       </mn>
+      </mrow>
+     </math>
+     . This involved firstly solving the characteristic equation det
+     <!--l. 32
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          A
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          λ
+         </mi>
+         <mi>
+          I
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     for a given
+     <!--l. 33
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     matrix
+     <!--l. 33
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     . This is an
+     <!--l. 33
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           th
+          </mtext>
+         </mstyle>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     order polynomial equation and, even for
+     <!--l. 33
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     as low as 3, solving it is not always straightforward. For large
+     <!--l. 34
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     even obtaining the characteristic equation may be difficult, let alone solving it.
+    </p>
+    <!--l. 36
+-->
+    <p class="noindent">
+     Consequently in this Section we give a brief introduction to alternative methods, essentially
+     <strong>
+      numerical
+     </strong>
+     in nature, of obtaining eigenvalues and perhaps eigenvectors.
+    </p>
+    <!--l. 37
+-->
+    <p class="noindent">
+     We would emphasize that in some applications such as Control Theory we might only require one eigenvalue of a matrix
+     <!--l. 38
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     , usually the one largest in magnitude which is called the
+     <strong>
+      dominant
+     </strong>
+     eigenvalue. It is this eigenvalue which sometimes tells us how a control system will behave.
+    </p>
+    <!--l. 43
+-->
+    <h4 class="likesubsectionHead">
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-web.html#QQ2-3-3" id="x3-3000">
+      Prerequisites
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      have a knowledge of determinants and matrices
+     </li>
+     <li class="itemize">
+      have a knowledge of linear first order differential equations
+     </li>
+    </ul>
+    <!--l. 50
+-->
+    <h4 class="likesubsectionHead">
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-web.html#QQ2-3-4" id="x3-4000">
+      Learning Outcomes
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      use the power method to obtain the dominant eigenvalue (and associated eigenvector) of a matrix
+     </li>
+     <li class="itemize">
+      state the main advantages and disadvantages of the power method
+     </li>
+    </ul>
+    <!--l. 55
+-->
+    <!--l. 59
+-->
+   </main>
+   <div class="tableofcontents">
+    <span class="likesubsectionHead">
+     <h4>
+      <a href="" id="QQ2-2-1">
+       Contents
+      </a>
+     </h4>
+    </span>
+    <span class="sectionToc">
+     1
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-50001" id="QQ2-4-5">
+      Numerical determination of eigenvalues and eigenvectors
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.1
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-60001.1" id="QQ2-4-6">
+      Preliminaries
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.2
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-90001.2" id="QQ2-4-9">
+      The power method
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.3
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-170001.3" id="QQ2-4-17">
+      Problems with the power method
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.4
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-180001.4" id="QQ2-4-18">
+      Advantages of the power method
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.5
+     <a href="22_4_numrcl_detrmntn_eignvl_eignvc-webse1.html#x4-190001.5" id="QQ2-4-19">
+      Finding eigenvalues other than the dominant
+     </a>
+    </span>
+    <br/>
+    <br/>
+   </div>
+  </div>
+ </body>
+</html>

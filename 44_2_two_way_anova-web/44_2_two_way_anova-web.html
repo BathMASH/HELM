@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Two-Way Analysis of Variance
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="44_2_two_way_anova-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <div class="maketitle">
+    <h2 class="titleHead">
+     Two-Way Analysis of Variance
+    </h2>
+    <div class="author">
+     <span class="ec-lmss-12x-x-120">
+      HELM
+     </span>
+    </div>
+    <div class="date">
+    </div>
+   </div>
+   <main id="main" role="main">
+    <h3 class="likesectionHead">
+     <a href="44_2_two_way_anova-web.html#QQ2-3-2" id="x3-2000">
+      Introduction
+     </a>
+    </h3>
+    <!--l. 60
+-->
+    <p class="noindent">
+     In the one-way analysis of variance (Section 44.1) we consider the effect of one factor on the values taken by a variable. Very often, in engineering investigations, the effects of two or more factors are considered simultaneously.
+    </p>
+    <!--l. 61
+-->
+    <p class="noindent">
+     The two-away ANOVA deals with the case where there are two factors. For example, we might compare the fuel consumptions of four car engines under three types of driving conditions (e.g. urban, rural, motorway). Sometimes we are interested in the effects of both factors. In other cases one of the factors is a ‘nuisance factor’ which is not of particular interest in itself but, if we allow for it in our analysis, we improve the power of our test for the other factor.
+    </p>
+    <!--l. 66
+-->
+    <p class="noindent">
+     We can also allow for interaction effects between the two factors.
+    </p>
+    <!--l. 69
+-->
+    <h4 class="likesubsectionHead">
+     <a href="44_2_two_way_anova-web.html#QQ2-3-3" id="x3-3000">
+      Prerequisites
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      be familiar with the general techniques of hypothesis testing
+     </li>
+     <li class="itemize">
+      be familiar with the
+      <!--l. 73
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         F
+        </mi>
+       </mrow>
+      </math>
+      -distribution
+     </li>
+     <li class="itemize">
+      be familiar with the one-way ANOVA calculations
+     </li>
+    </ul>
+    <!--l. 81
+-->
+    <h4 class="likesubsectionHead">
+     <a href="44_2_two_way_anova-web.html#QQ2-3-4" id="x3-4000">
+      Learning Outcomes
+     </a>
+    </h4>
+    <ul class="itemize1">
+     <li class="itemize">
+      state the concepts and terminology of two-way ANOVA
+     </li>
+     <li class="itemize">
+      perform two-way ANOVA
+     </li>
+     <li class="itemize">
+      interpret the results of two-way ANOVA calculations
+     </li>
+    </ul>
+    <!--l. 88
+-->
+    <!--l. 92
+-->
+   </main>
+   <div class="tableofcontents">
+    <span class="likesubsectionHead">
+     <h4>
+      <a href="" id="QQ2-2-1">
+       Contents
+      </a>
+     </h4>
+    </span>
+    <span class="sectionToc">
+     1
+     <a href="44_2_two_way_anova-webse1.html#x4-50001" id="QQ2-4-5">
+      Two-way ANOVA without interaction
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     1.1
+     <a href="44_2_two_way_anova-webse1.html#x4-60001.1" id="QQ2-4-6">
+      Example of variance in data
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="sectionToc">
+     2
+     <a href="44_2_two_way_anova-webse2.html#x5-100002" id="QQ2-5-10">
+      Two-way ANOVA with interaction
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="subsectionToc">
+     2.1
+     <a href="44_2_two_way_anova-webse2.html#x5-110002.1" id="QQ2-5-11">
+      Fixed and random effects
+     </a>
+    </span>
+    <br/>
+    <br/>
+    <span class="sectionToc">
+     3
+     <a href="44_2_two_way_anova-webse3.html#x6-190003" id="QQ2-6-19">
+      Two-way ANOVA versus one-way ANOVA
+     </a>
+    </span>
+    <br/>
+    <br/>
+   </div>
+  </div>
+ </body>
+</html>

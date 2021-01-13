@@ -1,0 +1,4019 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   LU decomposition
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="30_3_lu_decmp-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webli2.html#tail30_3_lu_decmp-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail30_3_lu_decmp-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-web.html#30_3_lu_decmp-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="30_3_lu_decmp-web.html#QQ2-4-5" id="x4-50001">
+      LU decomposition
+     </a>
+    </h3>
+    <!--l. 69
+-->
+    <p class="noindent">
+     Suppose we have the system of equations
+    </p>
+    <!--l. 70
+-->
+    <p class="noindent">
+     <!--l. 70
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        A
+       </mi>
+       <mi>
+        X
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 72
+-->
+    <p class="noindent">
+     The motivation for an
+     <!--l. 72
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition is based on the observation that systems of equations involving triangular coefficient matrices are easier to deal with. Indeed, the whole point of Gaussian elimination is to replace the coefficient matrix with one that is triangular. The
+     <!--l. 74
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition is another approach designed to exploit triangular systems.
+    </p>
+    <!--l. 76
+-->
+    <p class="noindent">
+     We suppose that we can write
+    </p>
+    <!--l. 77
+-->
+    <p class="noindent">
+     <!--l. 77
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 79
+-->
+    <p class="noindent">
+     where
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     is a lower triangular matrix and
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     is an upper triangular matrix. Our aim is to find
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     and once we have done so we have found an
+     <!--l. 80
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition of
+     <!--l. 80
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <div class="framed">
+     <!--l. 83
+-->
+     <h5 class="likesubsubsectionHead">
+      <a href="#x4-60001" id="x4-60001">
+       Key Point 5
+      </a>
+     </h5>
+     <!--l. 83
+-->
+     <p class="noindent">
+      An
+      <!--l. 83
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         L
+        </mi>
+        <mi>
+         U
+        </mi>
+       </mrow>
+      </math>
+      decomposition of a matrix
+      <!--l. 83
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         A
+        </mi>
+       </mrow>
+      </math>
+      is the product of a lower triangular matrix and an upper triangular matrix that is equal to
+      <!--l. 83
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         A
+        </mi>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 85
+-->
+    <p class="noindent">
+     It turns out that we need only consider lower triangular matrices
+     <!--l. 85
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     that have 1s down the diagonal. Here is an example. Let
+    </p>
+    <!--l. 86
+-->
+    <p class="noindent">
+     <!--l. 86
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             8
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             14
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             6
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             13
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     where
+     <!--l. 88
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               21
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               31
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               32
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     and
+     <!--l. 89
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               11
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               12
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               13
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               22
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               23
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               33
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 92
+-->
+    <p class="noindent">
+     Multiplying out
+     <!--l. 92
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     and setting the answer equal to
+     <!--l. 92
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     gives
+    </p>
+    <!--l. 93
+-->
+    <p class="noindent">
+     <!--l. 93
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               11
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               12
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               13
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               21
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               11
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               21
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               12
+              </mn>
+             </mrow>
+            </msub>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               22
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               21
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               13
+              </mn>
+             </mrow>
+            </msub>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               23
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="left">
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               31
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               11
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               31
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               12
+              </mn>
+             </mrow>
+            </msub>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               32
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               22
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+           <mtd class="array" columnalign="left">
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <mspace class="nbsp" width="1em">
+            </mspace>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               31
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               13
+              </mn>
+             </mrow>
+            </msub>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               L
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               32
+              </mn>
+             </mrow>
+            </msub>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               23
+              </mn>
+             </mrow>
+            </msub>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <msub>
+             <mrow>
+              <mi>
+               U
+              </mi>
+             </mrow>
+             <mrow>
+              <mn>
+               33
+              </mn>
+             </mrow>
+            </msub>
+           </mtd>
+          </mtr>
+          <!--lll
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             8
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             14
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             6
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             13
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 99
+-->
+    <p class="noindent">
+     Now we use this to find the entries in
+     <!--l. 99
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 99
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     . Fortunately this is not nearly as hard as it might at first seem. We begin by running along the top row to see that
+    </p>
+    <!--l. 102
+-->
+    <p class="noindent">
+     <!--l. 102
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mstyle mathvariant="bold">
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mstyle>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mstyle mathvariant="bold">
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mstyle>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mstyle mathvariant="bold">
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           13
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         4
+        </mn>
+       </mstyle>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 104
+-->
+    <p class="noindent">
+     Now consider the second row
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 105
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            L
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            21
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          3
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           22
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         8
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           22
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         8
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            U
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            22
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           13
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           23
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         14
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           23
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         14
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            U
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            23
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         .
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mspace class="qquad" width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 109
+-->
+    <p class="nopar">
+     Notice how, at each step, the equation being considered has only one unknown in it, and other quantities that we have already found. This pattern continues on the last row
+     <!--tex4ht:inline
+-->
+    </p>
+    <!--l. 111
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           31
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           31
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            L
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            31
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           31
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           32
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           22
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         6
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           32
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         6
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            L
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            32
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="eqnarray-1">
+       </mtd>
+       <mtd class="eqnarray-2">
+       </mtd>
+       <mtd class="eqnarray-3">
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           31
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           13
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           32
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           23
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           33
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         13
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           4
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           33
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         13
+        </mn>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mstyle mathvariant="bold">
+         <msub>
+          <mrow>
+           <mi>
+            U
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            33
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          3
+         </mn>
+        </mstyle>
+        <mspace class="nbsp" width="1em">
+        </mspace>
+        <mo class="MathClass-punc">
+         .
+        </mo>
+       </mtd>
+       <mtd class="eqnarray-4">
+        <mtext class="eqnarray">
+        </mtext>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 115
+-->
+    <!--l. 117
+-->
+    <p class="noindent">
+     We have shown that
+    </p>
+    <!--l. 118
+-->
+    <p class="noindent">
+     <!--l. 118
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             8
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             14
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             6
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             13
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             4
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             2
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 122
+-->
+    <p class="noindent">
+     and this is an
+     <!--l. 122
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition of
+     <!--l. 122
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 124
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-70001" id="x4-70001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 124
+-->
+    <p class="noindent">
+     Find an
+     <!--l. 124
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition of
+     <!--l. 124
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             6
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             4
+            </mn>
+           </mtd>
+          </mtr>
+          <!--cc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 137
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-80001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-80001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-80001">
+     <!--l. 137
+-->
+     <p class="noindent">
+      Let
+     </p>
+     <!--l. 137
+-->
+     <p class="noindent">
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              6
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              4
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         L
+        </mi>
+        <mi>
+         U
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                22
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                22
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 137
+-->
+     <p class="noindent">
+      then, comparing the left and right hand sides row by row implies that
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         3
+        </mn>
+       </mrow>
+      </math>
+      ,
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </math>
+      ,
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           11
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         6
+        </mn>
+       </mrow>
+      </math>
+      which implies
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mrow>
+      </math>
+      and
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           L
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           21
+          </mn>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           22
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         4
+        </mn>
+       </mrow>
+      </math>
+      which implies that
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msub>
+         <mrow>
+          <mi>
+           U
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           22
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mrow>
+      </math>
+      . Hence
+     </p>
+     <!--l. 137
+-->
+     <p class="noindent">
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              6
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              4
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              2
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              2
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 137
+-->
+     <p class="noindent">
+      is an
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         L
+        </mi>
+        <mi>
+         U
+        </mi>
+       </mrow>
+      </math>
+      decomposition of
+      <!--l. 137
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              6
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              4
+             </mn>
+            </mtd>
+           </mtr>
+           <!--cc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+      .
+     </p>
+    </div>
+    <!--l. 139
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-90001" id="x4-90001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 139
+-->
+    <p class="noindent">
+     Find an
+     <!--l. 139
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        L
+       </mi>
+       <mi>
+        U
+       </mi>
+      </mrow>
+     </math>
+     decomposition of
+     <!--l. 139
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfenced close="]" open="[" separators="">
+        <mrow>
+         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             3
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             1
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             6
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             6
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             16
+            </mn>
+           </mtd>
+          </mtr>
+          <mtr>
+           <mtd class="array" columnalign="center">
+            <mn>
+             0
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mn>
+             8
+            </mn>
+           </mtd>
+           <mtd class="array" columnalign="center">
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mn>
+             17
+            </mn>
+           </mtd>
+          </mtr>
+          <!--ccc
+-->
+         </mtable>
+        </mrow>
+       </mfenced>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 162
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-100001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-100001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-100001">
+     <!--l. 162
+-->
+     <p class="noindent">
+      Using material from the worked example in the notes we set
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      <!--l. 162
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              6
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              6
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              16
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              8
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              17
+             </mn>
+            </mtd>
+           </mtr>
+           <!--ccc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                13
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                22
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                21
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                13
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                23
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="left">
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                31
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                11
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                31
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                12
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                32
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                22
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+            <mtd class="array" columnalign="left">
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <mspace class="nbsp" width="1em">
+             </mspace>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                31
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                13
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                L
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                32
+               </mn>
+              </mrow>
+             </msub>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                23
+               </mn>
+              </mrow>
+             </msub>
+             <mo class="MathClass-bin">
+              +
+             </mo>
+             <msub>
+              <mrow>
+               <mi>
+                U
+               </mi>
+              </mrow>
+              <mrow>
+               <mn>
+                33
+               </mn>
+              </mrow>
+             </msub>
+            </mtd>
+           </mtr>
+           <!--lll
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      and comparing elements row by row we see that
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      <!--l. 162
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mtable align="axis" class="array" columnlines="none none none none" equalcolumns="false" equalrows="false" style="">
+         <mtr>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              11
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            3
+           </mn>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <mspace class="quad" width="1em">
+           </mspace>
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              12
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            1
+           </mn>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <mspace class="quad" width="1em">
+           </mspace>
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              13
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            6
+           </mn>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              L
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              21
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mn>
+            2
+           </mn>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+          <mtd class="array" columnalign="left">
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              22
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            2
+           </mn>
+           <mo class="MathClass-punc">
+            ,
+           </mo>
+          </mtd>
+          <mtd class="array" columnalign="left">
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              23
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mn>
+            4
+           </mn>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              L
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              31
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            0
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="left">
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              L
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              32
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mn>
+            4
+           </mn>
+          </mtd>
+          <mtd class="array" columnalign="left">
+          </mtd>
+          <mtd class="array" columnalign="left">
+           <msub>
+            <mrow>
+             <mi>
+              U
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              33
+             </mn>
+            </mrow>
+           </msub>
+           <mo class="MathClass-rel">
+            =
+           </mo>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mn>
+            1
+           </mn>
+          </mtd>
+         </mtr>
+         <!--lllll
+-->
+        </mtable>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      and it follows that
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      <!--l. 162
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              6
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              6
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              16
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              8
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              17
+             </mn>
+            </mtd>
+           </mtr>
+           <!--ccc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              2
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              4
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <!--ccc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+        <mfenced close="]" open="[" separators="">
+         <mrow>
+          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              3
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              1
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              6
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              2
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              4
+             </mn>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mn>
+              0
+             </mn>
+            </mtd>
+            <mtd class="array" columnalign="center">
+             <mo class="MathClass-bin">
+              −
+             </mo>
+             <mn>
+              1
+             </mn>
+            </mtd>
+           </mtr>
+           <!--ccc
+-->
+          </mtable>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 162
+-->
+     <p class="noindent">
+      is an
+      <!--l. 162
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         L
+        </mi>
+        <mi>
+         U
+        </mi>
+       </mrow>
+      </math>
+      decomposition of the given matrix.
+     </p>
+    </div>
+    <!--l. 164
+-->
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="30_3_lu_decmp-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webli2.html#tail30_3_lu_decmp-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="30_3_lu_decmp-web.html#30_3_lu_decmp-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail30_3_lu_decmp-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

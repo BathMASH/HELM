@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Case study: Newton’s law of cooling
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="19_1_modling_with_diffrntl_eqns-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webli2.html#tail19_1_modling_with_diffrntl_eqns-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail19_1_modling_with_diffrntl_eqns-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-web.html#19_1_modling_with_diffrntl_eqns-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="19_1_modling_with_diffrntl_eqns-web.html#QQ2-4-5" id="x4-50001">
+      Case study: Newton’s law of cooling
+     </a>
+    </h3>
+    <!--l. 95
+-->
+    <p class="noindent">
+     When a hot liquid is placed in a cooler environment, experimental observation shows that its temperature decreases to approximately that of its surroundings. A typical graph of the temperature of the liquid plotted against time is shown in Figure 1.
+    </p>
+    <!--l. 101
+-->
+    <p class="noindent">
+     <strong>
+      Figure 1
+     </strong>
+    </p>
+    <!--l. 103
+-->
+    <p class="noindent">
+     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/fig1.svg"/>
+    </p>
+    <!--l. 106
+-->
+    <p class="noindent">
+     After an initially rapid decrease the temperature changes progressively less rapidly and eventually the curve appears to ‘flatten out’.
+    </p>
+    <!--l. 110
+-->
+    <p class="noindent">
+     Newton’s law of cooling states that the rate of cooling of liquid is proportional to the difference between its temperature and the temperature of its environment (the ambient temperature). To convert this into mathematics, let
+     <!--l. 113
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     be the time elapsed (in seconds, s),
+     <!--l. 115
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     the temperature of the liquid (
+     <!--l. 115
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          ∘
+         </mo>
+        </mrow>
+       </msup>
+       <mstyle class="text">
+        <mtext>
+         C
+        </mtext>
+       </mstyle>
+      </mrow>
+     </math>
+     ),and
+     <!--l. 115
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     the temperature of the liquid at the start
+     <!--l. 116
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     . The temperature of the surroundings is denoted by
+     <!--l. 117
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           s
+          </mtext>
+         </mstyle>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 119
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-60001" id="x4-60001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 120
+-->
+    <p class="noindent">
+     Write down the mathematical equation which is equivalent to Newton’s law of cooling and state the accompanying condition.
+    </p>
+    <!--l. 123
+-->
+    <p class="noindent">
+     First, find an expression for the rate of cooling, and an expression for the difference between the liquid’s temperature and that of the environment:
+    </p>
+    <!--l. 131
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-70001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-70001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-70001">
+     <!--l. 131
+-->
+     <p class="noindent">
+      The rate of cooling is the rate of change of temperature with time:
+      <!--l. 131
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </mfrac>
+       </mrow>
+      </math>
+      .
+     </p>
+     <!--l. 131
+-->
+     <p class="noindent">
+      The temperature difference is
+      <!--l. 131
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         θ
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mstyle class="text">
+           <mtext>
+            s
+           </mtext>
+          </mstyle>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      . Now formulate Newton’s law of cooling:
+     </p>
+    </div>
+    <!--l. 147
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-80001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-80001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-80001">
+     <!--l. 147
+-->
+     <p class="noindent">
+      You should obtain
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </mfrac>
+        <mi>
+         r
+        </mi>
+        <mi>
+         o
+        </mi>
+        <mi>
+         p
+        </mi>
+        <mi>
+         t
+        </mi>
+        <mi>
+         o
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mstyle class="text">
+             <mtext>
+              s
+             </mtext>
+            </mstyle>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      or, equivalently:
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mi>
+         k
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <msub>
+           <mrow>
+            <mi>
+             θ
+            </mi>
+           </mrow>
+           <mrow>
+            <mstyle class="text">
+             <mtext>
+              s
+             </mtext>
+            </mstyle>
+           </mrow>
+          </msub>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+      .
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         k
+        </mi>
+       </mrow>
+      </math>
+      is a positive constant of proportion and the negative sign is present because (
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         θ
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mstyle class="text">
+           <mtext>
+            s
+           </mtext>
+          </mstyle>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      ) is positive, whereas
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </mfrac>
+       </mrow>
+      </math>
+      must be negative, since
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         θ
+        </mi>
+       </mrow>
+      </math>
+      decreases with time. The units of
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         k
+        </mi>
+       </mrow>
+      </math>
+      are
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msup>
+         <mrow>
+          <mstyle class="text">
+           <mtext>
+            s
+           </mtext>
+          </mstyle>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+      . The accompanying condition is
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         θ
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msub>
+         <mrow>
+          <mi>
+           θ
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </msub>
+       </mrow>
+      </math>
+      at
+      <!--l. 147
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         t
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+       </mrow>
+      </math>
+      which simply states the temperature of the liquid when the cooling begins.
+     </p>
+    </div>
+    <!--l. 149
+-->
+    <p class="noindent">
+     In the above Task we call
+     <!--l. 149
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     the independent variable and
+     <!--l. 149
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+      </mrow>
+     </math>
+     the dependent variable. Since the condition is given at
+     <!--l. 150
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     we refer to it as an initial condition. For future reference, the solution of the above differential equation which satisfies the initial condition is
+     <!--l. 153
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        θ
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          θ
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           s
+          </mtext>
+         </mstyle>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            θ
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            θ
+           </mi>
+          </mrow>
+          <mrow>
+           <mstyle class="text">
+            <mtext>
+             s
+            </mtext>
+           </mstyle>
+          </mrow>
+         </msub>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <msup>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           e
+          </mtext>
+         </mstyle>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          k
+         </mi>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     .
+    </p>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="19_1_modling_with_diffrntl_eqns-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webli2.html#tail19_1_modling_with_diffrntl_eqns-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="19_1_modling_with_diffrntl_eqns-web.html#19_1_modling_with_diffrntl_eqns-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail19_1_modling_with_diffrntl_eqns-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

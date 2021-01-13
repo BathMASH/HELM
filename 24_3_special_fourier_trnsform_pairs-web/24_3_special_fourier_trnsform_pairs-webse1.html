@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Parseval’s theorem
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="24_3_special_fourier_trnsform_pairs-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webli2.html#tail24_3_special_fourier_trnsform_pairs-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail24_3_special_fourier_trnsform_pairs-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-web.html#24_3_special_fourier_trnsform_pairs-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="24_3_special_fourier_trnsform_pairs-web.html#QQ2-4-5" id="x4-50001">
+      Parseval’s theorem
+     </a>
+    </h3>
+    <!--l. 76
+-->
+    <p class="noindent">
+     Recall from
+     <strong>
+      HELM booklet
+     </strong>
+     23.2 on Fourier series that for a periodic signal
+     <!--l. 76
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          f
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          T
+         </mi>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     with complex Fourier coefficients
+     <!--l. 78
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          c
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msub>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mn>
+          0
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mo class="MathClass-bin">
+          ±
+         </mo>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mo class="MathClass-bin">
+          ±
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mo class="MathClass-op">
+          …
+         </mo>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     Parseval’s theorem holds:
+    </p>
+    <!--l. 79
+-->
+    <p class="noindent">
+     <!--l. 79
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mi>
+          T
+         </mi>
+        </mrow>
+       </mfrac>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mfrac>
+          <mrow>
+           <mi>
+            T
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </mfrac>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mfrac>
+          <mrow>
+           <mi>
+            T
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </msubsup>
+       <msubsup>
+        <mrow>
+         <mi>
+          f
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          T
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msubsup>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mi>
+        d
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∑
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mfenced close="|" open="|" separators="">
+          <mrow>
+           <msub>
+            <mrow>
+             <mi>
+              c
+             </mi>
+            </mrow>
+            <mrow>
+             <mi>
+              n
+             </mi>
+            </mrow>
+           </msub>
+          </mrow>
+         </mfenced>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 81
+-->
+    <p class="noindent">
+     where the left-hand side is the mean square value of the function (signal) over one period.
+    </p>
+    <!--l. 82
+-->
+    <p class="noindent">
+     For a non-periodic real signal
+     <!--l. 83
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     with Fourier transform
+     <!--l. 83
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        F
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          ω
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     the corresponding result is
+    </p>
+    <!--l. 84
+-->
+    <p class="noindent">
+     <!--l. 84
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mi>
+          f
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mi>
+        d
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          π
+         </mi>
+        </mrow>
+       </mfrac>
+       <msubsup>
+        <mrow>
+         <mo class="MathClass-op">
+          ∫
+          <!--nolimits
+-->
+         </mo>
+         <!--nolimits
+-->
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∞
+         </mi>
+        </mrow>
+       </msubsup>
+       <msup>
+        <mrow>
+         <mfenced close="|" open="|" separators="">
+          <mrow>
+           <mi>
+            F
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              ω
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+         </mfenced>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mi>
+        d
+       </mi>
+       <mi>
+        ω
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 86
+-->
+    <p class="noindent">
+     This result is particularly significant in filter theory. For reasons that we do not have space to go into, the left-hand side integral is often referred to as the
+     <strong>
+      total energy
+     </strong>
+     of the signal. The integrand on the right-hand side
+    </p>
+    <!--l. 90
+-->
+    <p class="noindent">
+     <!--l. 90
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi>
+          π
+         </mi>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mfenced close="|" open="|" separators="">
+          <mrow>
+           <mi>
+            F
+           </mi>
+           <mrow>
+            <mo class="MathClass-open">
+             (
+            </mo>
+            <mrow>
+             <mi>
+              ω
+             </mi>
+            </mrow>
+            <mo class="MathClass-close">
+             )
+            </mo>
+           </mrow>
+          </mrow>
+         </mfenced>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 92
+-->
+    <p class="noindent">
+     is then referred to as the
+     <strong>
+      energy density
+     </strong>
+     (because it is the frequency domain quantity that has to be integrated to obtain the total energy).
+    </p>
+    <!--l. 95
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-60001" id="x4-60001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 96
+-->
+    <p class="noindent">
+     Verify Parseval’s theorem using the one-sided exponential function
+    </p>
+    <!--l. 97
+-->
+    <p class="noindent">
+     <!--l. 97
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 99
+-->
+    <p class="noindent">
+     Firstly evaluate the integral on the left-hand side:
+    </p>
+    <!--l. 105
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-70001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-70001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-70001">
+     <!--l. 105
+-->
+     <p class="noindent">
+      <!--l. 105
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mi>
+           ∞
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ∞
+          </mi>
+         </mrow>
+        </msubsup>
+        <msup>
+         <mrow>
+          <mi>
+           f
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           t
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mi>
+         d
+        </mi>
+        <mi>
+         t
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msubsup>
+         <mrow>
+          <mo class="MathClass-op">
+           ∫
+           <!--nolimits
+-->
+          </mo>
+          <!--nolimits
+-->
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mi>
+           ∞
+          </mi>
+         </mrow>
+        </msubsup>
+        <msup>
+         <mrow>
+          <mi>
+           e
+          </mi>
+         </mrow>
+         <mrow>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mi>
+           t
+          </mi>
+         </mrow>
+        </msup>
+        <mi>
+         d
+        </mi>
+        <mi>
+         t
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msubsup>
+         <mrow>
+          <mfenced close="]" open="[" separators="">
+           <mrow>
+            <mfrac>
+             <mrow>
+              <msup>
+               <mrow>
+                <mi>
+                 e
+                </mi>
+               </mrow>
+               <mrow>
+                <mo class="MathClass-bin">
+                 −
+                </mo>
+                <mn>
+                 2
+                </mn>
+                <mi>
+                 t
+                </mi>
+               </mrow>
+              </msup>
+             </mrow>
+             <mrow>
+              <mo class="MathClass-bin">
+               −
+              </mo>
+              <mn>
+               2
+              </mn>
+             </mrow>
+            </mfrac>
+           </mrow>
+          </mfenced>
+         </mrow>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mrow>
+          <mi>
+           ∞
+          </mi>
+         </mrow>
+        </msubsup>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-punc">
+         .
+        </mo>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 107
+-->
+    <p class="noindent">
+     Now obtain the Fourier transform
+     <!--l. 107
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        F
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          ω
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     and evaluate the right-hand side integral:
+    </p>
+    <!--l. 125
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-80001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-80001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-80001">
+     <!--l. 125
+-->
+     <p class="noindent">
+      <!--l. 125
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         F
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           ω
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi mathvariant="bold-script">
+         F
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          {
+         </mo>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             e
+            </mi>
+           </mrow>
+           <mrow>
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mi>
+             t
+            </mi>
+           </mrow>
+          </msup>
+          <mi>
+           u
+          </mi>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mi>
+             t
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+         <mo class="MathClass-close">
+          }
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <mstyle class="text">
+           <mtext>
+            i
+           </mtext>
+          </mstyle>
+          <mi>
+           ω
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-punc">
+         ,
+        </mo>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 125
+-->
+     <p class="noindent">
+      so
+     </p>
+     <!--l. 125
+-->
+     <p class="noindent">
+      <!--l. 125
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <msup>
+         <mrow>
+          <mfenced close="|" open="|" separators="">
+           <mrow>
+            <mi>
+             F
+            </mi>
+            <mrow>
+             <mo class="MathClass-open">
+              (
+             </mo>
+             <mrow>
+              <mi>
+               ω
+              </mi>
+             </mrow>
+             <mo class="MathClass-close">
+              )
+             </mo>
+            </mrow>
+           </mrow>
+          </mfenced>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mn>
+             1
+            </mn>
+            <mo class="MathClass-bin">
+             +
+            </mo>
+            <mstyle class="text">
+             <mtext>
+              i
+             </mtext>
+            </mstyle>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-punc">
+         .
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mrow>
+           <mo class="MathClass-open">
+            (
+           </mo>
+           <mrow>
+            <mn>
+             1
+            </mn>
+            <mo class="MathClass-bin">
+             −
+            </mo>
+            <mstyle class="text">
+             <mtext>
+              i
+             </mtext>
+            </mstyle>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mo class="MathClass-close">
+            )
+           </mo>
+          </mrow>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           +
+          </mo>
+          <msup>
+           <mrow>
+            <mi>
+             ω
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-punc">
+         .
+        </mo>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 125
+-->
+     <p class="noindent">
+      Then
+      <!--tex4ht:inline
+-->
+     </p>
+     <!--l. 125
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+       <mtr>
+        <mtd class="eqnarray-1">
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </mfrac>
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            ∞
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            ∞
+           </mi>
+          </mrow>
+         </msubsup>
+         <msup>
+          <mrow>
+           <mfenced close="|" open="|" separators="">
+            <mrow>
+             <mi>
+              F
+             </mi>
+             <mrow>
+              <mo class="MathClass-open">
+               (
+              </mo>
+              <mrow>
+               <mi>
+                ω
+               </mi>
+              </mrow>
+              <mo class="MathClass-close">
+               )
+              </mo>
+             </mrow>
+            </mrow>
+           </mfenced>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          d
+         </mi>
+         <mi>
+          ω
+         </mi>
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </mfrac>
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            ∞
+           </mi>
+          </mrow>
+         </msubsup>
+         <msup>
+          <mrow>
+           <mfenced close="|" open="|" separators="">
+            <mrow>
+             <mi>
+              F
+             </mi>
+             <mrow>
+              <mo class="MathClass-open">
+               (
+              </mo>
+              <mrow>
+               <mi>
+                ω
+               </mi>
+              </mrow>
+              <mo class="MathClass-close">
+               )
+              </mo>
+             </mrow>
+            </mrow>
+           </mfenced>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          d
+         </mi>
+         <mi>
+          ω
+         </mi>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+        </mtd>
+        <mtd class="eqnarray-3">
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd class="eqnarray-1">
+        </mtd>
+        <mtd class="eqnarray-2">
+         <mo class="MathClass-rel">
+          =
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-3">
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </mfrac>
+         <msubsup>
+          <mrow>
+           <mo class="MathClass-op">
+            ∫
+            <!--nolimits
+-->
+           </mo>
+           <!--nolimits
+-->
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            ∞
+           </mi>
+          </mrow>
+         </msubsup>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+           <mo class="MathClass-bin">
+            +
+           </mo>
+           <msup>
+            <mrow>
+             <mi>
+              ω
+             </mi>
+            </mrow>
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </msup>
+          </mrow>
+         </mfrac>
+         <mi>
+          d
+         </mi>
+         <mi>
+          ω
+         </mi>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </mfrac>
+         <msubsup>
+          <mrow>
+           <mfenced close="]" open="[" separators="">
+            <mrow>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <mspace class="thinspace" width="0.3em">
+             </mspace>
+             <msup>
+              <mrow>
+               <mo class="qopname">
+                tan
+               </mo>
+               <!--nolimits
+-->
+              </mrow>
+              <mrow>
+               <mo class="MathClass-bin">
+                −
+               </mo>
+               <mn>
+                1
+               </mn>
+              </mrow>
+             </msup>
+             <mi>
+              ω
+             </mi>
+            </mrow>
+           </mfenced>
+          </mrow>
+          <mrow>
+           <mn>
+            0
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            ∞
+           </mi>
+          </mrow>
+         </msubsup>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mi>
+            π
+           </mi>
+          </mrow>
+         </mfrac>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mfrac>
+          <mrow>
+           <mi>
+            π
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </mfrac>
+         <mo class="MathClass-rel">
+          =
+         </mo>
+         <mfrac>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </mfrac>
+         <mo class="MathClass-punc">
+          .
+         </mo>
+        </mtd>
+        <mtd class="eqnarray-4">
+         <mtext class="eqnarray">
+         </mtext>
+        </mtd>
+       </mtr>
+      </mtable>
+     </math>
+     <!--l. 125
+-->
+     <p class="nopar">
+      Since both integrals give the same value, Parseval’s theorem is verified for this case.
+     </p>
+    </div>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="24_3_special_fourier_trnsform_pairs-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webli2.html#tail24_3_special_fourier_trnsform_pairs-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="24_3_special_fourier_trnsform_pairs-web.html#24_3_special_fourier_trnsform_pairs-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail24_3_special_fourier_trnsform_pairs-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

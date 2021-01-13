@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Solution of important PDEs
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="25_3_solutn_using_sepratn_variabls-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webli2.html#tail25_3_solutn_using_sepratn_variabls-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail25_3_solutn_using_sepratn_variabls-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-web.html#25_3_solutn_using_sepratn_variabls-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="25_3_solutn_using_sepratn_variabls-web.html#QQ2-4-5" id="x4-50001">
+      Solution of important PDEs
+     </a>
+    </h3>
+    <!--l. 77
+-->
+    <p class="noindent">
+     We shall just consider two analytic solution techniques for PDEs:
+    </p>
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-5002x1">
+      Direct integration
+     </li>
+     <li class="enumerate" id="x4-5004x2">
+      Separation of variables
+     </li>
+    </ol>
+    <!--l. 83
+-->
+    <p class="noindent">
+     The method of direct integration is a straightforward extension of solving very simple ODEs by integration, and will be considered first. The method of separation of variables is more important and we will study it in detail shortly.
+    </p>
+    <!--l. 87
+-->
+    <p class="noindent">
+     You should note that many practical problems involving PDEs have to be solved by
+     <strong>
+      numerical
+     </strong>
+     methods but that is another story (introduced in
+     <strong>
+      HELM booklet
+     </strong>
+     32 and
+     <strong>
+      HELM booklet
+     </strong>
+     33).
+    </p>
+    <!--l. 91
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-60001" id="x4-60001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 92
+-->
+    <p class="noindent">
+     Solve the ODE
+    </p>
+    <!--l. 93
+-->
+    <p class="noindent">
+     <!--l. 93
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            d
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mn>
+        2
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 94
+-->
+    <p class="noindent">
+     given that
+     <!--l. 94
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     when
+     <!--l. 94
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and
+     <!--l. 94
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+      </mrow>
+     </math>
+     when
+     <!--l. 94
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0.
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 97
+-->
+    <p class="noindent">
+     First find
+     <!--l. 97
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          d
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     by integrating once, not forgetting the arbitrary constant of integration:
+    </p>
+    <!--l. 102
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-70001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-70001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-70001">
+     <!--l. 102
+-->
+     <p class="noindent">
+      <!--l. 102
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           d
+          </mi>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             3
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           3
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         A
+        </mi>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 104
+-->
+    <p class="noindent">
+     Now find
+     <!--l. 104
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+     </math>
+     by integrating again, not forgetting to include another arbitrary constant:
+    </p>
+    <!--l. 108
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-80001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-80001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-80001">
+     <!--l. 108
+-->
+     <p class="noindent">
+      <!--l. 108
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         A
+        </mi>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         B
+        </mi>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 110
+-->
+    <p class="noindent">
+     Now find
+     <!--l. 110
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 110
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        B
+       </mi>
+      </mrow>
+     </math>
+     by inserting the two given initial conditions and so find the solution:
+    </p>
+    <!--l. 117
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-90001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-90001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-90001">
+     <!--l. 117
+-->
+     <p class="noindent">
+      <!--l. 117
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </math>
+      gives
+      <!--l. 117
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         B
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </math>
+      <!--l. 117
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <msup>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ′
+          </mi>
+         </mrow>
+        </msup>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           0
+          </mn>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mrow>
+      </math>
+      gives
+      <!--l. 117
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         A
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 117
+-->
+     <p class="noindent">
+      so the required solution is
+     </p>
+     <!--l. 117
+-->
+     <p class="noindent">
+      <!--l. 117
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             x
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             4
+            </mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mn>
+           12
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         1
+        </mn>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 119
+-->
+    <p class="noindent">
+     Consider now a similar type of PDE i.e. one that can also be solved by direct integration.
+    </p>
+    <!--l. 122
+-->
+    <p class="noindent">
+     Suppose we require the general solution of
+    </p>
+    <!--l. 123
+-->
+    <p class="noindent">
+     <!--l. 123
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            ∂
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi>
+        x
+       </mi>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 124
+-->
+    <p class="noindent">
+     where
+     <!--l. 124
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+      </mrow>
+     </math>
+     is a function of
+     <!--l. 124
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 124
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 126
+-->
+    <p class="noindent">
+     Integrating with respect to
+     <!--l. 126
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     gives us
+    </p>
+    <!--l. 127
+-->
+    <p class="noindent">
+     <!--l. 127
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msup>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 128
+-->
+    <p class="noindent">
+     where the arbitrary function
+     <!--l. 128
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     replaces the normal “arbitrary constant” of ordinary integration. This function of
+     <!--l. 129
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     only is needed because we are integrating “partially” with respect to
+     <!--l. 130
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     i.e. we are reversing a partial differentiation with respect to
+     <!--l. 131
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     at constant
+     <!--l. 131
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 133
+-->
+    <p class="noindent">
+     Integrating again with respect to
+     <!--l. 133
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     gives the general solution:
+    </p>
+    <!--l. 134
+-->
+    <p class="noindent">
+     <!--l. 134
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        u
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        g
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 135
+-->
+    <p class="noindent">
+     where
+     <!--l. 135
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        g
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     is a second arbitrary function. We have now obtained the general solution of the given PDE but to find the arbitrary function we must know two initial conditions.
+    </p>
+    <!--l. 139
+-->
+    <p class="noindent">
+     Suppose, for the sake of example, that these conditions are
+    </p>
+    <!--l. 140
+-->
+    <p class="noindent">
+     <!--l. 140
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          0
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        t
+       </mi>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mn>
+          0
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 141
+-->
+    <p class="noindent">
+     Inserting the first of these conditions into the general solution gives
+     <!--l. 141
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        g
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        t
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 142
+-->
+    <p class="noindent">
+     Inserting the second condition into the general solution gives
+     <!--l. 142
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 143
+-->
+    <p class="noindent">
+     So the final solution is
+     <!--l. 143
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        u
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            x
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            3
+           </mn>
+          </mrow>
+         </msup>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </mfrac>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        x
+       </mi>
+       <msup>
+        <mrow>
+         <mi>
+          e
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          t
+         </mi>
+        </mrow>
+       </msup>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mi>
+        t
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 145
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-100001" id="x4-100001">
+      Task!
+     </a>
+    </h5>
+    <!--l. 146
+-->
+    <p class="noindent">
+     Solve the PDE
+    </p>
+    <!--l. 147
+-->
+    <p class="noindent">
+     <!--l. 147
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <msup>
+          <mrow>
+           <mi>
+            ∂
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msup>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          y
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mo class="qopname">
+        sin
+       </mo>
+       <!--nolimits
+-->
+       <mi>
+        x
+       </mi>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mo class="qopname">
+        cos
+       </mo>
+       <!--nolimits
+-->
+       <mi>
+        y
+       </mi>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 148
+-->
+    <p class="noindent">
+     subject to the conditions
+    </p>
+    <!--l. 149
+-->
+    <p class="noindent">
+     <!--l. 149
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi>
+        x
+       </mi>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mstyle class="text">
+        <mtext>
+         at
+        </mtext>
+       </mstyle>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        y
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          π
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        u
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mo class="qopname">
+        sin
+       </mo>
+       <!--nolimits
+-->
+       <mi>
+        y
+       </mi>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mstyle class="text">
+        <mtext>
+         at
+        </mtext>
+       </mstyle>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mspace class="nbsp" width="1em">
+       </mspace>
+       <mi>
+        x
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        π
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 153
+-->
+    <p class="noindent">
+     First integrate the PDE with respect to
+     <!--l. 153
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+     </math>
+     : (it is equally valid to integrate first with respect to
+     <!--l. 154
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+     </math>
+     ). Don’t forget the appropriate arbitrary function.
+    </p>
+    <!--l. 161
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-110001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-110001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-110001">
+     <!--l. 161
+-->
+     <p class="noindent">
+      Recall that
+      <!--l. 161
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mi>
+             ∂
+            </mi>
+           </mrow>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+          </msup>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           x
+          </mi>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           y
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           y
+          </mi>
+         </mrow>
+        </mfrac>
+        <mfenced close=")" open="(" separators="">
+         <mrow>
+          <mfrac>
+           <mrow>
+            <mi>
+             ∂
+            </mi>
+            <mi>
+             u
+            </mi>
+           </mrow>
+           <mrow>
+            <mi>
+             ∂
+            </mi>
+            <mi>
+             x
+            </mi>
+           </mrow>
+          </mfrac>
+         </mrow>
+        </mfenced>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 161
+-->
+     <p class="noindent">
+      Hence integration with respect to
+      <!--l. 161
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+       </mrow>
+      </math>
+      gives
+      <!--l. 161
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mfrac>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 163
+-->
+    <p class="noindent">
+     Since one of the given conditions is on
+     <!--l. 163
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          u
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          ∂
+         </mi>
+         <mi>
+          x
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     , impose this condition to determine the arbitrary function
+     <!--l. 164
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        f
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     :
+    </p>
+    <!--l. 172
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-120001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-120001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-120001">
+     <!--l. 172
+-->
+     <p class="noindent">
+      At
+      <!--l. 172
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mi>
+         π
+        </mi>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mn>
+         2
+        </mn>
+       </mrow>
+      </math>
+      the condition gives
+      <!--l. 172
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         π
+        </mi>
+        <mo class="MathClass-bin">
+         ∕
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      i.e.
+      <!--l. 172
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         f
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 172
+-->
+     <p class="noindent">
+      So
+      <!--l. 172
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           u
+          </mi>
+         </mrow>
+         <mrow>
+          <mi>
+           ∂
+          </mi>
+          <mi>
+           x
+          </mi>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 174
+-->
+    <p class="noindent">
+     Now integrate again to determine
+     <!--l. 174
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+      </mrow>
+     </math>
+     :
+    </p>
+    <!--l. 178
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-130001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-130001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-130001">
+     <!--l. 178
+-->
+     <p class="noindent">
+      Integrating now with respect to
+      <!--l. 178
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         x
+        </mi>
+       </mrow>
+      </math>
+      gives
+      <!--l. 178
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mi>
+         u
+        </mi>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mo class="qopname">
+         cos
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="qopname">
+         cos
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         g
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 180
+-->
+    <p class="noindent">
+     Next, obtain the arbitrary function
+     <!--l. 180
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        g
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     :
+    </p>
+    <!--l. 186
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-140001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-140001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-140001">
+     <!--l. 186
+-->
+     <p class="noindent">
+      The condition
+      <!--l. 186
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mi>
+         u
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           π
+          </mi>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+       </mrow>
+      </math>
+      gives
+      <!--l. 186
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="quad" width="1em">
+        </mspace>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mo class="qopname">
+         cos
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         π
+        </mi>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="qopname">
+         cos
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         π
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         g
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 186
+-->
+     <p class="noindent">
+      <!--l. 186
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mi>
+         g
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+       </mrow>
+      </math>
+     </p>
+     <!--l. 186
+-->
+     <p class="noindent">
+      <!--l. 186
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mo class="MathClass-rel">
+         ∴
+        </mo>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         g
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+     </p>
+    </div>
+    <!--l. 188
+-->
+    <p class="noindent">
+     Now write down the final answer for
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        u
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          x
+         </mi>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     :
+    </p>
+    <!--l. 192
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-150001" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-150001" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-150001">
+     <!--l. 192
+-->
+     <p class="noindent">
+      <!--l. 192
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <mi>
+         u
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mi>
+           x
+          </mi>
+          <mo class="MathClass-punc">
+           ,
+          </mo>
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           x
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="qopname">
+         cos
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         x
+        </mi>
+        <mrow>
+         <mo class="MathClass-open">
+          (
+         </mo>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           −
+          </mo>
+          <mo class="qopname">
+           sin
+          </mo>
+          <!--nolimits
+-->
+          <mi>
+           y
+          </mi>
+         </mrow>
+         <mo class="MathClass-close">
+          )
+         </mo>
+        </mrow>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mo class="qopname">
+         sin
+        </mo>
+        <!--nolimits
+-->
+        <mi>
+         y
+        </mi>
+        <mo class="MathClass-bin">
+         +
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-bin">
+         −
+        </mo>
+        <msup>
+         <mrow>
+          <mi>
+           π
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msup>
+       </mrow>
+      </math>
+     </p>
+    </div>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="25_3_solutn_using_sepratn_variabls-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webli2.html#tail25_3_solutn_using_sepratn_variabls-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="25_3_solutn_using_sepratn_variabls-web.html#25_3_solutn_using_sepratn_variabls-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail25_3_solutn_using_sepratn_variabls-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>

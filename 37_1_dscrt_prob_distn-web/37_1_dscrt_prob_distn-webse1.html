@@ -1,0 +1,3290 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+  <title>
+   Discrete probability distributions
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+  <meta content="True" name="HandheldFriendly"/>
+  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+  <link href="37_1_dscrt_prob_distn-web.css" rel="stylesheet" type="text/css"/>
+  <link href="additional.css" rel="stylesheet" type="text/css"/>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
+  "fast-preview": {disabled: true}, 
+  explorer:{ subtitle: true }, 
+  displayAlign: "center",  
+  MatchWebFonts: { 
+  matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+  fontCheckDelay: 2000, 
+  fontCheckTimeout: 30 * 1000 
+  }, 
+  "HTML-CSS": { 
+  preferredFont: "STIX",  
+  availableFonts: ["STIX","TeX"],  
+  webFont: "STIX-Web",  
+  linebreaks: { automatic: true, width: "90% container" } 
+  }, 
+  SVG: {  
+  font: "STIX-Web", 
+  linebreaks: { automatic: false, width: "90% container" } 
+  }, 
+  menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
+  });
+  </script>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
+  var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
+  while (nodes.length) { 
+  nodes.shift().removeAttribute('id'); 
+  } 
+  }, 20);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+  </script>
+  <style type="text/css">
+   ".MathJax_MathML" {text-indent: 0;}
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div class="container">
+   <nav aria-labelledby="topnav">
+    <div id="topnav">
+     [
+     <a href="#main">
+      Skip navigation
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webli2.html#tail37_1_dscrt_prob_distn-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="#tail37_1_dscrt_prob_distn-webse1.html">
+      tail
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-web.html#37_1_dscrt_prob_distn-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <main id="main" role="main">
+    <h3 class="sectionHead">
+     <span class="titlemark">
+      1
+     </span>
+     <a href="37_1_dscrt_prob_distn-web.html#QQ2-4-5" id="x4-50001">
+      Discrete probability distributions
+     </a>
+    </h3>
+    <!--l. 104
+-->
+    <p class="noindent">
+     We shall look at discrete distributions in this Workbook and continuous distributions in
+     <strong>
+      HELM booklet
+     </strong>
+     38. In order to get a good understanding of discrete distributions it is advisable to familiarise yourself with two related topics: permutations and combinations. Essentially we shall be using this area of mathematics as a calculating device which will enable us to deal sensibly with situations where
+     <strong>
+      choice
+     </strong>
+     leads to the use of very large numbers of possibilities. We shall use combinations to express and manipulate these numbers in a compact and efficient way.
+    </p>
+    <!--l. 115
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      1.1
+     </span>
+     <a href="37_1_dscrt_prob_distn-web.html#QQ2-4-6" id="x4-60001.1">
+      Permutations and Combinations
+     </a>
+    </h4>
+    <!--l. 116
+-->
+    <p class="noindent">
+     You may recall from
+     <strong>
+      HELM booklet
+     </strong>
+     35.2 concerned with probability that if we define the probability that an event
+     <!--l. 117
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     occurs by using the definition:
+    </p>
+    <!--l. 119
+-->
+    <p class="noindent">
+     <!--l. 119
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mstyle class="text">
+        <mtext>
+         P
+        </mtext>
+       </mstyle>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          A
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           The number of equally likely experimental outcomes favourable to
+          </mtext>
+         </mstyle>
+         <mi>
+          A
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           The total number of equally likely outcomes forming the sample space
+          </mtext>
+         </mstyle>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          a
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 122
+-->
+    <p class="noindent">
+     then we can only find P
+     <!--l. 122
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          A
+         </mi>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     provided that we can find both
+     <!--l. 122
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        a
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 122
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     . In practice, these numbers can be very large and difficult if not impossible to find by a simple counting process. Permutations and combinations help us to calculate probabilities in cases where counting is simply not a realistic possibility.
+    </p>
+    <!--l. 127
+-->
+    <p class="noindent">
+     Before discussing permutations, we will look briefly at the idea and notation of a factorial.
+    </p>
+    <!--l. 129
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      1.2
+     </span>
+     <a href="37_1_dscrt_prob_distn-web.html#QQ2-4-7" id="x4-70001.2">
+      Factorials
+     </a>
+    </h4>
+    <!--l. 131
+-->
+    <p class="noindent">
+     The
+     <strong>
+      factorial
+     </strong>
+     of an integer
+     <!--l. 131
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     commonly called ‘factorial
+     <!--l. 131
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     ’ and written
+     <!--l. 131
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+     is defined as follows:
+    </p>
+    <!--l. 133
+-->
+    <p class="noindent">
+     <!--l. 133
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-rel">
+        ≥
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 138
+-->
+    <p class="noindent">
+     Simple examples are:
+    </p>
+    <!--tex4ht:inline
+-->
+    <!--l. 143
+-->
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mtable class="align-star" columnalign="left" displaystyle="true">
+      <mtr>
+       <mtd class="align-odd" columnalign="right">
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-punc">
+         !
+        </mo>
+       </mtd>
+       <mtd class="align-even">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         24
+        </mn>
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="align-label" columnalign="right">
+       </mtd>
+       <mtd class="align-label">
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="align-odd" columnalign="right">
+        <mn>
+         5
+        </mn>
+        <mo class="MathClass-punc">
+         !
+        </mo>
+       </mtd>
+       <mtd class="align-even">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         5
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         120
+        </mn>
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="align-label" columnalign="right">
+       </mtd>
+       <mtd class="align-label">
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd class="align-odd" columnalign="right">
+        <mn>
+         8
+        </mn>
+        <mo class="MathClass-punc">
+         !
+        </mo>
+       </mtd>
+       <mtd class="align-even">
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         8
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         7
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         6
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         5
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         4
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         3
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         40320
+        </mn>
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+       <mtd class="align-label" columnalign="right">
+       </mtd>
+       <mtd class="align-label">
+        <mspace width="2em">
+        </mspace>
+       </mtd>
+      </mtr>
+     </mtable>
+    </math>
+    <!--l. 146
+-->
+    <p class="noindent">
+     As you can see, factorial notation enables us to express large numbers in a very compact format. You will see that this characteristic is very useful when we discuss the topic of permutations. A further point is that the definition above falls down when
+     <!--l. 148
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+      </mrow>
+     </math>
+     and we define
+    </p>
+    <!--l. 149
+-->
+    <p class="noindent">
+     <!--l. 149
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        0
+       </mn>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 151
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      1.3
+     </span>
+     <a href="37_1_dscrt_prob_distn-web.html#QQ2-4-8" id="x4-80001.3">
+      Permutations
+     </a>
+    </h4>
+    <!--l. 153
+-->
+    <p class="noindent">
+     A
+     <strong>
+      permutation
+     </strong>
+     of a set of distinct objects places the objects
+     <strong>
+      in order
+     </strong>
+     . For example the set of three numbers
+     <!--l. 154
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          3
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     can be placed in the following orders:
+    </p>
+    <!--l. 155
+-->
+    <p class="noindent">
+     1,2,3 1,3,2 2,1,3 2,3,1 3,2,1 3,1,2
+    </p>
+    <!--l. 156
+-->
+    <p class="noindent">
+     Note that we can choose the first item in 3 ways, the second in 2 ways and the third in 1 way. This gives us
+     <!--l. 157
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        6
+       </mn>
+      </mrow>
+     </math>
+     distinct orders. We say that the set
+     <!--l. 157
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         {
+        </mo>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          ,
+         </mo>
+         <mn>
+          3
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         }
+        </mo>
+       </mrow>
+      </mrow>
+     </math>
+     has the distinct permutations
+    </p>
+    <!--l. 160
+-->
+    <p class="noindent">
+     1,2,3 1,3,2 2,1,3 2,3,1 3,2,1 3,1,2
+    </p>
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-90001.3" id="x4-90001.3">
+      Example 1
+     </a>
+    </h5>
+    <!--l. 163
+-->
+    <p class="noindent">
+     Write out the possible permutations of the letters
+     <!--l. 163
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 163
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 176
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-100001.3" id="x4-100001.3">
+      Solution
+     </a>
+    </h5>
+    <!--l. 176
+-->
+    <p class="noindent">
+     The possible permutations are
+    </p>
+    <div class="tabular">
+     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-2">
+      <colgroup id="TBL-2-1g">
+       <col id="TBL-2-1"/>
+       <col id="TBL-2-2"/>
+       <col id="TBL-2-3"/>
+       <col id="TBL-2-4"/>
+       <col id="TBL-2-5"/>
+       <col id="TBL-2-6"/>
+      </colgroup>
+      <tr id="TBL-2-1-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-2-1-1" style="text-align:right; white-space:nowrap;">
+        ABCD
+       </td>
+       <td class="td11" id="TBL-2-1-2" style="text-align:right; white-space:nowrap;">
+        ABDC
+       </td>
+       <td class="td11" id="TBL-2-1-3" style="text-align:right; white-space:nowrap;">
+        ADBC
+       </td>
+       <td class="td11" id="TBL-2-1-4" style="text-align:right; white-space:nowrap;">
+        ADCB
+       </td>
+       <td class="td11" id="TBL-2-1-5" style="text-align:right; white-space:nowrap;">
+        ACBD
+       </td>
+       <td class="td11" id="TBL-2-1-6" style="text-align:right; white-space:nowrap;">
+        ACDB
+       </td>
+      </tr>
+      <tr id="TBL-2-2-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-2-2-1" style="text-align:right; white-space:nowrap;">
+        BADC
+       </td>
+       <td class="td11" id="TBL-2-2-2" style="text-align:right; white-space:nowrap;">
+        BACD
+       </td>
+       <td class="td11" id="TBL-2-2-3" style="text-align:right; white-space:nowrap;">
+        BCDA
+       </td>
+       <td class="td11" id="TBL-2-2-4" style="text-align:right; white-space:nowrap;">
+        BCAD
+       </td>
+       <td class="td11" id="TBL-2-2-5" style="text-align:right; white-space:nowrap;">
+        BDAC
+       </td>
+       <td class="td11" id="TBL-2-2-6" style="text-align:right; white-space:nowrap;">
+        BDCA
+       </td>
+      </tr>
+      <tr id="TBL-2-3-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-2-3-1" style="text-align:right; white-space:nowrap;">
+        CABD
+       </td>
+       <td class="td11" id="TBL-2-3-2" style="text-align:right; white-space:nowrap;">
+        CADB
+       </td>
+       <td class="td11" id="TBL-2-3-3" style="text-align:right; white-space:nowrap;">
+        CDBA
+       </td>
+       <td class="td11" id="TBL-2-3-4" style="text-align:right; white-space:nowrap;">
+        CDAB
+       </td>
+       <td class="td11" id="TBL-2-3-5" style="text-align:right; white-space:nowrap;">
+        CBAD
+       </td>
+       <td class="td11" id="TBL-2-3-6" style="text-align:right; white-space:nowrap;">
+        CBDA
+       </td>
+      </tr>
+      <tr id="TBL-2-4-" style="vertical-align:baseline;">
+       <td class="td11" id="TBL-2-4-1" style="text-align:right; white-space:nowrap;">
+        DABC
+       </td>
+       <td class="td11" id="TBL-2-4-2" style="text-align:right; white-space:nowrap;">
+        DACB
+       </td>
+       <td class="td11" id="TBL-2-4-3" style="text-align:right; white-space:nowrap;">
+        DCAB
+       </td>
+       <td class="td11" id="TBL-2-4-4" style="text-align:right; white-space:nowrap;">
+        DCBA
+       </td>
+       <td class="td11" id="TBL-2-4-5" style="text-align:right; white-space:nowrap;">
+        DBAC
+       </td>
+       <td class="td11" id="TBL-2-4-6" style="text-align:right; white-space:nowrap;">
+        DBCA
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!--l. 176
+-->
+    <p class="noindent">
+     There are
+     <!--l. 176
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        24
+       </mn>
+      </mrow>
+     </math>
+     permutations of the four letters
+     <!--l. 176
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 176
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+       <mo class="MathClass-punc">
+        .
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 178
+-->
+    <p class="noindent">
+     In general we can order
+     <!--l. 178
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     distinct objects in
+     <!--l. 178
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+     ways.
+     <br class="newline"/>
+     <br/>
+     Suppose we have
+     <!--l. 179
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     different types of object. It follows that if we have
+     <!--l. 179
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     objects of one kind,
+     <!--l. 180
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     of another kind and so on then the
+     <!--l. 180
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     objects can be ordered in
+     <!--l. 180
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+     ways, the
+     <!--l. 181
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     objects in
+     <!--l. 181
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+     ways and so on. If
+     <!--l. 181
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </msub>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mo class="MathClass-rel">
+        ⋯
+       </mo>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <msub>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     and if
+     <!--l. 181
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        p
+       </mi>
+      </mrow>
+     </math>
+     is the number of permutations possible from
+     <!--l. 182
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     objects we may write
+    </p>
+    <!--l. 183
+-->
+    <p class="noindent">
+     <!--l. 183
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        p
+       </mi>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mo class="MathClass-rel">
+          ⋯
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            r
+           </mi>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 184
+-->
+    <p class="noindent">
+     and so
+     <!--l. 184
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        p
+       </mi>
+      </mrow>
+     </math>
+     is given by the formula
+    </p>
+    <!--l. 185
+-->
+    <p class="noindent">
+     <!--l. 185
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        p
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            1
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mn>
+            2
+           </mn>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mo class="MathClass-rel">
+          ⋯
+         </mo>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <msub>
+          <mrow>
+           <mi>
+            n
+           </mi>
+          </mrow>
+          <mrow>
+           <mi>
+            r
+           </mi>
+          </mrow>
+         </msub>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 186
+-->
+    <p class="noindent">
+     Very often we will find it useful to be able to calculate the number of permutations of
+     <!--l. 186
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     objects taken
+     <!--l. 187
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     at a time. Assuming that we do not allow repetitions, we may choose the first object in
+     <!--l. 187
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     ways, the second in
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     ways, the third in
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mn>
+        2
+       </mn>
+      </mrow>
+     </math>
+     ways and so on so that the
+     <!--l. 188
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+        <mrow>
+         <mstyle class="text">
+          <mtext>
+           th
+          </mtext>
+         </mstyle>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     object may be chosen in
+     <!--l. 189
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+       <mo class="MathClass-bin">
+        −
+       </mo>
+       <mi>
+        r
+       </mi>
+       <mo class="MathClass-bin">
+        +
+       </mo>
+       <mn>
+        1
+       </mn>
+      </mrow>
+     </math>
+     ways.
+    </p>
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-110001.3" id="x4-110001.3">
+      Example 2
+     </a>
+    </h5>
+    <!--l. 191
+-->
+    <p class="noindent">
+     Find the number of permutations of the four letters
+     <!--l. 191
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 191
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     taken three at a time.
+    </p>
+    <!--l. 200
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-120001.3" id="x4-120001.3">
+      Solution
+     </a>
+    </h5>
+    <!--l. 200
+-->
+    <p class="noindent">
+     We may choose the first letter in 4 ways, either
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     or
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     . Suppose, for the purposes of illustration we choose
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+      </mrow>
+     </math>
+     . We may choose the second letter in 3 ways, either
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     or
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     . Suppose, for the purposes of illustration we choose
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        B
+       </mi>
+      </mrow>
+     </math>
+     . We may choose the third letter in 2 ways, either
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     or
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     . Suppose, for the purposes of illustration we choose
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     . The total number of choices made is
+     <!--l. 200
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        24
+       </mn>
+      </mrow>
+     </math>
+     .
+    </p>
+    <!--l. 205
+-->
+    <p class="noindent">
+     In general the numbers of permutations of
+     <!--l. 205
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     objects taken
+     <!--l. 205
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     at a time is
+    </p>
+    <!--l. 206
+-->
+    <p class="noindent">
+     <!--l. 206
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mi>
+        n
+       </mi>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mo class="MathClass-op">
+        …
+       </mo>
+       <mrow>
+        <mo class="MathClass-open">
+         (
+        </mo>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-bin">
+          −
+         </mo>
+         <mi>
+          r
+         </mi>
+         <mo class="MathClass-bin">
+          +
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mo class="MathClass-close">
+         )
+        </mo>
+       </mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mstyle class="text">
+        <mtext>
+         which is the same as
+        </mtext>
+       </mstyle>
+       <mspace class="quad" width="1em">
+       </mspace>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 207
+-->
+    <p class="noindent">
+     This is usually denoted by
+     <!--l. 207
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msubsup>
+        <mrow>
+         <mrow class="prescript">
+         </mrow>
+        </mrow>
+        <mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <msub>
+        <mrow>
+         <mi>
+          P
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     so that
+    </p>
+    <!--l. 208
+-->
+    <p class="noindent">
+     <!--l. 208
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <msubsup>
+        <mrow>
+         <mrow class="prescript">
+         </mrow>
+        </mrow>
+        <mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <msub>
+        <mrow>
+         <mi>
+          P
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </p>
+    <!--l. 209
+-->
+    <p class="noindent">
+     If we allow repetitions the number of permutations becomes
+     <!--l. 209
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msup>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msup>
+      </mrow>
+     </math>
+     (can you see why?).
+    </p>
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-130001.3" id="x4-130001.3">
+      Example 3
+     </a>
+    </h5>
+    <!--l. 211
+-->
+    <p class="noindent">
+     Find the number of permutations of the four letters
+     <!--l. 211
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        A
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        B
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 211
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        D
+       </mi>
+      </mrow>
+     </math>
+     taken two at a time.
+    </p>
+    <!--l. 216
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-140001.3" id="x4-140001.3">
+      Solution
+     </a>
+    </h5>
+    <!--l. 216
+-->
+    <p class="noindent">
+     We may choose the first letter in 4 ways and the second letter in 3 ways giving us
+    </p>
+    <!--l. 216
+-->
+    <p class="noindent">
+     <!--l. 216
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mspace class="qquad" width="2em">
+       </mspace>
+       <mn>
+        4
+       </mn>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          4
+         </mn>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mn>
+          3
+         </mn>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mn>
+          1
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mo class="MathClass-bin">
+          ×
+         </mo>
+         <mn>
+          2
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mn>
+          4
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        12
+       </mn>
+      </mrow>
+     </math>
+     permutations
+    </p>
+    <!--l. 218
+-->
+    <h4 class="subsectionHead">
+     <span class="titlemark">
+      1.4
+     </span>
+     <a href="37_1_dscrt_prob_distn-web.html#QQ2-4-15" id="x4-150001.4">
+      Combinations
+     </a>
+    </h4>
+    <!--l. 219
+-->
+    <p class="noindent">
+     A
+     <strong>
+      combination
+     </strong>
+     of objects takes
+     <strong>
+      no account of order
+     </strong>
+     whereas a permutation does. The formula
+     <!--l. 220
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msubsup>
+        <mrow>
+         <mrow class="prescript">
+         </mrow>
+        </mrow>
+        <mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <msub>
+        <mrow>
+         <mi>
+          P
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+     gives us the number of ordered sets of
+     <!--l. 220
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     objects chosen from
+     <!--l. 221
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     . Suppose the number of sets of
+     <!--l. 221
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        r
+       </mi>
+      </mrow>
+     </math>
+     objects (taken from
+     <!--l. 221
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        n
+       </mi>
+      </mrow>
+     </math>
+     objects) in which order is not taken into account is
+     <!--l. 222
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+      </mrow>
+     </math>
+     . It follows that
+    </p>
+    <div class="par-math-block" custom-style="Normal">
+     <!--l. 224
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+       <mo class="MathClass-bin">
+        ×
+       </mo>
+       <mi>
+        r
+       </mi>
+       <mo class="MathClass-punc">
+        !
+       </mo>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </div>
+    and so
+    <!--l. 225
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mi>
+       C
+      </mi>
+     </mrow>
+    </math>
+    is given by the formula
+    <div class="math-block" custom-style="Normal">
+     <!--l. 226
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        C
+       </mi>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </div>
+    <!--l. 228
+-->
+    <p class="noindent">
+     We normally denote the right-hand side of this expression by
+     <!--l. 229
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msubsup>
+        <mrow>
+         <mrow class="prescript">
+         </mrow>
+        </mrow>
+        <mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <msub>
+        <mrow>
+         <mi>
+          C
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+      </mrow>
+     </math>
+     so that
+    </p>
+    <div class="math-block" custom-style="Normal">
+     <!--l. 230
+-->
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <msubsup>
+        <mrow>
+         <mrow class="prescript">
+         </mrow>
+        </mrow>
+        <mrow>
+        </mrow>
+        <mrow>
+         <mi>
+          n
+         </mi>
+        </mrow>
+       </msubsup>
+       <msub>
+        <mrow>
+         <mi>
+          C
+         </mi>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+        </mrow>
+       </msub>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          n
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+        <mrow>
+         <mi>
+          r
+         </mi>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+         <mrow>
+          <mo class="MathClass-open">
+           (
+          </mo>
+          <mrow>
+           <mi>
+            n
+           </mi>
+           <mo class="MathClass-bin">
+            −
+           </mo>
+           <mi>
+            r
+           </mi>
+          </mrow>
+          <mo class="MathClass-close">
+           )
+          </mo>
+         </mrow>
+         <mo class="MathClass-punc">
+          !
+         </mo>
+        </mrow>
+       </mfrac>
+      </mrow>
+     </math>
+    </div>
+    A common alternative notation for
+    <!--l. 231
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <msubsup>
+       <mrow>
+        <mrow class="prescript">
+        </mrow>
+       </mrow>
+       <mrow>
+       </mrow>
+       <mrow>
+        <mi>
+         n
+        </mi>
+       </mrow>
+      </msubsup>
+      <msub>
+       <mrow>
+        <mi>
+         C
+        </mi>
+       </mrow>
+       <mrow>
+        <mi>
+         r
+        </mi>
+       </mrow>
+      </msub>
+     </mrow>
+    </math>
+    is
+    <!--l. 231
+-->
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+     <mrow>
+      <mfenced close=")" open="(" separators="">
+       <mrow>
+        <mtable align="axis" class="array" columnlines="none none none none none none none none none" equalcolumns="false" equalrows="false" style="">
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mi>
+            n
+           </mi>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd class="array" columnalign="center">
+           <mi>
+            r
+           </mi>
+          </mtd>
+         </mtr>
+         <!--*\c@MaxMatrixCols c
+-->
+        </mtable>
+       </mrow>
+      </mfenced>
+     </mrow>
+    </math>
+    .
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-160001.4" id="x4-160001.4">
+      Example 4
+     </a>
+    </h5>
+    <!--l. 233
+-->
+    <p class="noindent">
+     How many car registrations are there beginning with
+     <!--l. 233
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        N
+       </mi>
+       <mi>
+        P
+       </mi>
+       <mn>
+        05
+       </mn>
+      </mrow>
+     </math>
+     followed by three letters? Note that, conventionally,
+     <!--l. 235
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        I
+       </mi>
+       <mo class="MathClass-punc">
+        ,
+       </mo>
+       <mi>
+        O
+       </mi>
+      </mrow>
+     </math>
+     and
+     <!--l. 235
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        Q
+       </mi>
+      </mrow>
+     </math>
+     may not be chosen.
+    </p>
+    <!--l. 240
+-->
+    <h5 class="likesubsubsectionHead">
+     <a href="#x4-170001.4" id="x4-170001.4">
+      Solution
+     </a>
+    </h5>
+    <!--l. 240
+-->
+    <p class="noindent">
+     We have to choose 3 letters from 23 allowing repetition. Hence the number of registrations beginning with
+     <!--l. 240
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mi>
+        N
+       </mi>
+       <mi>
+        P
+       </mi>
+       <mn>
+        05
+       </mn>
+      </mrow>
+     </math>
+     must be
+     <!--l. 240
+-->
+     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+       <mn>
+        2
+       </mn>
+       <msup>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          3
+         </mn>
+        </mrow>
+       </msup>
+       <mo class="MathClass-rel">
+        =
+       </mo>
+       <mn>
+        12167
+       </mn>
+      </mrow>
+     </math>
+     .
+    </p>
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-180001.4" id="x4-180001.4">
+      Task!
+     </a>
+    </h5>
+    <!--l. 242
+-->
+    <ol class="enumerate1">
+     <li class="enumerate" id="x4-18002x1">
+      How many different signals consisting of five symbols can be sent using the dot and dash of Morse code?
+     </li>
+     <li class="enumerate" id="x4-18004x2">
+      How many can be sent if five symbols
+      <strong>
+       or less
+      </strong>
+      can be sent?
+     </li>
+    </ol>
+    <!--l. 266
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-1900014" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-1900014" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-1900014">
+     <!--l. 266
+-->
+     <ol class="enumerate1">
+      <li class="enumerate" id="x4-19002x1">
+       Clearly, the order of the symbols is important. We can choose each symbol in two ways, either a dot or a dash. The number of distinct signals is
+       <!--l. 266
+-->
+       <p class="noindent">
+        <!--l. 266
+-->
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+         <mrow>
+          <mspace class="qquad" width="2em">
+          </mspace>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <msup>
+           <mrow>
+            <mn>
+             2
+            </mn>
+           </mrow>
+           <mrow>
+            <mn>
+             5
+            </mn>
+           </mrow>
+          </msup>
+          <mo class="MathClass-rel">
+           =
+          </mo>
+          <mn>
+           32
+          </mn>
+         </mrow>
+        </math>
+       </p>
+      </li>
+      <li class="enumerate" id="x4-19004x2">
+       If five
+       <strong>
+        or less
+       </strong>
+       symbols may be used, the total number of signals may be calculated as follows:
+       <div class="tabular">
+        <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-4">
+         <colgroup id="TBL-4-1g">
+          <col id="TBL-4-1"/>
+          <col id="TBL-4-2"/>
+         </colgroup>
+         <tr id="TBL-4-1-" style="vertical-align:baseline;">
+          <td class="td11" id="TBL-4-1-1" style="text-align:left; white-space:nowrap;">
+           Using one symbol:
+          </td>
+          <td class="td11" id="TBL-4-1-2" style="text-align:left; white-space:nowrap;">
+           <!--l. 266
+-->
+           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+             <mn>
+              2
+             </mn>
+            </mrow>
+           </math>
+           ways
+          </td>
+         </tr>
+         <tr id="TBL-4-2-" style="vertical-align:baseline;">
+          <td class="td11" id="TBL-4-2-1" style="text-align:left; white-space:nowrap;">
+           Using two symbols:
+          </td>
+          <td class="td11" id="TBL-4-2-2" style="text-align:left; white-space:nowrap;">
+           <!--l. 266
+-->
+           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <mn>
+              4
+             </mn>
+            </mrow>
+           </math>
+           ways
+          </td>
+         </tr>
+         <tr id="TBL-4-3-" style="vertical-align:baseline;">
+          <td class="td11" id="TBL-4-3-1" style="text-align:left; white-space:nowrap;">
+           Using three symbols:
+          </td>
+          <td class="td11" id="TBL-4-3-2" style="text-align:left; white-space:nowrap;">
+           <!--l. 266
+-->
+           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <mn>
+              8
+             </mn>
+            </mrow>
+           </math>
+           ways
+          </td>
+         </tr>
+         <tr id="TBL-4-4-" style="vertical-align:baseline;">
+          <td class="td11" id="TBL-4-4-1" style="text-align:left; white-space:nowrap;">
+           Using four symbols:
+          </td>
+          <td class="td11" id="TBL-4-4-2" style="text-align:left; white-space:nowrap;">
+           <!--l. 266
+-->
+           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <mn>
+              16
+             </mn>
+            </mrow>
+           </math>
+           ways
+          </td>
+         </tr>
+         <tr id="TBL-4-5-" style="vertical-align:baseline;">
+          <td class="td11" id="TBL-4-5-1" style="text-align:left; white-space:nowrap;">
+           Using five symbols:
+          </td>
+          <td class="td11" id="TBL-4-5-2" style="text-align:left; white-space:nowrap;">
+           <!--l. 266
+-->
+           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-bin">
+              ×
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mo class="MathClass-rel">
+              =
+             </mo>
+             <mn>
+              32
+             </mn>
+            </mrow>
+           </math>
+           ways
+          </td>
+         </tr>
+        </table>
+       </div>
+       <!--l. 266
+-->
+       <p class="noindent">
+        The total number of signals which may be sent is 62.
+       </p>
+      </li>
+     </ol>
+    </div>
+    <!--l. 267
+-->
+    <h5 class="likesubsubsectionHead">
+     <a class="btn btn-primary" href="#x4-200001.4" id="x4-200001.4">
+      Task!
+     </a>
+    </h5>
+    <!--l. 268
+-->
+    <p class="noindent">
+     A box contains 50 resistors of which 20 are deemed to be ‘very high quality’ , 20 ‘high quality’ and 10 ‘standard’. In how many ways can a batch of 5 resistors be chosen if it is to contain 2 ‘very high quality’, 2 ‘high quality’ and 1 ‘standard’ resistor?
+    </p>
+    <!--l. 281
+-->
+    <h5 class="likesubsubsectionHead">
+     <a aria-contorls="x4-2100014" aria-expanded="false" class="btn btn-success" data-toggle="collapse" href="#x4-2100014" role="button">
+      Answer
+     </a>
+    </h5>
+    <div class="collapse" id="x4-2100014">
+     <!--l. 281
+-->
+     <p class="noindent">
+      The order in which the resistors are chosen does not matter so that the number of ways in which the batch of 5 can be chosen is:
+     </p>
+     <!--l. 281
+-->
+     <p class="noindent">
+      <!--l. 281
+-->
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+        <mspace class="qquad" width="2em">
+        </mspace>
+        <msubsup>
+         <mrow>
+          <mrow class="prescript">
+          </mrow>
+         </mrow>
+         <mrow>
+         </mrow>
+         <mrow>
+          <mn>
+           20
+          </mn>
+         </mrow>
+        </msubsup>
+        <msub>
+         <mrow>
+          <mi>
+           C
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <msubsup>
+         <mrow>
+          <mrow class="prescript">
+          </mrow>
+         </mrow>
+         <mrow>
+         </mrow>
+         <mrow>
+          <mn>
+           20
+          </mn>
+         </mrow>
+        </msubsup>
+        <msub>
+         <mrow>
+          <mi>
+           C
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <msubsup>
+         <mrow>
+          <mrow class="prescript">
+          </mrow>
+         </mrow>
+         <mrow>
+         </mrow>
+         <mrow>
+          <mn>
+           10
+          </mn>
+         </mrow>
+        </msubsup>
+        <msub>
+         <mrow>
+          <mi>
+           C
+          </mi>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </msub>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           20
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+         <mrow>
+          <mn>
+           18
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           20
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+         <mrow>
+          <mn>
+           18
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           10
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+         <mrow>
+          <mn>
+           9
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-punc">
+           !
+          </mo>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           20
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           19
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           20
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           19
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mo class="MathClass-bin">
+           ×
+          </mo>
+          <mn>
+           2
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-bin">
+         ×
+        </mo>
+        <mfrac>
+         <mrow>
+          <mn>
+           10
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+         </mrow>
+        </mfrac>
+        <mo class="MathClass-rel">
+         =
+        </mo>
+        <mn>
+         361000
+        </mn>
+       </mrow>
+      </math>
+     </p>
+    </div>
+   </main>
+   <nav aria-labelledby="botnav">
+    <div id="botnav">
+     [
+     <a href="37_1_dscrt_prob_distn-webse2.html">
+      next
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webli2.html">
+      prev
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webli2.html#tail37_1_dscrt_prob_distn-webli2.html">
+      prev-tail
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-webse1.html">
+      front
+     </a>
+     ] [
+     <a href="37_1_dscrt_prob_distn-web.html#37_1_dscrt_prob_distn-webse1.html">
+      up
+     </a>
+     ]
+    </div>
+   </nav>
+   <a id="tail37_1_dscrt_prob_distn-webse1.html">
+   </a>
+  </div>
+ </body>
+</html>
