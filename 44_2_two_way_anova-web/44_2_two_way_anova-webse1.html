@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
- <head>
-  <title>
+<head>
+<title>
    Two-way ANOVA without interaction
   </title>
-  <meta charset="utf-8"/>
-  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
-  <meta content="True" name="HandheldFriendly"/>
-  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
-  <link href="44_2_two_way_anova-web.css" rel="stylesheet" type="text/css"/>
-  <link href="additional.css" rel="stylesheet" type="text/css"/>
-  <script type="text/x-mathjax-config">
+<meta charset="utf-8"/>
+<meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+<link href="44_2_two_way_anova-web.css" rel="stylesheet" type="text/css"/>
+<link href="additional.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
    MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
 "fast-preview": {disabled: true}, 
 explorer:{ subtitle: true }, 
@@ -33,7 +34,7 @@ linebreaks: { automatic: false, width: "90% container" }
 menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
 });
   </script>
-  <script type="text/x-mathjax-config">
+<script type="text/x-mathjax-config">
    MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
 var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
 while (nodes.length) { 
@@ -41,22 +42,22 @@ nodes.shift().removeAttribute('id');
 } 
 }, 20);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
-  </script>
-  <style type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+</script>
+<style type="text/css">
    ".MathJax_MathML" {text-indent: 0;}
   </style>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
-  </script>
-  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
- </head>
- <body>
-  <div class="container">
-   <nav aria-labelledby="topnav">
-    <div id="topnav">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+<link href="toplayer.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+<nav aria-labelledby="topnav">
+<div id="topnav">
      [
      <a href="#main">
       Skip navigation
@@ -83,27 +84,27 @@ nodes.shift().removeAttribute('id');
      </a>
      ]
     </div>
-   </nav>
-   <main id="main" role="main">
-    <h3 class="sectionHead">
-     <span class="titlemark">
+</nav>
+<main id="main" role="main">
+<h3 class="sectionHead">
+<span class="titlemark">
       1
      </span>
-     <a href="44_2_two_way_anova-web.html#QQ2-4-5" id="x4-50001">
+<a href="44_2_two_way_anova-web.html#QQ2-4-5" id="x4-50001">
       Two-way ANOVA without interaction
      </a>
-    </h3>
-    <!--l. 104
+</h3>
+<!--l. 104
 -->
-    <p class="noindent">
+<p class="noindent">
      The previous Section considered a one-way classification analysis of variance, that is we looked at the
 variations induced by one set of values of a factor (or treatments as we called them) by partitioning
-the variation in the data into components representing &lsquo;between treatments&rsquo;&nbsp;and &lsquo;within
-treatments.&rsquo;&nbsp;
+the variation in the data into components representing ‘between treatments’ and ‘within
+treatments.’ 
     </p>
-    <!--l. 109
+<!--l. 109
 -->
-    <p class="noindent">
+<p class="noindent">
      In this Section we will look at the analysis of variance involving two factors or, as we
 might say, two sets of treatments. In general terms, if we have two factors say A and B,
 there is no absolute reason to assume that there is no interaction between the factors.
@@ -114,958 +115,958 @@ residual sum of squares contains the effects of this interaction even though the
 does not, at this stage, allow us to separate it out and check its possible effects on the
 experiment.
     </p>
-    <!--l. 119
+<!--l. 119
 -->
-    <p class="noindent">
+<p class="noindent">
      The following example builds on the previous example where we looked at the one-way analysis of
 variance.
     </p>
-    <!--l. 122
+<!--l. 122
 -->
-    <h4 class="subsectionHead">
-     <span class="titlemark">
+<h4 class="subsectionHead">
+<span class="titlemark">
       1.1
      </span>
-     <a href="44_2_two_way_anova-web.html#QQ2-4-6" id="x4-60001.1">
+<a href="44_2_two_way_anova-web.html#QQ2-4-6" id="x4-60001.1">
       Example of variance in data
      </a>
-    </h4>
-    <!--l. 123
+</h4>
+<!--l. 123
 -->
-    <p class="noindent">
+<p class="noindent">
      In Section 44.1 we considered an example concerning four machines producing alloy spaces. This
 time we introduce an extra factor by considering both the machines producing the spacers and the
 performance of the operators working with the machines. In this experiment, the data
 appear as follows (spacer lengths in mm). Each operator made one spacer with each
 machine.
     </p>
-    <div class="tabular">
-     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-2" rules="groups">
-      <colgroup id="TBL-2-1g">
-       <col id="TBL-2-1"/>
-      </colgroup>
-      <colgroup id="TBL-2-2g">
-       <col id="TBL-2-2"/>
-      </colgroup>
-      <colgroup id="TBL-2-3g">
-       <col id="TBL-2-3"/>
-      </colgroup>
-      <colgroup id="TBL-2-4g">
-       <col id="TBL-2-4"/>
-      </colgroup>
-      <colgroup id="TBL-2-5g">
-       <col id="TBL-2-5"/>
-      </colgroup>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-1-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-1-1" style="text-align:center; white-space:nowrap;">
-        <strong>
+<div class="tabular">
+<table cellpadding="0" cellspacing="0" class="tabular" id="TBL-2" rules="groups">
+<colgroup id="TBL-2-1g">
+<col id="TBL-2-1"/>
+</colgroup>
+<colgroup id="TBL-2-2g">
+<col id="TBL-2-2"/>
+</colgroup>
+<colgroup id="TBL-2-3g">
+<col id="TBL-2-3"/>
+</colgroup>
+<colgroup id="TBL-2-4g">
+<col id="TBL-2-4"/>
+</colgroup>
+<colgroup id="TBL-2-5g">
+<col id="TBL-2-5"/>
+</colgroup>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-1-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-1-1" style="text-align:center; white-space:nowrap;">
+<strong>
          Operator
         </strong>
-       </td>
-       <td class="td11" id="TBL-2-1-2" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-2-1-2" style="text-align:center; white-space:nowrap;">
+<strong>
          Machine 1
         </strong>
-       </td>
-       <td class="td11" id="TBL-2-1-3" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-2-1-3" style="text-align:center; white-space:nowrap;">
+<strong>
          Machine 2
         </strong>
-       </td>
-       <td class="td11" id="TBL-2-1-4" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-2-1-4" style="text-align:center; white-space:nowrap;">
+<strong>
          Machine 3
         </strong>
-       </td>
-       <td class="td11" id="TBL-2-1-5" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-2-1-5" style="text-align:center; white-space:nowrap;">
+<strong>
          Machine 4
         </strong>
-       </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-2-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-2-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-2-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-2-1" style="text-align:center; white-space:nowrap;">
         1
        </td>
-       <td class="td11" id="TBL-2-2-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-2-2" style="text-align:center; white-space:nowrap;">
         46
        </td>
-       <td class="td11" id="TBL-2-2-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-2-3" style="text-align:center; white-space:nowrap;">
         56
        </td>
-       <td class="td11" id="TBL-2-2-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-2-4" style="text-align:center; white-space:nowrap;">
         55
        </td>
-       <td class="td11" id="TBL-2-2-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-2-5" style="text-align:center; white-space:nowrap;">
         47
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-3-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-3-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-3-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-3-1" style="text-align:center; white-space:nowrap;">
         2
        </td>
-       <td class="td11" id="TBL-2-3-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-3-2" style="text-align:center; white-space:nowrap;">
         54
        </td>
-       <td class="td11" id="TBL-2-3-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-3-3" style="text-align:center; white-space:nowrap;">
         55
        </td>
-       <td class="td11" id="TBL-2-3-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-3-4" style="text-align:center; white-space:nowrap;">
         51
        </td>
-       <td class="td11" id="TBL-2-3-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-3-5" style="text-align:center; white-space:nowrap;">
         56
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-4-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-4-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-4-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-4-1" style="text-align:center; white-space:nowrap;">
         3
        </td>
-       <td class="td11" id="TBL-2-4-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-4-2" style="text-align:center; white-space:nowrap;">
         48
        </td>
-       <td class="td11" id="TBL-2-4-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-4-3" style="text-align:center; white-space:nowrap;">
         56
        </td>
-       <td class="td11" id="TBL-2-4-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-4-4" style="text-align:center; white-space:nowrap;">
         50
        </td>
-       <td class="td11" id="TBL-2-4-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-4-5" style="text-align:center; white-space:nowrap;">
         58
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-5-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-5-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-5-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-5-1" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-2-5-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-5-2" style="text-align:center; white-space:nowrap;">
         46
        </td>
-       <td class="td11" id="TBL-2-5-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-5-3" style="text-align:center; white-space:nowrap;">
         60
        </td>
-       <td class="td11" id="TBL-2-5-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-5-4" style="text-align:center; white-space:nowrap;">
         51
        </td>
-       <td class="td11" id="TBL-2-5-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-5-5" style="text-align:center; white-space:nowrap;">
         59
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-6-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-6-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-6-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-6-1" style="text-align:center; white-space:nowrap;">
         5
        </td>
-       <td class="td11" id="TBL-2-6-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-6-2" style="text-align:center; white-space:nowrap;">
         51
        </td>
-       <td class="td11" id="TBL-2-6-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-6-3" style="text-align:center; white-space:nowrap;">
         53
        </td>
-       <td class="td11" id="TBL-2-6-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-6-4" style="text-align:center; white-space:nowrap;">
         53
        </td>
-       <td class="td11" id="TBL-2-6-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-2-6-5" style="text-align:center; white-space:nowrap;">
         55
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-2-7-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-2-7-1" style="text-align:center; white-space:nowrap;">
-       </td>
-      </tr>
-     </table>
-    </div>
-    <!--l. 144
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-2-7-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-2-7-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+</table>
+</div>
+<!--l. 144
 -->
-    <p class="noindent">
-     In a case such as this we are looking for discernible difference between the operators (&lsquo;operator
-effects&rsquo;) on the one hand and the machines (&lsquo;machine effects&rsquo;) on the other.
+<p class="noindent">
+     In a case such as this we are looking for discernible difference between the operators (‘operator
+effects’) on the one hand and the machines (‘machine effects’) on the other.
     </p>
-    <!--l. 147
+<!--l. 147
 -->
-    <p class="noindent">
+<p class="noindent">
      We suppose that the observation for operator
      <!--l. 147
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         i
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and machine
      <!--l. 147
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         j
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      is taken from a normal distribution with mean
     </p>
-    <!--l. 148
+<!--l. 148
 -->
-    <p class="noindent">
-     <!--l. 149
+<p class="noindent">
+<!--l. 149
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &mu;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
+          μ
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           i
          </mi>
-         <mi>
+<mi>
           j
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mi>
-        &mu;
+<mi>
+        μ
        </mi>
-       <mo class="MathClass-bin">
+<mo class="MathClass-bin">
         +
        </mo>
-       <msub>
-        <mrow>
-         <mi>
-          &alpha;
+<msub>
+<mrow>
+<mi>
+          α
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           i
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
         +
        </mo>
-       <msub>
-        <mrow>
-         <mi>
-          &beta;
+<msub>
+<mrow>
+<mi>
+          β
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           j
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 150
+</mrow>
+</msub>
+</mrow>
+</math>
+</p>
+<!--l. 150
 -->
-    <p class="noindent">
+<p class="noindent">
      Here
      <!--l. 150
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &alpha;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
+          α
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           i
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      is an operator
 effect and
      <!--l. 150
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &beta;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
+          β
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           j
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      is a machine effect. Our hypotheses may be stated as follows.
     </p>
-    <!--l. 152
+<!--l. 152
 -->
-    <p class="noindent">
+<p class="noindent">
      Operator Effects
      <!--l. 152
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mfenced close="" open="{" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <msub>
-             <mrow>
-              <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfenced close="" open="{" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                H
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                0
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
              :
             </mo>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<mspace class="nbsp" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-              <mi>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                2
               </mn>
-              <mi>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                3
               </mn>
-              <mi>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                4
               </mn>
-              <mi>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                5
               </mn>
-              <mi>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <mi>
-             &mu;
+<mi>
+             μ
             </mi>
-            <mo class="MathClass-bin">
+<mo class="MathClass-bin">
              +
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &beta;
+<msub>
+<mrow>
+<mi>
+               β
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                j
               </mi>
-             </mrow>
-            </msub>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <mspace class="qquad" width="2em">
-            </mspace>
-            <mstyle class="text">
-             <mtext>
-              That&nbsp;is&nbsp;
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mspace class="qquad" width="2em">
+</mspace>
+<mstyle class="text">
+<mtext>
+              That is 
              </mtext>
-            </mstyle>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+</mstyle>
+<mspace class="nbsp" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                2
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                3
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                4
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                5
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <mn>
+<mn>
              0
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <msub>
-             <mrow>
-              <mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                H
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
              :
             </mo>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <mstyle class="text">
-             <mtext>
-              At&nbsp;least&nbsp;one&nbsp;of&nbsp;the&nbsp;operator&nbsp;effects&nbsp;is&nbsp;different&nbsp;to&nbsp;the&nbsp;others
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+              At least one of the operator effects is different to the others
              </mtext>
-            </mstyle>
-           </mtd>
-          </mtr>
-          <!--l
+</mstyle>
+</mtd>
+</mtr>
+<!--l
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 156
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 156
 -->
-    <p class="noindent">
-     &nbsp;Machine Effects
+<p class="noindent">
+      Machine Effects
      <!--l. 156
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mfenced close="" open="{" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <msub>
-             <mrow>
-              <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfenced close="" open="{" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                H
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                0
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
              :
             </mo>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<mspace class="nbsp" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                i
               </mi>
-              <mn>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                i
               </mi>
-              <mn>
+<mn>
                2
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                i
               </mi>
-              <mn>
+<mn>
                3
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &mu;
+<msub>
+<mrow>
+<mi>
+               μ
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                i
               </mi>
-              <mn>
+<mn>
                4
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <mi>
-             &mu;
+<mi>
+             μ
             </mi>
-            <mo class="MathClass-bin">
+<mo class="MathClass-bin">
              +
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &alpha;
+<msub>
+<mrow>
+<mi>
+               α
               </mi>
-             </mrow>
-             <mrow>
-              <mi>
+</mrow>
+<mrow>
+<mi>
                i
               </mi>
-             </mrow>
-            </msub>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <mspace class="qquad" width="2em">
-            </mspace>
-            <mstyle class="text">
-             <mtext>
-              That&nbsp;is
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mspace class="qquad" width="2em">
+</mspace>
+<mstyle class="text">
+<mtext>
+              That is
              </mtext>
-            </mstyle>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <msub>
-             <mrow>
-              <mi>
-               &beta;
+</mstyle>
+<mspace class="nbsp" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
+               β
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &beta;
+<msub>
+<mrow>
+<mi>
+               β
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                2
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &beta;
+<msub>
+<mrow>
+<mi>
+               β
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                3
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <msub>
-             <mrow>
-              <mi>
-               &beta;
+<msub>
+<mrow>
+<mi>
+               β
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                4
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
              =
             </mo>
-            <mn>
+<mn>
              0
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="left">
-            <msub>
-             <mrow>
-              <mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                H
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-            <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
              :
             </mo>
-            <mspace class="nbsp" width="1em">
-            </mspace>
-            <mstyle class="text">
-             <mtext>
-              At&nbsp;least&nbsp;one&nbsp;of&nbsp;the&nbsp;machine&nbsp;effects&nbsp;is&nbsp;different&nbsp;to&nbsp;the&nbsp;others
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+              At least one of the machine effects is different to the others
              </mtext>
-            </mstyle>
-           </mtd>
-          </mtr>
-          <!--l
+</mstyle>
+</mtd>
+</mtr>
+<!--l
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 160
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 160
 -->
-    <p class="noindent">
+<p class="noindent">
      Note that the five operators and four machines give rise to data which has only one observation per
-&lsquo;cell.&rsquo;&nbsp;For example, operator 2 using machine 3 produces a spacer 51 mm long, while operator 1
+‘cell.’ For example, operator 2 using machine 3 produces a spacer 51 mm long, while operator 1
 using machine 2 produces a spacer which is 56 mm long. Note also that in this example we have
 referred to the machines by number and not by letter. This is not particularly important but it will
 simplify some of the notation used when we come to write out a general two-way ANOVA table
@@ -1077,1389 +1078,1389 @@ factors and check for this. In the case considered here (no interaction between 
 required sums of squares build easily on the relationship used in the one-way analysis of
 variance
     </p>
-    <!--l. 172
+<!--l. 172
 -->
-    <p class="noindent">
-     <!--l. 172
+<p class="noindent">
+<!--l. 172
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mi>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-         <mi>
+<mi>
           r
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
         +
        </mo>
-       <mi>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           E
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 174
+</mrow>
+</msub>
+</mrow>
+</math>
+</p>
+<!--l. 174
 -->
-    <p class="noindent">
+<p class="noindent">
      to become
     </p>
-    <!--l. 176
+<!--l. 176
 -->
-    <p class="noindent">
-     <!--l. 176
+<p class="noindent">
+<!--l. 176
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mi>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           A
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
         +
        </mo>
-       <mi>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           B
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
         +
        </mo>
-       <mi>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           E
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 178
+</mrow>
+</msub>
+</mrow>
+</math>
+</p>
+<!--l. 178
 -->
-    <p class="noindent">
+<p class="noindent">
      where
      <!--l. 178
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           A
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      represent the sums of
 squares corresponding to factors
      <!--l. 178
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         A
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and
      <!--l. 178
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         B
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      . In
 order to calculate the required sums of squares we lay out the table slightly more efficiently as
 follows.
     </p>
-    <!--l. 182
+<!--l. 182
 -->
-    <p class="noindent">
-     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table1.svg"/>
-    </p>
-    <!--l. 184
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table1.svg"/>
+</p>
+<!--l. 184
 -->
-    <p class="noindent">
-     <strong>
+<p class="noindent">
+<strong>
       Note 1
      </strong>
-    </p>
-    <!--l. 186
+</p>
+<!--l. 186
 -->
-    <p class="noindent">
+<p class="noindent">
      The
      <!--l. 186
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mo class="MathClass-punc">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
+</mrow>
+</math>
      notation means that summation takes place over that variable. For example, the five operator means
      <!--l. 187
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-punc">
+</mover>
+</mrow>
+<mrow>
+<mo class="MathClass-punc">
           .
          </mo>
-         <mi>
+<mi>
           j
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      are obtained as
      <!--l. 187
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mrow>
-         <mn>
+</mover>
+</mrow>
+<mrow>
+<mn>
           .1
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           46
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           56
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           55
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           47
          </mn>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           4
          </mn>
-        </mrow>
-       </mfrac>
-       <mo class="MathClass-rel">
+</mrow>
+</mfrac>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         51
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and so on, while the
 four machine means
      <!--l. 188
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mrow>
-         <mi>
+</mover>
+</mrow>
+<mrow>
+<mi>
           i
          </mi>
-         <mo class="MathClass-punc">
+<mo class="MathClass-punc">
           .
          </mo>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      are obtained as
      <!--l. 188
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mrow>
-         <mn>
+</mover>
+</mrow>
+<mrow>
+<mn>
           1
          </mn>
-         <mo class="MathClass-punc">
+<mo class="MathClass-punc">
           .
          </mo>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           46
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           54
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           48
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           46
          </mn>
-         <mo class="MathClass-bin">
+<mo class="MathClass-bin">
           +
          </mo>
-         <mn>
+<mn>
           51
          </mn>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           5
          </mn>
-        </mrow>
-       </mfrac>
-       <mo class="MathClass-rel">
+</mrow>
+</mfrac>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         49
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and so on. Put more generally (and this is just an example)
     </p>
-    <!--l. 191
+<!--l. 191
 -->
-    <p class="noindent">
-     <!--l. 191
+<p class="noindent">
+<!--l. 191
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-punc">
+</mover>
+</mrow>
+<mrow>
+<mo class="MathClass-punc">
           .
          </mo>
-         <mi>
+<mi>
           j
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <msubsup>
-          <mrow>
-           <mo class="MathClass-op">
-            &sum;
+<mfrac>
+<mrow>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+            ∑
            </mo>
-           <!--nolimits
+<!--nolimits
 -->
-          </mrow>
-          <mrow>
-           <mi>
+</mrow>
+<mrow>
+<mi>
             i
            </mi>
-           <mo class="MathClass-rel">
+<mo class="MathClass-rel">
             =
            </mo>
-           <mn>
+<mn>
             1
            </mn>
-          </mrow>
-          <mrow>
-           <mi>
+</mrow>
+<mrow>
+<mi>
             m
            </mi>
-          </mrow>
-         </msubsup>
-         <msub>
-          <mrow>
-           <mi>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
             x
            </mi>
-          </mrow>
-          <mrow>
-           <mi>
+</mrow>
+<mrow>
+<mi>
             i
            </mi>
-           <mi>
+<mi>
             j
            </mi>
-          </mrow>
-         </msub>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<mi>
           m
          </mi>
-        </mrow>
-       </mfrac>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 193
+</mrow>
+</mfrac>
+</mrow>
+</math>
+</p>
+<!--l. 193
 -->
-    <p class="noindent">
-     <strong>
+<p class="noindent">
+<strong>
       Note 2
      </strong>
-    </p>
-    <!--l. 195
+</p>
+<!--l. 195
 -->
-    <p class="noindent">
+<p class="noindent">
      Multiplying factors were used in the calculation of the machine sum of squares (four in this case
 since there are four machines) and the operator sum of squares (five in this case since there are five
 operators).
     </p>
-    <!--l. 199
+<!--l. 199
 -->
-    <p class="noindent">
-     <strong>
+<p class="noindent">
+<strong>
       Note 3
      </strong>
-    </p>
-    <!--l. 201
+</p>
+<!--l. 201
 -->
-    <p class="noindent">
-     The two statements &lsquo;Sum = 0&rsquo;&nbsp;are included purely as arithmetic checks.
+<p class="noindent">
+     The two statements ‘Sum = 0’ are included purely as arithmetic checks.
     </p>
-    <!--l. 203
+<!--l. 203
 -->
-    <p class="noindent">
+<p class="noindent">
      We also know that
      <!--l. 203
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           O
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         24
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and
      <!--l. 203
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           M
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         150
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      .
     </p>
-    <!--l. 205
+<!--l. 205
 -->
-    <p class="noindent">
-     <strong>
+<p class="noindent">
+<strong>
       Calculating the error sum of squares
      </strong>
-    </p>
-    <!--l. 207
+</p>
+<!--l. 207
 -->
-    <p class="noindent">
+<p class="noindent">
      Note that the total sum of squares is easy to obtain and that the error sum of squares is then
 obtained by straightforward subtraction.
     </p>
-    <!--l. 210
+<!--l. 210
 -->
-    <p class="noindent">
+<p class="noindent">
      The total sum of squares is given by summing the quantities
      <!--l. 210
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msup>
-        <mrow>
-         <mrow>
-          <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msup>
+<mrow>
+<mrow>
+<mo class="MathClass-open">
            (
           </mo>
-          <mrow>
-           <msub>
-            <mrow>
-             <mi>
+<mrow>
+<msub>
+<mrow>
+<mi>
               X
              </mi>
-            </mrow>
-            <mrow>
-             <mi>
+</mrow>
+<mrow>
+<mi>
               i
              </mi>
-             <mi>
+<mi>
               j
              </mi>
-            </mrow>
-           </msub>
-           <mo class="MathClass-bin">
-            &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mover accent="true">
-            <mrow>
-             <mover accent="true">
-              <mrow>
-               <mi>
+<mover accent="true">
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
                 X
                </mi>
-              </mrow>
-              <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
                ̄
               </mo>
-             </mover>
-            </mrow>
-            <mo class="MathClass-op">
+</mover>
+</mrow>
+<mo class="MathClass-op">
              ̄
             </mo>
-           </mover>
-          </mrow>
-          <mo class="MathClass-close">
+</mover>
+</mrow>
+<mo class="MathClass-close">
            )
           </mo>
-         </mrow>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-        </mrow>
-       </msup>
-      </mrow>
-     </math>
+</mrow>
+</msup>
+</mrow>
+</math>
      for the table of
 entries. Subtracting
      <!--l. 211
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mover accent="true">
-        <mrow>
-         <mover accent="true">
-          <mrow>
-           <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mover accent="true">
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
             X
            </mi>
-          </mrow>
-          <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
            ̄
           </mo>
-         </mover>
-        </mrow>
-        <mo class="MathClass-op">
+</mover>
+</mrow>
+<mo class="MathClass-op">
          ̄
         </mo>
-       </mover>
-       <mo class="MathClass-rel">
+</mover>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         53
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      from each table member and squaring gives:
     </p>
-    <div class="tabular">
-     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-5" rules="groups">
-      <colgroup id="TBL-5-1g">
-       <col id="TBL-5-1"/>
-      </colgroup>
-      <colgroup id="TBL-5-2g">
-       <col id="TBL-5-2"/>
-      </colgroup>
-      <colgroup id="TBL-5-3g">
-       <col id="TBL-5-3"/>
-      </colgroup>
-      <colgroup id="TBL-5-4g">
-       <col id="TBL-5-4"/>
-      </colgroup>
-      <colgroup id="TBL-5-5g">
-       <col id="TBL-5-5"/>
-      </colgroup>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-1-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-1-1" style="text-align:center; white-space:nowrap;">
-        <strong>
-         Operator&nbsp;
+<div class="tabular">
+<table cellpadding="0" cellspacing="0" class="tabular" id="TBL-5" rules="groups">
+<colgroup id="TBL-5-1g">
+<col id="TBL-5-1"/>
+</colgroup>
+<colgroup id="TBL-5-2g">
+<col id="TBL-5-2"/>
+</colgroup>
+<colgroup id="TBL-5-3g">
+<col id="TBL-5-3"/>
+</colgroup>
+<colgroup id="TBL-5-4g">
+<col id="TBL-5-4"/>
+</colgroup>
+<colgroup id="TBL-5-5g">
+<col id="TBL-5-5"/>
+</colgroup>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-1-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-1-1" style="text-align:center; white-space:nowrap;">
+<strong>
+         Operator 
          <!--l. 215
 -->
-         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-           <mrow>
-            <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
              (
             </mo>
-            <mrow>
-             <mi>
+<mrow>
+<mi>
               j
              </mi>
-            </mrow>
-            <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
              )
             </mo>
-           </mrow>
-          </mrow>
-         </math>
-        </strong>
-       </td>
-       <td class="td11" colspan="4" id="TBL-5-1-2" style="text-align:center; white-space:nowrap;">
-        <div class="multicolumn" style="text-align:center; white-space:nowrap;">
-         <strong>
+</mrow>
+</mrow>
+</math>
+</strong>
+</td>
+<td class="td11" colspan="4" id="TBL-5-1-2" style="text-align:center; white-space:nowrap;">
+<div class="multicolumn" style="text-align:center; white-space:nowrap;">
+<strong>
           Machine
          </strong>
-         &nbsp;
+          
          <!--l. 215
 -->
-         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-           <mrow>
-            <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
              (
             </mo>
-            <mrow>
-             <mi>
+<mrow>
+<mi>
               i
              </mi>
-            </mrow>
-            <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
              )
             </mo>
-           </mrow>
-          </mrow>
-         </math>
-        </div>
+</mrow>
+</mrow>
+</math>
+</div>
+</td>
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-2-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-2-1" style="text-align:center; white-space:nowrap;">
+</td>
+<td class="td11" id="TBL-5-2-2" style="text-align:center; white-space:nowrap;">
+         1 
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-2-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-2-1" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-2-3" style="text-align:center; white-space:nowrap;">
+         2 
        </td>
-       <td class="td11" id="TBL-5-2-2" style="text-align:center; white-space:nowrap;">
-        &nbsp;1&nbsp;
+<td class="td11" id="TBL-5-2-4" style="text-align:center; white-space:nowrap;">
+         3 
        </td>
-       <td class="td11" id="TBL-5-2-3" style="text-align:center; white-space:nowrap;">
-        &nbsp;2&nbsp;
+<td class="td11" id="TBL-5-2-5" style="text-align:center; white-space:nowrap;">
+         4 
        </td>
-       <td class="td11" id="TBL-5-2-4" style="text-align:center; white-space:nowrap;">
-        &nbsp;3&nbsp;
-       </td>
-       <td class="td11" id="TBL-5-2-5" style="text-align:center; white-space:nowrap;">
-        &nbsp;4&nbsp;
-       </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-3-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-3-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-3-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-3-1" style="text-align:center; white-space:nowrap;">
         1
        </td>
-       <td class="td11" id="TBL-5-3-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-3-2" style="text-align:center; white-space:nowrap;">
         49
        </td>
-       <td class="td11" id="TBL-5-3-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-3-3" style="text-align:center; white-space:nowrap;">
         9
        </td>
-       <td class="td11" id="TBL-5-3-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-3-4" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-3-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-3-5" style="text-align:center; white-space:nowrap;">
         36
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-4-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-4-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-4-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-4-1" style="text-align:center; white-space:nowrap;">
         2
        </td>
-       <td class="td11" id="TBL-5-4-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-4-2" style="text-align:center; white-space:nowrap;">
         1
        </td>
-       <td class="td11" id="TBL-5-4-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-4-3" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-4-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-4-4" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-4-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-4-5" style="text-align:center; white-space:nowrap;">
         9
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-5-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-5-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-5-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-5-1" style="text-align:center; white-space:nowrap;">
         3
        </td>
-       <td class="td11" id="TBL-5-5-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-5-2" style="text-align:center; white-space:nowrap;">
         25
        </td>
-       <td class="td11" id="TBL-5-5-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-5-3" style="text-align:center; white-space:nowrap;">
         9
        </td>
-       <td class="td11" id="TBL-5-5-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-5-4" style="text-align:center; white-space:nowrap;">
         9
        </td>
-       <td class="td11" id="TBL-5-5-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-5-5" style="text-align:center; white-space:nowrap;">
         25
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-6-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-6-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-6-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-6-1" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-6-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-6-2" style="text-align:center; white-space:nowrap;">
         49
        </td>
-       <td class="td11" id="TBL-5-6-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-6-3" style="text-align:center; white-space:nowrap;">
         49
        </td>
-       <td class="td11" id="TBL-5-6-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-6-4" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-6-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-6-5" style="text-align:center; white-space:nowrap;">
         36
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-7-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-7-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-7-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-7-1" style="text-align:center; white-space:nowrap;">
         5
        </td>
-       <td class="td11" id="TBL-5-7-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-7-2" style="text-align:center; white-space:nowrap;">
         4
        </td>
-       <td class="td11" id="TBL-5-7-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-7-3" style="text-align:center; white-space:nowrap;">
         0
        </td>
-       <td class="td11" id="TBL-5-7-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-7-4" style="text-align:center; white-space:nowrap;">
         0
        </td>
-       <td class="td11" id="TBL-5-7-5" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-5-7-5" style="text-align:center; white-space:nowrap;">
         4
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-5-8-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-5-8-1" style="text-align:center; white-space:nowrap;">
-       </td>
-      </tr>
-     </table>
-    </div>
-    <!--l. 231
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-5-8-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-5-8-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+</table>
+</div>
+<!--l. 231
 -->
-    <p class="noindent">
+<p class="noindent">
      The total sum of squares is
      <!--l. 231
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         S
        </mi>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           S
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         330
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      .
     </p>
-    <!--l. 233
+<!--l. 233
 -->
-    <p class="noindent">
+<p class="noindent">
      The error sum of squares is given by the result
      <!--tex4ht:inline
 -->
-    </p>
-    <!--l. 234
+</p>
+<!--l. 234
 -->
-    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mi>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+<mtr>
+<mtd class="eqnarray-1">
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            E
           </mi>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mi>
+</mtd>
+<mtd class="eqnarray-3">
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            T
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            A
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            B
           </mi>
-         </mrow>
-        </msub>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          330
         </mn>
-        <mo class="MathClass-bin">
-         &minus;
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          24
         </mn>
-        <mo class="MathClass-bin">
-         &minus;
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          150
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          156
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-     </mtable>
-    </math>
-    <!--l. 236
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+</mtable>
+</math>
+<!--l. 236
 -->
-    <!--l. 238
+<!--l. 238
 -->
-    <p class="noindent">
+<p class="noindent">
      At this stage we display the general two-way ANOVA table and then particularise the table for the
 example we are engaged in and draw conclusions by using the test as we have previously done with
 one-way ANOVA.
     </p>
-    <!--l. 243
+<!--l. 243
 -->
-    <p class="noindent">
-     <strong>
+<p class="noindent">
+<strong>
       A General Two-Way ANOVA Table
      </strong>
-    </p>
-    <!--l. 248
+</p>
+<!--l. 248
 -->
-    <!--l. 250
+<!--l. 250
 -->
-    <p class="noindent">
-     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table6.svg"/>
-    </p>
-    <!--l. 253
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table6.svg"/>
+</p>
+<!--l. 253
 -->
-    <p class="noindent">
+<p class="noindent">
      Hence the two-way ANOVA table for the example under consideration is
     </p>
-    <!--l. 260
+<!--l. 260
 -->
-    <!--l. 262
+<!--l. 262
 -->
-    <p class="noindent">
-     <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table7.svg"/>
-    </p>
-    <!--l. 265
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table7.svg"/>
+</p>
+<!--l. 265
 -->
-    <p class="noindent">
+<p class="noindent">
      From the
      <!--l. 265
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      -tables (at the
 end of the Workbook)
      <!--l. 265
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           F
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           4
          </mn>
-         <mo class="MathClass-punc">
+<mo class="MathClass-punc">
           ,
          </mo>
-         <mn>
+<mn>
           12
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         3.26
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and
      <!--l. 265
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           F
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           3
          </mn>
-         <mo class="MathClass-punc">
+<mo class="MathClass-punc">
           ,
          </mo>
-         <mn>
+<mn>
           12
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         3.49
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      . Since
      <!--l. 265
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>
         0.46
        </mn>
-       <mo class="MathClass-rel">
+<mo class="MathClass-rel">
         &lt;
        </mo>
-       <mn>
+<mn>
         3.26
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      we conclude
 that we
      <strong>
@@ -2469,19 +2470,19 @@ that we
 operators. Since
      <!--l. 267
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>
         3.85
        </mn>
-       <mo class="MathClass-rel">
+<mo class="MathClass-rel">
         &gt;
        </mo>
-       <mn>
+<mn>
         3.49
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      we conclude that we
      <strong>
       do
@@ -2489,2497 +2490,2497 @@ operators. Since
      have sufficient evidence at the 5% level of significance to reject the null
 hypothesis that there in no difference between the machines.
     </p>
-    <div class="framed">
-     <!--l. 291
+<div class="framed">
+<!--l. 291
 -->
-     <h5 class="likesubsubsectionHead">
-      <a href="#x4-70001.1" id="x4-70001.1">
+<h5 class="likesubsubsectionHead">
+<a href="#x4-70001.1" id="x4-70001.1">
        Key Point 2
       </a>
-     </h5>
-     <!--l. 291
+</h5>
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       If we have two factors,
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          A
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       and
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          B
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       , with
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          a
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       levels of
 factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          A
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       and
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          b
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       levels of
 factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          B
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       ,
 and one observation per cell, we can calculate the sum of squares as follows.
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       The sum of squares for factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          A
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       is
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            A
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mfrac>
-         <mrow>
-          <mn>
+<mfrac>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            b
           </mi>
-         </mrow>
-        </mfrac>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            a
           </mi>
-         </mrow>
-        </msubsup>
-        <msubsup>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msubsup>
+<mrow>
+<mi>
            A
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msubsup>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msubsup>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mfrac>
-         <mrow>
-          <msup>
-           <mrow>
-            <mi>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mi>
              G
             </mi>
-           </mrow>
-           <mrow>
-            <mn>
+</mrow>
+<mrow>
+<mn>
              2
             </mn>
-           </mrow>
-          </msup>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+</msup>
+</mrow>
+<mrow>
+<mi>
            N
           </mi>
-         </mrow>
-        </mfrac>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
+</mrow>
+</mfrac>
+<mspace class="qquad" width="2em">
+</mspace>
+<mstyle class="text">
+<mtext>
           with
          </mtext>
-        </mstyle>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+</mstyle>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          a
         </mi>
-        <mo class="MathClass-bin">
-         &minus;
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          1
         </mn>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
-          degrees&nbsp;of&nbsp;freedom
+<mspace class="nbsp" width="1em">
+</mspace>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+          degrees of freedom
          </mtext>
-        </mstyle>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 291
+</mstyle>
+</mrow>
+</math>
+</p>
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       and the sum of squares for factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          B
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       is
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            B
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mfrac>
-         <mrow>
-          <mn>
+<mfrac>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            a
           </mi>
-         </mrow>
-        </mfrac>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            b
           </mi>
-         </mrow>
-        </msubsup>
-        <msubsup>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msubsup>
+<mrow>
+<mi>
            B
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msubsup>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msubsup>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mfrac>
-         <mrow>
-          <msup>
-           <mrow>
-            <mi>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mi>
              G
             </mi>
-           </mrow>
-           <mrow>
-            <mn>
+</mrow>
+<mrow>
+<mn>
              2
             </mn>
-           </mrow>
-          </msup>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+</msup>
+</mrow>
+<mrow>
+<mi>
            N
           </mi>
-         </mrow>
-        </mfrac>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
+</mrow>
+</mfrac>
+<mspace class="qquad" width="2em">
+</mspace>
+<mstyle class="text">
+<mtext>
           with
          </mtext>
-        </mstyle>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+</mstyle>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          b
         </mi>
-        <mo class="MathClass-bin">
-         &minus;
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          1
         </mn>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
-          degrees&nbsp;of&nbsp;freedom
+<mspace class="nbsp" width="1em">
+</mspace>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+          degrees of freedom
          </mtext>
-        </mstyle>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 291
+</mstyle>
+</mrow>
+</math>
+</p>
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       where
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
            A
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            b
           </mi>
-         </mrow>
-        </msubsup>
-        <msub>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
            X
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mi>
+<mi>
            j
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
+</mrow>
+</msub>
+</mrow>
+</math>
       is the
 total for level
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          i
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       of factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          A
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       ,
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
            B
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            a
           </mi>
-         </mrow>
-        </msubsup>
-        <msub>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
            X
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mi>
+<mi>
            j
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
+</mrow>
+</msub>
+</mrow>
+</math>
       is the
 total for level
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          j
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       of factor
       <!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          B
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       ,
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          G
         </mi>
-        <mo class="MathClass-rel">
+<mo class="MathClass-rel">
          =
         </mo>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            a
           </mi>
-         </mrow>
-        </msubsup>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+</mrow>
+</msubsup>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            b
           </mi>
-         </mrow>
-        </msubsup>
-        <msub>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
            X
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mi>
+<mi>
            j
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
-      &nbsp;is
+</mrow>
+</msub>
+</mrow>
+</math>
+       is
 the overall total of the data, and
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          N
         </mi>
-        <mo class="MathClass-rel">
+<mo class="MathClass-rel">
          =
         </mo>
-        <mi>
+<mi>
          a
         </mi>
-        <mi>
+<mi>
          b
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       is
 the total number of observations.
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       The total sum of squares is
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            T
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            a
           </mi>
-         </mrow>
-        </msubsup>
-        <msubsup>
-         <mrow>
-          <mo class="MathClass-op">
-           &sum;
+</mrow>
+</msubsup>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+           ∑
           </mo>
-          <!--nolimits
+<!--nolimits
 -->
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            j
           </mi>
-          <mo class="MathClass-rel">
+<mo class="MathClass-rel">
            =
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            b
           </mi>
-         </mrow>
-        </msubsup>
-        <msubsup>
-         <mrow>
-          <mi>
+</mrow>
+</msubsup>
+<msubsup>
+<mrow>
+<mi>
            X
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            i
           </mi>
-          <mi>
+<mi>
            j
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msubsup>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msubsup>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mfrac>
-         <mrow>
-          <msup>
-           <mrow>
-            <mi>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mi>
              G
             </mi>
-           </mrow>
-           <mrow>
-            <mn>
+</mrow>
+<mrow>
+<mn>
              2
             </mn>
-           </mrow>
-          </msup>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+</msup>
+</mrow>
+<mrow>
+<mi>
            N
           </mi>
-         </mrow>
-        </mfrac>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
+</mrow>
+</mfrac>
+<mspace class="qquad" width="2em">
+</mspace>
+<mstyle class="text">
+<mtext>
           with
          </mtext>
-        </mstyle>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+</mstyle>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          N
         </mi>
-        <mo class="MathClass-bin">
-         &minus;
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          1
         </mn>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          d
         </mi>
-        <mi>
+<mi>
          e
         </mi>
-        <mi>
+<mi>
          g
         </mi>
-        <mi>
+<mi>
          r
         </mi>
-        <mi>
+<mi>
          e
         </mi>
-        <mi>
+<mi>
          e
         </mi>
-        <mi>
+<mi>
          s
         </mi>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          o
         </mi>
-        <mi>
+<mi>
          f
         </mi>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mi>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mi>
          f
         </mi>
-        <mi>
+<mi>
          r
         </mi>
-        <mi>
+<mi>
          e
         </mi>
-        <mi>
+<mi>
          e
         </mi>
-        <mi>
+<mi>
          d
         </mi>
-        <mi>
+<mi>
          o
         </mi>
-        <mi>
+<mi>
          m
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
+</p>
+<!--l. 291
+-->
+<p class="noindent">
+      The within-samples, or ‘error’, sum of squares can be found by subtraction. So
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      The within-samples, or &lsquo;error&rsquo;, sum of squares can be found by subtraction. So
-     </p>
-     <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
--->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            E
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            T
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            A
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            B
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 291
+</mrow>
+</msub>
+</mrow>
+</math>
+</p>
+<!--l. 291
 -->
-     <p class="noindent">
+<p class="noindent">
       with
      </p>
-     <!--l. 291
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mrow>
-         <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            N
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            a
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            b
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            a
           </mi>
-          <mi>
+<mi>
            b
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            a
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            b
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 291
+</mrow>
+</mrow>
+</math>
+</p>
+<!--l. 291
 -->
-     <p class="noindent">
-      <!--l. 291
+<p class="noindent">
+<!--l. 291
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mo class="MathClass-rel">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mrow>
-         <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            a
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-open">
+</mrow>
+<mrow>
+<mo class="MathClass-open">
           (
          </mo>
-         <mrow>
-          <mi>
+<mrow>
+<mi>
            b
           </mi>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            1
           </mn>
-         </mrow>
-         <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
           )
          </mo>
-        </mrow>
-        <mspace class="nbsp" width="1em">
-        </mspace>
-        <mstyle class="text">
-         <mtext>
-          degrees&nbsp;of&nbsp;freedom
+</mrow>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+          degrees of freedom
          </mtext>
-        </mstyle>
-       </mrow>
-      </math>
-     </p>
-    </div>
-    <!--l. 292
+</mstyle>
+</mrow>
+</math>
+</p>
+</div>
+<!--l. 292
 -->
-    <h5 class="likesubsubsectionHead">
-     <a class="btn btn-primary" href="#x4-80001.1" id="x4-80001.1">
+<h5 class="likesubsubsectionHead">
+<a class="btn btn-primary" href="#x4-80001.1" id="x4-80001.1">
       Task!
      </a>
-    </h5>
-    <!--l. 293
+</h5>
+<!--l. 293
 -->
-    <p class="noindent">
+<p class="noindent">
      A vehicle manufacturer wishes to test the ability of three types of steel-alloy panels to resist
 corrosion when three different paint types are applied. Three panels with differing steel-alloy
 composition are coated with three types of paint. The following coded data represent the ability of
 the painted panels to resist weathering.
     </p>
-    <div class="tabular">
-     <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-6" rules="groups">
-      <colgroup id="TBL-6-1g">
-       <col id="TBL-6-1"/>
-      </colgroup>
-      <colgroup id="TBL-6-2g">
-       <col id="TBL-6-2"/>
-      </colgroup>
-      <colgroup id="TBL-6-3g">
-       <col id="TBL-6-3"/>
-      </colgroup>
-      <colgroup id="TBL-6-4g">
-       <col id="TBL-6-4"/>
-      </colgroup>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-6-1-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-6-1-1" style="text-align:center; white-space:nowrap;">
-        <strong>
+<div class="tabular">
+<table cellpadding="0" cellspacing="0" class="tabular" id="TBL-6" rules="groups">
+<colgroup id="TBL-6-1g">
+<col id="TBL-6-1"/>
+</colgroup>
+<colgroup id="TBL-6-2g">
+<col id="TBL-6-2"/>
+</colgroup>
+<colgroup id="TBL-6-3g">
+<col id="TBL-6-3"/>
+</colgroup>
+<colgroup id="TBL-6-4g">
+<col id="TBL-6-4"/>
+</colgroup>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-6-1-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-6-1-1" style="text-align:center; white-space:nowrap;">
+<strong>
          Paint Type
         </strong>
-       </td>
-       <td class="td11" id="TBL-6-1-2" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-6-1-2" style="text-align:center; white-space:nowrap;">
+<strong>
          Steel-Alloy 1
         </strong>
-       </td>
-       <td class="td11" id="TBL-6-1-3" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-6-1-3" style="text-align:center; white-space:nowrap;">
+<strong>
          Steel-Alloy 2
         </strong>
-       </td>
-       <td class="td11" id="TBL-6-1-4" style="text-align:center; white-space:nowrap;">
-        <strong>
+</td>
+<td class="td11" id="TBL-6-1-4" style="text-align:center; white-space:nowrap;">
+<strong>
          Steel-Alloy 3
         </strong>
-       </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-6-2-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-6-2-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-6-2-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-6-2-1" style="text-align:center; white-space:nowrap;">
         1
        </td>
-       <td class="td11" id="TBL-6-2-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-2-2" style="text-align:center; white-space:nowrap;">
         40
        </td>
-       <td class="td11" id="TBL-6-2-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-2-3" style="text-align:center; white-space:nowrap;">
         51
        </td>
-       <td class="td11" id="TBL-6-2-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-2-4" style="text-align:center; white-space:nowrap;">
         56
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-6-3-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-6-3-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-6-3-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-6-3-1" style="text-align:center; white-space:nowrap;">
         2
        </td>
-       <td class="td11" id="TBL-6-3-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-3-2" style="text-align:center; white-space:nowrap;">
         54
        </td>
-       <td class="td11" id="TBL-6-3-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-3-3" style="text-align:center; white-space:nowrap;">
         55
        </td>
-       <td class="td11" id="TBL-6-3-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-3-4" style="text-align:center; white-space:nowrap;">
         50
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-6-4-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-6-4-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-6-4-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-6-4-1" style="text-align:center; white-space:nowrap;">
         3
        </td>
-       <td class="td11" id="TBL-6-4-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-4-2" style="text-align:center; white-space:nowrap;">
         47
        </td>
-       <td class="td11" id="TBL-6-4-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-4-3" style="text-align:center; white-space:nowrap;">
         56
        </td>
-       <td class="td11" id="TBL-6-4-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-6-4-4" style="text-align:center; white-space:nowrap;">
         50
        </td>
-      </tr>
-      <table:table-row table:style-name="hline-row">
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-       <table:table-cell table:style-name="hline-cell" table:value-type="string">
-        <text:p text:style-name="hline-p-hr">
-        </text:p>
-       </table:table-cell>
-      </table:table-row>
-      <tr id="TBL-6-5-" style="vertical-align:baseline;">
-       <td class="td11" id="TBL-6-5-1" style="text-align:center; white-space:nowrap;">
-       </td>
-      </tr>
-     </table>
-    </div>
-    <!--l. 310
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-6-5-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-6-5-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+</table>
+</div>
+<!--l. 310
 -->
-    <p class="noindent">
+<p class="noindent">
      Use a two-way ANOVA procedure to determine whether any difference in the ability of the panels to
 resist corrosion may be assigned to either the type of paint or the steel-alloy composition of the
 panels.
     </p>
-    <!--l. 380
+<!--l. 380
 -->
-    <h5 class="likesubsubsectionHead">
-     <button aria-controls="x4-900011" aria-expanded="false" class="btn btn-success" data-target="#x4-900011" data-toggle="collapse" role="button">
+<h5 class="likesubsubsectionHead">
+<button aria-controls="x4-900011" aria-expanded="false" class="btn btn-success" data-target="#x4-900011" data-toggle="collapse" role="button">
       Answer
      </button>
-    </h5>
-    <div class="collapse" id="x4-900011">
-     <!--l. 380
+</h5>
+<div class="collapse" id="x4-900011">
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Our hypotheses may be stated as follows.
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Paint type
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mfenced close="" open="{" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="left">
-             <msub>
-              <mrow>
-               <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfenced close="" open="{" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                 H
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 0
                </mn>
-              </mrow>
-             </msub>
-             <mspace class="nbsp" width="1em">
-             </mspace>
-             <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mspace class="nbsp" width="1em">
+</mspace>
+<mo class="MathClass-punc">
               :
              </mo>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 1
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
               =
              </mo>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 2
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
               =
              </mo>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 3
                </mn>
-              </mrow>
-             </msub>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="left">
-             <msub>
-              <mrow>
-               <mi>
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                 H
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 1
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
               :
              </mo>
-             <mspace class="nbsp" width="1em">
-             </mspace>
-             <mstyle class="text">
-              <mtext>
-               At&nbsp;least&nbsp;one&nbsp;of&nbsp;the&nbsp;means&nbsp;is&nbsp;different&nbsp;from&nbsp;the&nbsp;others
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+               At least one of the means is different from the others
               </mtext>
-             </mstyle>
-            </mtd>
-           </mtr>
-           <!--l
+</mstyle>
+</mtd>
+</mtr>
+<!--l
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 380
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Steel-Alloy
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mfenced close="" open="{" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="left">
-             <msub>
-              <mrow>
-               <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfenced close="" open="{" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                 H
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 0
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
               :
              </mo>
-             <mspace class="nbsp" width="1em">
-             </mspace>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<mspace class="nbsp" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 1
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
               =
              </mo>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 2
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
               =
              </mo>
-             <msub>
-              <mrow>
-               <mi>
-                &mu;
+<msub>
+<mrow>
+<mi>
+                μ
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 3
                </mn>
-              </mrow>
-             </msub>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="left">
-             <msub>
-              <mrow>
-               <mi>
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<msub>
+<mrow>
+<mi>
                 H
                </mi>
-              </mrow>
-              <mrow>
-               <mn>
+</mrow>
+<mrow>
+<mn>
                 1
                </mn>
-              </mrow>
-             </msub>
-             <mo class="MathClass-punc">
+</mrow>
+</msub>
+<mo class="MathClass-punc">
               :
              </mo>
-             <mspace class="nbsp" width="1em">
-             </mspace>
-             <mstyle class="text">
-              <mtext>
-               At&nbsp;least&nbsp;one&nbsp;of&nbsp;the&nbsp;means&nbsp;is&nbsp;different&nbsp;from&nbsp;the&nbsp;others
+<mspace class="nbsp" width="1em">
+</mspace>
+<mstyle class="text">
+<mtext>
+               At least one of the means is different from the others
               </mtext>
-             </mstyle>
-            </mtd>
-           </mtr>
-           <!--l
+</mstyle>
+</mtd>
+</mtr>
+<!--l
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 380
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Following the methods of calculation outlined above we obtain:
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
-      <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table2.svg"/>
-     </p>
-     <!--l. 380
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table2.svg"/>
+</p>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Hence
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            P
           </mi>
-          <mi>
+<mi>
            a
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          24
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       and
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            S
           </mi>
-          <mi>
+<mi>
            t
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          78
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       . We now
 require
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            E
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
+</mrow>
+</msub>
+</mrow>
+</math>
       .
 The calculations are as follows.
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       In the table below, the predicted outputs are given in parentheses.
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
-      <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table3.svg"/>
-     </p>
-     <!--l. 380
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table3.svg"/>
+</p>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       A table of squared residuals is easily obtained as
      </p>
-     <div class="tabular">
-      <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-9" rules="groups">
-       <colgroup id="TBL-9-1g">
-        <col id="TBL-9-1"/>
-       </colgroup>
-       <colgroup id="TBL-9-2g">
-        <col id="TBL-9-2"/>
-       </colgroup>
-       <colgroup id="TBL-9-3g">
-        <col id="TBL-9-3"/>
-       </colgroup>
-       <colgroup id="TBL-9-4g">
-        <col id="TBL-9-4"/>
-       </colgroup>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-1-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-1-1" style="text-align:center; white-space:nowrap;">
-         <strong>
+<div class="tabular">
+<table cellpadding="0" cellspacing="0" class="tabular" id="TBL-9" rules="groups">
+<colgroup id="TBL-9-1g">
+<col id="TBL-9-1"/>
+</colgroup>
+<colgroup id="TBL-9-2g">
+<col id="TBL-9-2"/>
+</colgroup>
+<colgroup id="TBL-9-3g">
+<col id="TBL-9-3"/>
+</colgroup>
+<colgroup id="TBL-9-4g">
+<col id="TBL-9-4"/>
+</colgroup>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-1-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-1-1" style="text-align:center; white-space:nowrap;">
+<strong>
           Paint
          </strong>
-         <!--l. 380
+<!--l. 380
 -->
-         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-           <mrow>
-            <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
              (
             </mo>
-            <mrow>
-             <mi>
+<mrow>
+<mi>
               j
              </mi>
-            </mrow>
-            <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
              )
             </mo>
-           </mrow>
-          </mrow>
-         </math>
-        </td>
-        <td class="td11" colspan="3" id="TBL-9-1-2" style="text-align:center; white-space:nowrap;">
-         <div class="multicolumn" style="text-align:center; white-space:nowrap;">
-          <strong>
+</mrow>
+</mrow>
+</math>
+</td>
+<td class="td11" colspan="3" id="TBL-9-1-2" style="text-align:center; white-space:nowrap;">
+<div class="multicolumn" style="text-align:center; white-space:nowrap;">
+<strong>
            Steel
           </strong>
-          <!--l. 380
+<!--l. 380
 -->
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-           <mrow>
-            <mrow>
-             <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
               (
              </mo>
-             <mrow>
-              <mi>
+<mrow>
+<mi>
                i
               </mi>
-             </mrow>
-             <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
               )
              </mo>
-            </mrow>
-           </mrow>
-          </math>
-         </div>
+</mrow>
+</mrow>
+</math>
+</div>
+</td>
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-2-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-2-1" style="text-align:center; white-space:nowrap;">
+</td>
+<td class="td11" id="TBL-9-2-2" style="text-align:center; white-space:nowrap;">
+          1 
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-2-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-2-1" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-2-3" style="text-align:center; white-space:nowrap;">
+          2 
         </td>
-        <td class="td11" id="TBL-9-2-2" style="text-align:center; white-space:nowrap;">
-         &nbsp;1&nbsp;
+<td class="td11" id="TBL-9-2-4" style="text-align:center; white-space:nowrap;">
+          3 
         </td>
-        <td class="td11" id="TBL-9-2-3" style="text-align:center; white-space:nowrap;">
-         &nbsp;2&nbsp;
-        </td>
-        <td class="td11" id="TBL-9-2-4" style="text-align:center; white-space:nowrap;">
-         &nbsp;3&nbsp;
-        </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-3-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-3-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-3-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-3-1" style="text-align:center; white-space:nowrap;">
          1
         </td>
-        <td class="td11" id="TBL-9-3-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-3-2" style="text-align:center; white-space:nowrap;">
          25
         </td>
-        <td class="td11" id="TBL-9-3-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-3-3" style="text-align:center; white-space:nowrap;">
          1
         </td>
-        <td class="td11" id="TBL-9-3-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-3-4" style="text-align:center; white-space:nowrap;">
          36
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-4-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-4-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-4-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-4-1" style="text-align:center; white-space:nowrap;">
          2
         </td>
-        <td class="td11" id="TBL-9-4-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-4-2" style="text-align:center; white-space:nowrap;">
          25
         </td>
-        <td class="td11" id="TBL-9-4-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-4-3" style="text-align:center; white-space:nowrap;">
          1
         </td>
-        <td class="td11" id="TBL-9-4-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-4-4" style="text-align:center; white-space:nowrap;">
          16
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-5-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-5-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-5-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-5-1" style="text-align:center; white-space:nowrap;">
          3
         </td>
-        <td class="td11" id="TBL-9-5-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-5-2" style="text-align:center; white-space:nowrap;">
          0
         </td>
-        <td class="td11" id="TBL-9-5-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-5-3" style="text-align:center; white-space:nowrap;">
          4
         </td>
-        <td class="td11" id="TBL-9-5-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-9-5-4" style="text-align:center; white-space:nowrap;">
          4
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-9-6-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-9-6-1" style="text-align:center; white-space:nowrap;">
-        </td>
-       </tr>
-      </table>
-     </div>
-     <!--l. 380
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-9-6-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-9-6-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+</table>
+</div>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       Hence the residual sum of squares is
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            E
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          112
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       .
 The total sum of squares is given by subtracting
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mover accent="true">
-         <mrow>
-          <mover accent="true">
-           <mrow>
-            <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mover accent="true">
+<mrow>
+<mover accent="true">
+<mrow>
+<mi>
              X
             </mi>
-           </mrow>
-           <mo class="MathClass-op">
+</mrow>
+<mo class="MathClass-op">
             ̄
            </mo>
-          </mover>
-         </mrow>
-         <mo class="MathClass-op">
+</mover>
+</mrow>
+<mo class="MathClass-op">
           ̄
          </mo>
-        </mover>
-        <mo class="MathClass-rel">
+</mover>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          51
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       from
 each table member and squaring to obtain
      </p>
-     <div class="tabular">
-      <table cellpadding="0" cellspacing="0" class="tabular" id="TBL-10" rules="groups">
-       <colgroup id="TBL-10-1g">
-        <col id="TBL-10-1"/>
-       </colgroup>
-       <colgroup id="TBL-10-2g">
-        <col id="TBL-10-2"/>
-       </colgroup>
-       <colgroup id="TBL-10-3g">
-        <col id="TBL-10-3"/>
-       </colgroup>
-       <colgroup id="TBL-10-4g">
-        <col id="TBL-10-4"/>
-       </colgroup>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-1-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-1-1" style="text-align:center; white-space:nowrap;">
-         <strong>
+<div class="tabular">
+<table cellpadding="0" cellspacing="0" class="tabular" id="TBL-10" rules="groups">
+<colgroup id="TBL-10-1g">
+<col id="TBL-10-1"/>
+</colgroup>
+<colgroup id="TBL-10-2g">
+<col id="TBL-10-2"/>
+</colgroup>
+<colgroup id="TBL-10-3g">
+<col id="TBL-10-3"/>
+</colgroup>
+<colgroup id="TBL-10-4g">
+<col id="TBL-10-4"/>
+</colgroup>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-1-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-1-1" style="text-align:center; white-space:nowrap;">
+<strong>
           Paint
          </strong>
-         <!--l. 380
+<!--l. 380
 -->
-         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-           <mrow>
-            <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
              (
             </mo>
-            <mrow>
-             <mi>
+<mrow>
+<mi>
               j
              </mi>
-            </mrow>
-            <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
              )
             </mo>
-           </mrow>
-          </mrow>
-         </math>
-        </td>
-        <td class="td11" colspan="3" id="TBL-10-1-2" style="text-align:center; white-space:nowrap;">
-         <div class="multicolumn" style="text-align:center; white-space:nowrap;">
-          <strong>
+</mrow>
+</mrow>
+</math>
+</td>
+<td class="td11" colspan="3" id="TBL-10-1-2" style="text-align:center; white-space:nowrap;">
+<div class="multicolumn" style="text-align:center; white-space:nowrap;">
+<strong>
            Steel
           </strong>
-          <!--l. 380
+<!--l. 380
 -->
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-           <mrow>
-            <mrow>
-             <mo class="MathClass-open">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mo class="MathClass-open">
               (
              </mo>
-             <mrow>
-              <mi>
+<mrow>
+<mi>
                i
               </mi>
-             </mrow>
-             <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
               )
              </mo>
-            </mrow>
-           </mrow>
-          </math>
-         </div>
+</mrow>
+</mrow>
+</math>
+</div>
+</td>
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-2-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-2-1" style="text-align:center; white-space:nowrap;">
+</td>
+<td class="td11" id="TBL-10-2-2" style="text-align:center; white-space:nowrap;">
+          1 
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-2-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-2-1" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-2-3" style="text-align:center; white-space:nowrap;">
+          2 
         </td>
-        <td class="td11" id="TBL-10-2-2" style="text-align:center; white-space:nowrap;">
-         &nbsp;1&nbsp;
+<td class="td11" id="TBL-10-2-4" style="text-align:center; white-space:nowrap;">
+          3 
         </td>
-        <td class="td11" id="TBL-10-2-3" style="text-align:center; white-space:nowrap;">
-         &nbsp;2&nbsp;
-        </td>
-        <td class="td11" id="TBL-10-2-4" style="text-align:center; white-space:nowrap;">
-         &nbsp;3&nbsp;
-        </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-3-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-3-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-3-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-3-1" style="text-align:center; white-space:nowrap;">
          1
         </td>
-        <td class="td11" id="TBL-10-3-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-3-2" style="text-align:center; white-space:nowrap;">
          121
         </td>
-        <td class="td11" id="TBL-10-3-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-3-3" style="text-align:center; white-space:nowrap;">
          0
         </td>
-        <td class="td11" id="TBL-10-3-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-3-4" style="text-align:center; white-space:nowrap;">
          25
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-4-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-4-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-4-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-4-1" style="text-align:center; white-space:nowrap;">
          2
         </td>
-        <td class="td11" id="TBL-10-4-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-4-2" style="text-align:center; white-space:nowrap;">
          9
         </td>
-        <td class="td11" id="TBL-10-4-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-4-3" style="text-align:center; white-space:nowrap;">
          16
         </td>
-        <td class="td11" id="TBL-10-4-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-4-4" style="text-align:center; white-space:nowrap;">
          1
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-5-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-5-1" style="text-align:center; white-space:nowrap;">
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-5-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-5-1" style="text-align:center; white-space:nowrap;">
          3
         </td>
-        <td class="td11" id="TBL-10-5-2" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-5-2" style="text-align:center; white-space:nowrap;">
          16
         </td>
-        <td class="td11" id="TBL-10-5-3" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-5-3" style="text-align:center; white-space:nowrap;">
          25
         </td>
-        <td class="td11" id="TBL-10-5-4" style="text-align:center; white-space:nowrap;">
+<td class="td11" id="TBL-10-5-4" style="text-align:center; white-space:nowrap;">
          1
         </td>
-       </tr>
-       <table:table-row table:style-name="hline-row">
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-        <table:table-cell table:style-name="hline-cell" table:value-type="string">
-         <text:p text:style-name="hline-p-hr">
-         </text:p>
-        </table:table-cell>
-       </table:table-row>
-       <tr id="TBL-10-6-" style="vertical-align:baseline;">
-        <td class="td11" id="TBL-10-6-1" style="text-align:center; white-space:nowrap;">
-        </td>
-       </tr>
-      </table>
-     </div>
-     <!--l. 380
+</tr>
+<table:table-row table:style-name="hline-row">
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+<table:table-cell table:style-name="hline-cell" table:value-type="string">
+<text:p text:style-name="hline-p-hr">
+</text:p>
+</table:table-cell>
+</table:table-row>
+<tr id="TBL-10-6-" style="vertical-align:baseline;">
+<td class="td11" id="TBL-10-6-1" style="text-align:center; white-space:nowrap;">
+</td>
+</tr>
+</table>
+</div>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       The total sum of squares is
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            T
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          214
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       . We
 should now check to see that
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            T
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            P
           </mi>
-          <mi>
+<mi>
            a
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            S
           </mi>
-          <mi>
+<mi>
            t
           </mi>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mi>
+<mi>
          S
         </mi>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            S
           </mi>
-         </mrow>
-         <mrow>
-          <mi>
+</mrow>
+<mrow>
+<mi>
            E
           </mi>
-         </mrow>
-        </msub>
-       </mrow>
-      </math>
+</mrow>
+</msub>
+</mrow>
+</math>
       .
 Substitution gives
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>
          214
         </mn>
-        <mo class="MathClass-rel">
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          24
         </mn>
-        <mo class="MathClass-bin">
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          78
         </mn>
-        <mo class="MathClass-bin">
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          112
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       which is correct.
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       The values of
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          F
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       are calculated as shown in the ANOVA table below.
      </p>
-     <!--l. 380
+<!--l. 380
 -->
-     <!--l. 380
+<!--l. 380
 -->
-     <p class="noindent">
-      <img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table8.svg"/>
-     </p>
-     <!--l. 380
+<p class="noindent">
+<img alt="No alt text was set. Please request alt text from the person who provided you with this resource." src="./figures/pdf/table8.svg"/>
+</p>
+<!--l. 380
 -->
-     <p class="noindent">
+<p class="noindent">
       From the
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          F
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       -tables the
 critical values of
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <msub>
-         <mrow>
-          <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
            F
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-          <mo class="MathClass-punc">
+<mo class="MathClass-punc">
            ,
           </mo>
-          <mn>
+<mn>
            4
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
          =
         </mo>
-        <mn>
+<mn>
          6.94
         </mn>
-       </mrow>
-      </math>
+</mrow>
+</math>
       and since
 both of the calculated
       <!--l. 380
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
          F
         </mi>
-       </mrow>
-      </math>
+</mrow>
+</math>
       values are less than 6.94 we conclude that we do not have sufficient evidence to reject either null
 hypothesis.
      </p>
-    </div>
-   </main>
-   <footer>
-    <hr/>
+</div>
+</main>
+<footer>
+<hr/>
     Original work was created by
     <a href="https://www.lboro.ac.uk/departments/mlsc/student-resources/helm-workbooks/consortium-members/">
      the HELM consortium.
     </a>
-    <br/>
+<br/>
     This work is licensed under a
     <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">
      Creative Commons Attribution-NonCommercial 4.0 International License
     </a>
-   </footer>
-   <nav aria-labelledby="botnav">
-    <div id="botnav">
+</footer>
+<nav aria-labelledby="botnav">
+<div id="botnav">
      [
      <a href="44_2_two_way_anova-webse2.html">
       next
@@ -5002,9 +5003,9 @@ hypothesis.
      </a>
      ]
     </div>
-   </nav>
-   <a id="tail44_2_two_way_anova-webse1.html">
-   </a>
-  </div>
- </body>
+</nav>
+<a id="tail44_2_two_way_anova-webse1.html">
+</a>
+</div>
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics --></body>
 </html>

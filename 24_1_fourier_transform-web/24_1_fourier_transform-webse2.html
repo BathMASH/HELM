@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
- <head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+<title>
    Informal derivation of the Fourier transform
   </title>
-  <meta charset="utf-8"/>
-  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
-  <meta content="True" name="HandheldFriendly"/>
-  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
-  <link href="24_1_fourier_transform-web.css" rel="stylesheet" type="text/css"/>
-  <link href="additional.css" rel="stylesheet" type="text/css"/>
-  <script type="text/x-mathjax-config">
+<meta charset="utf-8"/>
+<meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+<link href="24_1_fourier_transform-web.css" rel="stylesheet" type="text/css"/>
+<link href="additional.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
    MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
   "fast-preview": {disabled: true}, 
   explorer:{ subtitle: true }, 
@@ -34,7 +35,7 @@
   menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
   });
   </script>
-  <script type="text/x-mathjax-config">
+<script type="text/x-mathjax-config">
    MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
   var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
   while (nodes.length) { 
@@ -42,22 +43,22 @@
   } 
   }, 20);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
-  </script>
-  <style type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+</script>
+<style type="text/css">
    ".MathJax_MathML" {text-indent: 0;}
   </style>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
-  </script>
-  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
- </head>
- <body>
-  <div class="container">
-   <nav aria-labelledby="topnav">
-    <div id="topnav">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+<link href="toplayer.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+<nav aria-labelledby="topnav">
+<div id="topnav">
      [
      <a href="#main">
       Skip navigation
@@ -84,1631 +85,1631 @@
      </a>
      ]
     </div>
-   </nav>
-   <main id="main" role="main">
-    <h3 class="sectionHead">
-     <span class="titlemark">
+</nav>
+<main id="main" role="main">
+<h3 class="sectionHead">
+<span class="titlemark">
       2
      </span>
-     <a href="24_1_fourier_transform-web.html#QQ2-5-6" id="x5-60002">
+<a href="24_1_fourier_transform-web.html#QQ2-5-6" id="x5-60002">
       Informal derivation of the Fourier transform
      </a>
-    </h3>
-    <!--l. 101
+</h3>
+<!--l. 101
 -->
-    <p class="noindent">
+<p class="noindent">
      Recall that if
      <!--l. 101
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      is a period
      <!--l. 101
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         T
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      function, which we will temporarily re-write as
      <!--l. 102
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           f
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mrow>
-        <mo class="MathClass-open">
+</mrow>
+</msub>
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      for emphasis, then we can expand it in a complex Fourier series,
     </p>
-    <!--l. 103
+<!--l. 103
 -->
-    <p class="noindent">
-     <!--l. 103
+<p class="noindent">
+<!--l. 103
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<msub>
+<mrow>
+<mi>
           f
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mrow>
-        <mo class="MathClass-open">
+</mrow>
+</msub>
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∑
          </mo>
-         <!--nolimits
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-         <mo class="MathClass-rel">
+<mo class="MathClass-rel">
           =
          </mo>
-         <mo class="MathClass-bin">
-          &minus;
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <msub>
-        <mrow>
-         <mi>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
           c
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-        </mrow>
-       </msub>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+</msub>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
+</mstyle>
+<mi>
           n
          </mi>
-         <msub>
-          <mrow>
-           <mi>
-            &omega;
+<msub>
+<mrow>
+<mi>
+            ω
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             0
            </mn>
-          </mrow>
-         </msub>
-         <mi>
+</mrow>
+</msub>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-      </mrow>
-     </math>
+</mrow>
+</msup>
+</mrow>
+</math>
      (1)
     </p>
-    <!--l. 104
+<!--l. 104
 -->
-    <p class="noindent">
+<p class="noindent">
      where
      <!--l. 104
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </mfrac>
-      </mrow>
-     </math>
+</mrow>
+</mfrac>
+</mrow>
+</math>
      . In words, harmonics of frequency
      <!--l. 106
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         n
        </mi>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mi>
+<mi>
         n
        </mi>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </mfrac>
-       <mspace class="quad" width="1em">
-       </mspace>
-       <mi>
+</mrow>
+</mfrac>
+<mspace class="quad" width="1em">
+</mspace>
+<mi>
         n
        </mi>
-       <mo class="MathClass-rel">
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         0
        </mn>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         ,
        </mo>
-       <mo class="MathClass-bin">
-        &plusmn;
+<mo class="MathClass-bin">
+        ±
        </mo>
-       <mn>
+<mn>
         1
        </mn>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         ,
        </mo>
-       <mo class="MathClass-bin">
-        &plusmn;
+<mo class="MathClass-bin">
+        ±
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         ,
        </mo>
-       <mo class="MathClass-op">
-        &hellip;
+<mo class="MathClass-op">
+        …
        </mo>
-      </mrow>
-     </math>
+</mrow>
+</math>
      are present in the series and these frequencies are separated by
     </p>
-    <!--l. 108
+<!--l. 108
 -->
-    <p class="noindent">
-     <!--l. 108
+<p class="noindent">
+<!--l. 108
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         n
        </mi>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
-        &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           n
          </mi>
-         <mo class="MathClass-bin">
-          &minus;
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mn>
+<mn>
           1
          </mn>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+</mrow>
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </mfrac>
-       <mo class="MathClass-punc">
+</mrow>
+</mfrac>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 110
+</mrow>
+</math>
+</p>
+<!--l. 110
 -->
-    <p class="noindent">
+<p class="noindent">
      Hence, as
      <!--l. 110
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         T
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      increases the frequency separation becomes smaller and can be conveniently written as
      <!--l. 111
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &Delta;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        Δ
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      . This suggests that as
      <!--l. 111
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         T
        </mi>
-       <mo class="MathClass-rel">
-        &rarr;
+<mo class="MathClass-rel">
+        →
        </mo>
-       <mi>
-        &infin;
+<mi>
+        ∞
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      , corresponding to a non-periodic function, then
      <!--l. 113
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &Delta;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        Δ
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-       <mo class="MathClass-rel">
-        &rarr;
+<mo class="MathClass-rel">
+        →
        </mo>
-       <mn>
+<mn>
         0
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and the frequency representation contains
      <strong>
       all
      </strong>
      frequency harmonics.
     </p>
-    <!--l. 115
+<!--l. 115
 -->
-    <p class="noindent">
+<p class="noindent">
      To see this in a little more detail, we recall (
      <a href="../index.html#23-contents-section">
-      <strong>
+<strong>
        HELM booklet
       </strong>
-     </a>
-     &nbsp;23: Fourier series) that the complex Fourier coefficients
+</a>
+      23: Fourier series) that the complex Fourier coefficients
      <!--l. 116
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           c
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      are given by
     </p>
-    <!--l. 117
+<!--l. 117
 -->
-    <p class="noindent">
-     <!--l. 117
+<p class="noindent">
+<!--l. 117
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<msub>
+<mrow>
+<mi>
           c
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </mfrac>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mfrac>
-          <mrow>
-           <mi>
+<mfrac>
+<mrow>
+<mi>
             T
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             2
            </mn>
-          </mrow>
-         </mfrac>
-        </mrow>
-        <mrow>
-         <mfrac>
-          <mrow>
-           <mi>
+</mrow>
+</mfrac>
+</mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>
             T
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             2
            </mn>
-          </mrow>
-         </mfrac>
-        </mrow>
-       </msubsup>
-       <msub>
-        <mrow>
-         <mi>
+</mrow>
+</mfrac>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
           f
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mrow>
-        <mo class="MathClass-open">
+</mrow>
+</msub>
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mstyle class="text">
-          <mtext>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
+</mstyle>
+<mi>
           n
          </mi>
-         <msub>
-          <mrow>
-           <mi>
-            &omega;
+<msub>
+<mrow>
+<mi>
+            ω
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             0
            </mn>
-          </mrow>
-         </msub>
-         <mi>
+</mrow>
+</msub>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
+<mi>
         t
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
+</mrow>
+</math>
      (2)
     </p>
-    <!--l. 118
+<!--l. 118
 -->
-    <p class="noindent">
+<p class="noindent">
      Putting
      <!--l. 118
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </mfrac>
-      </mrow>
-     </math>
+</mrow>
+</mfrac>
+</mrow>
+</math>
      as
      <!--l. 118
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msub>
-          <mrow>
-           <mi>
-            &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>
+            ω
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             0
            </mn>
-          </mrow>
-         </msub>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-       </mfrac>
-      </mrow>
-     </math>
+</mrow>
+</mfrac>
+</mrow>
+</math>
      and then substituting (2) in (1) we get
     </p>
-    <!--l. 119
+<!--l. 119
 -->
-    <p class="noindent">
-     <!--l. 119
+<p class="noindent">
+<!--l. 119
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<msub>
+<mrow>
+<mi>
           f
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           T
          </mi>
-        </mrow>
-       </msub>
-       <mrow>
-        <mo class="MathClass-open">
+</mrow>
+</msub>
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &sum;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∑
          </mo>
-         <!--nolimits
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-         <mo class="MathClass-rel">
+<mo class="MathClass-rel">
           =
          </mo>
-         <mo class="MathClass-bin">
-          &minus;
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mfenced close="}" open="{" separators="">
-        <mrow>
-         <mfrac>
-          <mrow>
-           <msub>
-            <mrow>
-             <mi>
-              &omega;
+</mrow>
+</msubsup>
+<mfenced close="}" open="{" separators="">
+<mrow>
+<mfrac>
+<mrow>
+<msub>
+<mrow>
+<mi>
+              ω
              </mi>
-            </mrow>
-            <mrow>
-             <mn>
+</mrow>
+<mrow>
+<mn>
               0
              </mn>
-            </mrow>
-           </msub>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<mn>
             2
            </mn>
-           <mi>
-            &pi;
+<mi>
+            π
            </mi>
-          </mrow>
-         </mfrac>
-         <msubsup>
-          <mrow>
-           <mo class="MathClass-op">
-            &int;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+            ∫
             <!--nolimits
 -->
-           </mo>
-           <!--nolimits
+</mo>
+<!--nolimits
 -->
-          </mrow>
-          <mrow>
-           <mo class="MathClass-bin">
-            &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mfrac>
-            <mrow>
-             <mi>
+<mfrac>
+<mrow>
+<mi>
               T
              </mi>
-            </mrow>
-            <mrow>
-             <mn>
+</mrow>
+<mrow>
+<mn>
               2
              </mn>
-            </mrow>
-           </mfrac>
-          </mrow>
-          <mrow>
-           <mfrac>
-            <mrow>
-             <mi>
+</mrow>
+</mfrac>
+</mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>
               T
              </mi>
-            </mrow>
-            <mrow>
-             <mn>
+</mrow>
+<mrow>
+<mn>
               2
              </mn>
-            </mrow>
-           </mfrac>
-          </mrow>
-         </msubsup>
-         <msub>
-          <mrow>
-           <mi>
+</mrow>
+</mfrac>
+</mrow>
+</msubsup>
+<msub>
+<mrow>
+<mi>
             f
            </mi>
-          </mrow>
-          <mrow>
-           <mi>
+</mrow>
+<mrow>
+<mi>
             T
            </mi>
-          </mrow>
-         </msub>
-         <mrow>
-          <mo class="MathClass-open">
+</mrow>
+</msub>
+<mrow>
+<mo class="MathClass-open">
            (
           </mo>
-          <mrow>
-           <mi>
+<mrow>
+<mi>
             t
            </mi>
-          </mrow>
-          <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
            )
           </mo>
-         </mrow>
-         <msup>
-          <mrow>
-           <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
             e
            </mi>
-          </mrow>
-          <mrow>
-           <mo class="MathClass-bin">
-            &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mstyle class="text">
-            <mtext>
+<mstyle class="text">
+<mtext>
              i
             </mtext>
-           </mstyle>
-           <mi>
+</mstyle>
+<mi>
             n
            </mi>
-           <msub>
-            <mrow>
-             <mi>
-              &omega;
+<msub>
+<mrow>
+<mi>
+              ω
              </mi>
-            </mrow>
-            <mrow>
-             <mn>
+</mrow>
+<mrow>
+<mn>
               0
              </mn>
-            </mrow>
-           </msub>
-           <mi>
+</mrow>
+</msub>
+<mi>
             t
            </mi>
-          </mrow>
-         </msup>
-         <mspace class="thinspace" width="0.3em">
-         </mspace>
-         <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
           d
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </mfenced>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+</mfenced>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
+</mstyle>
+<mi>
           n
          </mi>
-         <msub>
-          <mrow>
-           <mi>
-            &omega;
+<msub>
+<mrow>
+<mi>
+            ω
            </mi>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             0
            </mn>
-          </mrow>
-         </msub>
-         <mi>
+</mrow>
+</msub>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mo class="MathClass-punc">
+</mrow>
+</msup>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 121
+</mrow>
+</math>
+</p>
+<!--l. 121
 -->
-    <p class="noindent">
+<p class="noindent">
      In view of the discussion above, as
      <!--l. 121
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         T
        </mi>
-       <mo class="MathClass-rel">
-        &rarr;
+<mo class="MathClass-rel">
+        →
        </mo>
-       <mi>
-        &infin;
+<mi>
+        ∞
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      we can put
      <!--l. 121
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      as
      <!--l. 121
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &Delta;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        Δ
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      and replace the sum over the discrete frequencies
      <!--l. 122
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         n
        </mi>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      by an integral over all frequencies. We replace
      <!--l. 123
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         n
        </mi>
-       <msub>
-        <mrow>
-         <mi>
-          &omega;
+<msub>
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           0
          </mn>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      by a general frequency variable
      <!--l. 123
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      . We then obtain the double integral representation
     </p>
-    <!--l. 125
+<!--l. 125
 -->
-    <p class="noindent">
-     <!--l. 125
+<p class="noindent">
+<!--l. 125
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mfenced close="}" open="{" separators="">
-        <mrow>
-         <mfrac>
-          <mrow>
-           <mn>
+</mrow>
+</msubsup>
+<mfenced close="}" open="{" separators="">
+<mrow>
+<mfrac>
+<mrow>
+<mn>
             1
            </mn>
-          </mrow>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<mn>
             2
            </mn>
-           <mi>
-            &pi;
+<mi>
+            π
            </mi>
-          </mrow>
-         </mfrac>
-         <msubsup>
-          <mrow>
-           <mo class="MathClass-op">
-            &int;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+            ∫
             <!--nolimits
 -->
-           </mo>
-           <!--nolimits
+</mo>
+<!--nolimits
 -->
-          </mrow>
-          <mrow>
-           <mo class="MathClass-bin">
-            &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mi>
-            &infin;
+<mi>
+            ∞
            </mi>
-          </mrow>
-          <mrow>
-           <mi>
-            &infin;
+</mrow>
+<mrow>
+<mi>
+            ∞
            </mi>
-          </mrow>
-         </msubsup>
-         <mi>
+</mrow>
+</msubsup>
+<mi>
           f
          </mi>
-         <mrow>
-          <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
            (
           </mo>
-          <mrow>
-           <mi>
+<mrow>
+<mi>
             t
            </mi>
-          </mrow>
-          <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
            )
           </mo>
-         </mrow>
-         <msup>
-          <mrow>
-           <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
             e
            </mi>
-          </mrow>
-          <mrow>
-           <mo class="MathClass-bin">
-            &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mstyle class="text">
-            <mtext>
+<mstyle class="text">
+<mtext>
              i
             </mtext>
-           </mstyle>
-           <mi>
-            &omega;
+</mstyle>
+<mi>
+            ω
            </mi>
-           <mi>
+<mi>
             t
            </mi>
-          </mrow>
-         </msup>
-         <mspace class="thinspace" width="0.3em">
-         </mspace>
-         <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
           d
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </mfenced>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+</mfenced>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
+</mrow>
+</math>
      (3)
     </p>
-    <!--l. 128
+<!--l. 128
 -->
-    <p class="noindent">
+<p class="noindent">
      The inner integral (over all
      <!--l. 128
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         t
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      ) will give a function dependent only on
      <!--l. 128
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      which we write as
      <!--l. 129
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      . Then (3) can be written
     </p>
-    <!--l. 130
+<!--l. 130
 -->
-    <p class="noindent">
-     <!--l. 130
+<p class="noindent">
+<!--l. 130
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-       </mfrac>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      (4)
     </p>
-    <!--l. 131
+<!--l. 131
 -->
-    <p class="noindent">
+<p class="noindent">
      where
     </p>
-    <!--l. 132
+<!--l. 132
 -->
-    <p class="noindent">
-     <!--l. 132
+<p class="noindent">
+<!--l. 132
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mstyle class="text">
-          <mtext>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
+<mi>
         t
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
+</mrow>
+</math>
      (5)
     </p>
-    <!--l. 133
+<!--l. 133
 -->
-    <p class="noindent">
+<p class="noindent">
      The representation (4) of
      <!--l. 133
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      which involves all frequencies
      <!--l. 133
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      can be considered as the equivalent for a non-periodic function of the complex Fourier series representation (1) of a periodic function.
     </p>
-    <!--l. 136
+<!--l. 136
 -->
-    <p class="noindent">
+<p class="noindent">
      The expression (5) for
      <!--l. 136
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      is analogous to the relation (2) for the Fourier coefficients
      <!--l. 137
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           c
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
+</mrow>
+<mrow>
+<mi>
           n
          </mi>
-        </mrow>
-       </msub>
-      </mrow>
-     </math>
+</mrow>
+</msub>
+</mrow>
+</math>
      .
     </p>
-    <!--l. 138
+<!--l. 138
 -->
-    <p class="noindent">
+<p class="noindent">
      The function
      <!--l. 138
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      is called the
      <strong>
       Fourier transform
@@ -1716,163 +1717,163 @@
      of the function
      <!--l. 138
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      . Symbolically we can write
     </p>
-    <!--l. 140
+<!--l. 140
 -->
-    <p class="noindent">
-     <!--l. 140
+<p class="noindent">
+<!--l. 140
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mi mathvariant="bold-script">
+<mi mathvariant="bold-script">
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          {
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           f
          </mi>
-         <mrow>
-          <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
            (
           </mo>
-          <mrow>
-           <mi>
+<mrow>
+<mi>
             t
            </mi>
-          </mrow>
-          <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
            )
           </mo>
-         </mrow>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+</mrow>
+<mo class="MathClass-close">
          }
         </mo>
-       </mrow>
-       <mo class="MathClass-punc">
+</mrow>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 142
+</mrow>
+</math>
+</p>
+<!--l. 142
 -->
-    <p class="noindent">
+<p class="noindent">
      Equation (4) enables us, in principle, to write
      <!--l. 142
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      in terms of
      <!--l. 142
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      .
      <!--l. 142
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      is often called the
      <strong>
       inverse Fourier transform
@@ -1880,640 +1881,640 @@
      of
      <!--l. 143
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      and we denote this by writing
     </p>
-    <!--l. 144
+<!--l. 144
 -->
-    <p class="noindent">
-     <!--l. 144
+<p class="noindent">
+<!--l. 144
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msup>
-        <mrow>
-         <mi mathvariant="bold-script">
+<msup>
+<mrow>
+<mi mathvariant="bold-script">
           F
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mn>
+<mn>
           1
          </mn>
-        </mrow>
-       </msup>
-       <mrow>
-        <mo class="MathClass-open">
+</mrow>
+</msup>
+<mrow>
+<mo class="MathClass-open">
          {
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           F
          </mi>
-         <mrow>
-          <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
            (
           </mo>
-          <mrow>
-           <mi>
-            &omega;
+<mrow>
+<mi>
+            ω
            </mi>
-          </mrow>
-          <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
            )
           </mo>
-         </mrow>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+</mrow>
+<mo class="MathClass-close">
          }
         </mo>
-       </mrow>
-       <mo class="MathClass-punc">
+</mrow>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 145
+</mrow>
+</math>
+</p>
+<!--l. 145
 -->
-    <p class="noindent">
+<p class="noindent">
      Looking at the basic relation (3) it is clear that the position of the factor
      <!--l. 145
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-       </mfrac>
-      </mrow>
-     </math>
+</mrow>
+</mfrac>
+</mrow>
+</math>
      is somewhat arbitrary in (4) and (5). If instead of (5) we define
     </p>
-    <!--l. 147
+<!--l. 147
 -->
-    <p class="noindent">
-     <!--l. 147
+<p class="noindent">
+<!--l. 147
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-         <mi>
-          &pi;
+<mi>
+          π
          </mi>
-        </mrow>
-       </mfrac>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mstyle class="text">
-          <mtext>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
+<mi>
         t
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 149
+</mrow>
+</math>
+</p>
+<!--l. 149
 -->
-    <p class="noindent">
+<p class="noindent">
      then (4) must be written
     </p>
-    <!--l. 150
+<!--l. 150
 -->
-    <p class="noindent">
-     <!--l. 150
+<p class="noindent">
+<!--l. 150
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 152
+</mrow>
+</math>
+</p>
+<!--l. 152
 -->
-    <p class="noindent">
+<p class="noindent">
      A third, more symmetric, alternative is to write
     </p>
-    <!--l. 153
+<!--l. 153
 -->
-    <p class="noindent">
-     <!--l. 153
+<p class="noindent">
+<!--l. 153
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <msqrt>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<msqrt>
+<mrow>
+<mn>
             2
            </mn>
-           <mi>
-            &pi;
+<mi>
+            π
            </mi>
-          </mrow>
-         </msqrt>
-        </mrow>
-       </mfrac>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+</mrow>
+</msqrt>
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mstyle class="text">
-          <mtext>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
+<mi>
         t
        </mi>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 154
+</mrow>
+</math>
+</p>
+<!--l. 154
 -->
-    <p class="noindent">
+<p class="noindent">
      and, consequently:
     </p>
-    <!--l. 155
+<!--l. 155
 -->
-    <p class="noindent">
-     <!--l. 155
+<p class="noindent">
+<!--l. 155
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <mo class="MathClass-rel">
+</mrow>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfrac>
-        <mrow>
-         <mn>
+<mfrac>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-        <mrow>
-         <msqrt>
-          <mrow>
-           <mn>
+</mrow>
+<mrow>
+<msqrt>
+<mrow>
+<mn>
             2
            </mn>
-           <mi>
-            &pi;
+<mi>
+            π
            </mi>
-          </mrow>
-         </msqrt>
-        </mrow>
-       </mfrac>
-       <msubsup>
-        <mrow>
-         <mo class="MathClass-op">
-          &int;
+</mrow>
+</msqrt>
+</mrow>
+</mfrac>
+<msubsup>
+<mrow>
+<mo class="MathClass-op">
+          ∫
           <!--nolimits
 -->
-         </mo>
-         <!--nolimits
+</mo>
+<!--nolimits
 -->
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mi>
-          &infin;
+<mi>
+          ∞
          </mi>
-        </mrow>
-        <mrow>
-         <mi>
-          &infin;
+</mrow>
+<mrow>
+<mi>
+          ∞
          </mi>
-        </mrow>
-       </msubsup>
-       <mi>
+</mrow>
+</msubsup>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-       <msup>
-        <mrow>
-         <mi>
+</mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+</mrow>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-       <mspace class="thinspace" width="0.3em">
-       </mspace>
-       <mi>
+</mrow>
+</msup>
+<mspace class="thinspace" width="0.3em">
+</mspace>
+<mi>
         d
        </mi>
-       <mi>
-        &omega;
+<mi>
+        ω
        </mi>
-       <mo class="MathClass-punc">
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 156
+</mrow>
+</math>
+</p>
+<!--l. 156
 -->
-    <p class="noindent">
+<p class="noindent">
      We shall use (4) and (5) throughout this Section but you should be aware of these other possibilities which might be used in other texts.
     </p>
-    <!--l. 159
+<!--l. 159
 -->
-    <p class="noindent">
+<p class="noindent">
      Engineers often refer to
      <!--l. 159
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      (whichever precise definition is used!) as the
      <span class="phvb8t-x-x-120">
       frequency domain
@@ -2521,240 +2522,240 @@
      representation of a function or signal and
      <!--l. 160
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      as the
      <strong>
       time domain
      </strong>
      representation. In what follows we shall use this language where appropriate. However, (5) is really a mathematical transformation for obtaining one function from another and (4) is then the inverse transformation for recovering the initial function. In some applications of Fourier transforms (which we shall not study) the time/frequency interpretations are not relevant. However, in engineering applications, such as communications theory, the frequency representation is often used very literally.
     </p>
-    <!--l. 168
+<!--l. 168
 -->
-    <p class="noindent">
+<p class="noindent">
      As can be seen above, notationally we will use capital letters to denote Fourier transforms: thus a function
      <!--l. 169
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         f
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      has a Fourier transform denoted by
      <!--l. 169
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      ,
      <!--l. 169
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         g
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
+<mrow>
+<mi>
           t
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      has a Fourier transform written
      <!--l. 171
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         G
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mi>
-          &omega;
+<mrow>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      and so on. The notation
      <!--l. 171
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         F
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      ,
      <!--l. 171
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
         G
        </mi>
-       <mrow>
-        <mo class="MathClass-open">
+<mrow>
+<mo class="MathClass-open">
          (
         </mo>
-        <mrow>
-         <mstyle class="text">
-          <mtext>
+<mrow>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-        </mrow>
-        <mo class="MathClass-close">
+</mrow>
+<mo class="MathClass-close">
          )
         </mo>
-       </mrow>
-      </mrow>
-     </math>
+</mrow>
+</mrow>
+</math>
      is used in some texts because
      <!--l. 172
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mi>
-        &omega;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mi>
+        ω
        </mi>
-      </mrow>
-     </math>
+</mrow>
+</math>
      occurs in (5) only in the term
      <!--l. 172
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msup>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msup>
+<mrow>
+<mi>
           e
          </mi>
-        </mrow>
-        <mrow>
-         <mo class="MathClass-bin">
-          &minus;
+</mrow>
+<mrow>
+<mo class="MathClass-bin">
+          −
          </mo>
-         <mstyle class="text">
-          <mtext>
+<mstyle class="text">
+<mtext>
            i
           </mtext>
-         </mstyle>
-         <mi>
-          &omega;
+</mstyle>
+<mi>
+          ω
          </mi>
-         <mi>
+<mi>
           t
          </mi>
-        </mrow>
-       </msup>
-      </mrow>
-     </math>
+</mrow>
+</msup>
+</mrow>
+</math>
      .
     </p>
-   </main>
-   <footer>
-    <hr/>
+</main>
+<footer>
+<hr/>
     Original work was created by
     <a href="https://www.lboro.ac.uk/departments/mlsc/student-resources/helm-workbooks/consortium-members/">
      the HELM consortium.
     </a>
-    <br/>
+<br/>
     This work is licensed under a
     <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">
      Creative Commons Attribution-NonCommercial 4.0 International License
     </a>
-   </footer>
-   <nav aria-labelledby="botnav">
-    <div id="botnav">
+</footer>
+<nav aria-labelledby="botnav">
+<div id="botnav">
      [
      <a href="24_1_fourier_transform-webse3.html">
       next
@@ -2777,9 +2778,9 @@
      </a>
      ]
     </div>
-   </nav>
-   <a id="tail24_1_fourier_transform-webse2.html">
-   </a>
-  </div>
- </body>
+</nav>
+<a id="tail24_1_fourier_transform-webse2.html">
+</a>
+</div>
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics --></body>
 </html>

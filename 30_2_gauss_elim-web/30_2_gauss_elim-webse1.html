@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
- <head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name="generator"/>
+<title>
    Gaussian elimination
   </title>
-  <meta charset="utf-8"/>
-  <meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
-  <meta content="True" name="HandheldFriendly"/>
-  <meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
-  <link href="30_2_gauss_elim-web.css" rel="stylesheet" type="text/css"/>
-  <link href="additional.css" rel="stylesheet" type="text/css"/>
-  <script type="text/x-mathjax-config">
+<meta charset="utf-8"/>
+<meta content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;" name="viewport"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" name="generator"/>
+<link href="30_2_gauss_elim-web.css" rel="stylesheet" type="text/css"/>
+<link href="additional.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
    MathJax.Hub.Config({ mml2jax: { preview: ["[maths rendering]"]}, 
   "fast-preview": {disabled: true}, 
   explorer:{ subtitle: true }, 
@@ -34,7 +35,7 @@
   menuSettings: { collapsible: false, autocollapse: false, explorer: false } 
   });
   </script>
-  <script type="text/x-mathjax-config">
+<script type="text/x-mathjax-config">
    MathJax.Hub.Register.MessageHook("End Math", function (msg) { 
   var nodes = Array.from(msg[1].querySelectorAll('.MJX_Assistive_MathML [id]')); 
   while (nodes.length) { 
@@ -42,22 +43,22 @@
   } 
   }, 20);
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
-  </script>
-  <style type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" type="text/javascript">
+</script>
+<style type="text/css">
    ".MathJax_MathML" {text-indent: 0;}
   </style>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
-  </script>
-  <link href="toplayer.css" rel="stylesheet" type="text/css"/>
- </head>
- <body>
-  <div class="container">
-   <nav aria-labelledby="topnav">
-    <div id="topnav">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+<link href="toplayer.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+<nav aria-labelledby="topnav">
+<div id="topnav">
      [
      <a href="#main">
       Skip navigation
@@ -84,26 +85,26 @@
      </a>
      ]
     </div>
-   </nav>
-   <main id="main" role="main">
-    <h3 class="sectionHead">
-     <span class="titlemark">
+</nav>
+<main id="main" role="main">
+<h3 class="sectionHead">
+<span class="titlemark">
       1
      </span>
-     <a href="30_2_gauss_elim-web.html#QQ2-4-5" id="x4-50001">
+<a href="30_2_gauss_elim-web.html#QQ2-4-5" id="x4-50001">
       Gaussian elimination
      </a>
-    </h3>
-    <!--l. 72
+</h3>
+<!--l. 72
 -->
-    <p class="noindent">
+<p class="noindent">
      Recall from
      <a href="../index.html#8-contents-section">
-      <strong>
+<strong>
        HELM booklet
       </strong>
-     </a>
-     &nbsp;8 that the basic idea with Gaussian (or Gauss) elimination is to replace the matrix of coefficients with a matrix that is easier to deal with. Usually the nicer matrix is of
+</a>
+      8 that the basic idea with Gaussian (or Gauss) elimination is to replace the matrix of coefficients with a matrix that is easier to deal with. Usually the nicer matrix is of
      <strong>
       upper triangular
      </strong>
@@ -114,594 +115,594 @@
      . For example, suppose we have
      <!--tex4ht:inline
 -->
-    </p>
-    <!--l. 76
+</p>
+<!--l. 76
 -->
-    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
-      <mtr>
-       <mtd class="eqnarray-1">
-        <msub>
-         <mrow>
-          <mi>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+<mtr>
+<mtd class="eqnarray-1">
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          3
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          5
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          2
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mn>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mn>
          3
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          11
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          9
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          4
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mo class="MathClass-bin">
-         &minus;
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mo class="MathClass-bin">
+         −
         </mo>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          6
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          5
         </mn>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-     </mtable>
-    </math>
-    <!--l. 80
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+</mtable>
+</math>
+<!--l. 80
 -->
-    <p class="nopar">
+<p class="nopar">
      which we can abbreviate using an
      <strong>
       augmented matrix
      </strong>
      to
     </p>
-    <!--l. 82
+<!--l. 82
 -->
-    <p class="noindent">
-     <!--l. 82
+<p class="noindent">
+<!--l. 82
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mstyle mathvariant="bold">
-             <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mstyle mathvariant="bold">
+<mn>
               1
              </mn>
-            </mstyle>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mstyle>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              5
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              11
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              9
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              5
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc|c
+</mtd>
+</mtr>
+<!--ccc|c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mo class="MathClass-punc">
+</mtable>
+</mrow>
+</mfenced>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 89
+</mrow>
+</math>
+</p>
+<!--l. 89
 -->
-    <p class="noindent">
+<p class="noindent">
      We use the boxed element to eliminate any non-zeros below it. This involves the following row operations
     </p>
-    <!--l. 91
+<!--l. 91
 -->
-    <p class="noindent">
-     <!--l. 91
+<p class="noindent">
+<!--l. 91
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mstyle mathvariant="bold">
-             <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mstyle mathvariant="bold">
+<mn>
               1
              </mn>
-            </mstyle>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mstyle>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              5
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              11
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              9
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              5
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc|c
+</mtd>
+</mtr>
+<!--ccc|c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-        <mtr>
-         <mtd class="array" columnalign="left">
-         </mtd>
-        </mtr>
-        <mtr>
-         <mtd class="array" columnalign="left">
-          <mi>
+</mtable>
+</mrow>
+</mfenced>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            2
           </mn>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            3
           </mn>
-          <mo class="MathClass-bin">
-           &times;
+<mo class="MathClass-bin">
+           ×
           </mo>
-          <mi>
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            1
           </mn>
-         </mtd>
-        </mtr>
-        <mtr>
-         <mtd class="array" columnalign="left">
-          <mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            3
           </mn>
-          <mo class="MathClass-bin">
+<mo class="MathClass-bin">
            +
           </mo>
-          <mi>
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            1
           </mn>
-         </mtd>
-        </mtr>
-        <!--l
+</mtd>
+</mtr>
+<!--l
 -->
-       </mtable>
-       <mo class="MathClass-rel">
-        &rArr;
+</mtable>
+<mo class="MathClass-rel">
+        ⇒
        </mo>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mstyle mathvariant="bold">
-             <mn>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mstyle mathvariant="bold">
+<mn>
               1
              </mn>
-            </mstyle>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mstyle>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              5
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              7
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc|c
+</mtd>
+</mtr>
+<!--ccc|c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mo class="MathClass-punc">
+</mtable>
+</mrow>
+</mfenced>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 105
+</mrow>
+</math>
+</p>
+<!--l. 105
 -->
-    <p class="noindent">
+<p class="noindent">
      And the next step is to use the
      <strong>
       2
@@ -712,1507 +713,1507 @@
      </strong>
      . This requires the final row operation
     </p>
-    <!--l. 107
+<!--l. 107
 -->
-    <p class="noindent">
-     <!--l. 107
+<p class="noindent">
+<!--l. 107
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              5
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mstyle mathvariant="bold">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mstyle mathvariant="bold">
+<mn>
               2
              </mn>
-            </mstyle>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mstyle>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              7
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc|c
+</mtd>
+</mtr>
+<!--ccc|c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-        <mtr>
-         <mtd class="array" columnalign="left">
-         </mtd>
-        </mtr>
-        <mtr>
-         <mtd class="array" columnalign="left">
-         </mtd>
-        </mtr>
-        <mtr>
-         <mtd class="array" columnalign="left">
-          <mi>
+</mtable>
+</mrow>
+</mfenced>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            3
           </mn>
-          <mo class="MathClass-bin">
-           &minus;
+<mo class="MathClass-bin">
+           −
           </mo>
-          <mn>
+<mn>
            2
           </mn>
-          <mo class="MathClass-bin">
-           &times;
+<mo class="MathClass-bin">
+           ×
           </mo>
-          <mi>
+<mi>
            R
           </mi>
-          <mn>
+<mn>
            2
           </mn>
-         </mtd>
-        </mtr>
-        <!--l
+</mtd>
+</mtr>
+<!--l
 -->
-       </mtable>
-       <mo class="MathClass-rel">
-        &rArr;
+</mtable>
+<mo class="MathClass-rel">
+        ⇒
        </mo>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none solid" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              5
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mstyle mathvariant="bold">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mstyle mathvariant="bold">
+<mn>
               2
              </mn>
-            </mstyle>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mstyle>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              0
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              11
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              11
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc|c
+</mtd>
+</mtr>
+<!--ccc|c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mo class="MathClass-punc">
+</mtable>
+</mrow>
+</mfenced>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 121
+</mrow>
+</math>
+</p>
+<!--l. 121
 -->
-    <p class="noindent">
+<p class="noindent">
      This is the augmented form for an upper triangular system, writing the system in extended form we have
      <!--tex4ht:inline
 -->
-    </p>
-    <!--l. 123
+</p>
+<!--l. 123
 -->
-    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
-      <mtr>
-       <mtd class="eqnarray-1">
-        <msub>
-         <mrow>
-          <mi>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+<mtr>
+<mtd class="eqnarray-1">
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          3
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          5
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          2
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mn>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mn>
          2
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          6
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mo class="MathClass-bin">
-         &minus;
+</mtd>
+<mtd class="eqnarray-3">
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          2
         </mn>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mo class="MathClass-bin">
-         &minus;
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          11
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          11
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-     </mtable>
-    </math>
-    <!--l. 127
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+</mtable>
+</math>
+<!--l. 127
 -->
-    <p class="nopar">
+<p class="nopar">
      which is easy to solve from the bottom up, by
      <strong>
       back substitution
      </strong>
      .
     </p>
-    <h5 class="likesubsubsectionHead">
-     <a href="#x4-60001" id="x4-60001">
+<h5 class="likesubsubsectionHead">
+<a href="#x4-60001" id="x4-60001">
       Example 5
      </a>
-    </h5>
-    <!--l. 131
+</h5>
+<!--l. 131
 -->
-    <p class="noindent">
+<p class="noindent">
      Solve the system
      <!--tex4ht:inline
 -->
-    </p>
-    <!--l. 132
+</p>
+<!--l. 132
 -->
-    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-     <mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
-      <mtr>
-       <mtd class="eqnarray-1">
-        <msub>
-         <mrow>
-          <mi>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="eqnarray-star" columnalign="right center left" displaystyle="true">
+<mtr>
+<mtd class="eqnarray-1">
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            1
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          3
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
-         &minus;
+</mrow>
+</msub>
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          5
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          2
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mn>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mn>
          2
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            2
           </mn>
-         </mrow>
-        </msub>
-        <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
          +
         </mo>
-        <mn>
+<mn>
          6
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mo class="MathClass-bin">
-         &minus;
+</mtd>
+<mtd class="eqnarray-3">
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          2
         </mn>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mspace class="qquad" width="2em">
-        </mspace>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-      <mtr>
-       <mtd class="eqnarray-1">
-        <mo class="MathClass-bin">
-         &minus;
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+<mspace class="qquad" width="2em">
+</mspace>
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="eqnarray-1">
+<mo class="MathClass-bin">
+         −
         </mo>
-        <mn>
+<mn>
          11
         </mn>
-        <msub>
-         <mrow>
-          <mi>
+<msub>
+<mrow>
+<mi>
            x
           </mi>
-         </mrow>
-         <mrow>
-          <mn>
+</mrow>
+<mrow>
+<mn>
            3
           </mn>
-         </mrow>
-        </msub>
-       </mtd>
-       <mtd class="eqnarray-2">
-        <mo class="MathClass-rel">
+</mrow>
+</msub>
+</mtd>
+<mtd class="eqnarray-2">
+<mo class="MathClass-rel">
          =
         </mo>
-       </mtd>
-       <mtd class="eqnarray-3">
-        <mn>
+</mtd>
+<mtd class="eqnarray-3">
+<mn>
          11
         </mn>
-       </mtd>
-       <mtd class="eqnarray-4">
-        <mtext class="eqnarray">
-        </mtext>
-       </mtd>
-      </mtr>
-     </mtable>
-    </math>
-    <!--l. 136
+</mtd>
+<mtd class="eqnarray-4">
+<mtext class="eqnarray">
+</mtext>
+</mtd>
+</mtr>
+</mtable>
+</math>
+<!--l. 136
 -->
-    <!--l. 152
+<!--l. 152
 -->
-    <h5 class="likesubsubsectionHead">
-     <a href="#x4-70001" id="x4-70001">
+<h5 class="likesubsubsectionHead">
+<a href="#x4-70001" id="x4-70001">
       Solution
      </a>
-    </h5>
-    <!--l. 152
+</h5>
+<!--l. 152
 -->
-    <p class="noindent">
+<p class="noindent">
      The bottom equation implies that
      <!--l. 152
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           3
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         1
        </mn>
-      </mrow>
-     </math>
+</mrow>
+</math>
      . The middle equation then gives us that
     </p>
-    <!--l. 152
+<!--l. 152
 -->
-    <p class="noindent">
-     <!--l. 152
+<p class="noindent">
+<!--l. 152
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mn>
         2
        </mn>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         6
        </mn>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           3
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-       <mo class="MathClass-bin">
+<mo class="MathClass-bin">
         +
        </mo>
-       <mn>
+<mn>
         6
        </mn>
-       <mo class="MathClass-rel">
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         4
        </mn>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mo class="MathClass-rel">
-        &there4;
+<mspace class="qquad" width="2em">
+</mspace>
+<mo class="MathClass-rel">
+        ∴
        </mo>
-       <mspace class="quad" width="1em">
-       </mspace>
-       <msub>
-        <mrow>
-         <mi>
+<mspace class="quad" width="1em">
+</mspace>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 152
+</mrow>
+</math>
+</p>
+<!--l. 152
 -->
-    <p class="noindent">
+<p class="noindent">
      and finally, from the top equation,
     </p>
-    <!--l. 152
+<!--l. 152
 -->
-    <p class="noindent">
-     <!--l. 152
+<p class="noindent">
+<!--l. 152
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <msub>
-        <mrow>
-         <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           1
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         3
        </mn>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           2
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-bin">
+</mrow>
+</msub>
+<mo class="MathClass-bin">
         +
        </mo>
-       <mn>
+<mn>
         5
        </mn>
-       <msub>
-        <mrow>
-         <mi>
+<msub>
+<mrow>
+<mi>
           x
          </mi>
-        </mrow>
-        <mrow>
-         <mn>
+</mrow>
+<mrow>
+<mn>
           3
          </mn>
-        </mrow>
-       </msub>
-       <mo class="MathClass-rel">
+</mrow>
+</msub>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mn>
+<mn>
         2
        </mn>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         6
        </mn>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         5
        </mn>
-       <mo class="MathClass-rel">
+<mo class="MathClass-rel">
         =
        </mo>
-       <mo class="MathClass-bin">
-        &minus;
+<mo class="MathClass-bin">
+        −
        </mo>
-       <mn>
+<mn>
         9.
        </mn>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 152
+</mrow>
+</math>
+</p>
+<!--l. 152
 -->
-    <p class="noindent">
+<p class="noindent">
      Therefore the solution to the problem stated at the beginning of this Section is
     </p>
-    <!--l. 152
+<!--l. 152
 -->
-    <p class="noindent">
-     <!--l. 152
+<p class="noindent">
+<!--l. 152
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <msub>
-             <mrow>
-              <mi>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<msub>
+<mrow>
+<mi>
                x
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                1
               </mn>
-             </mrow>
-            </msub>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <msub>
-             <mrow>
-              <mi>
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<msub>
+<mrow>
+<mi>
                x
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                2
               </mn>
-             </mrow>
-            </msub>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <msub>
-             <mrow>
-              <mi>
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<msub>
+<mrow>
+<mi>
                x
               </mi>
-             </mrow>
-             <mrow>
-              <mn>
+</mrow>
+<mrow>
+<mn>
                3
               </mn>
-             </mrow>
-            </msub>
-           </mtd>
-          </mtr>
-          <!--c
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<!--c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mo class="MathClass-rel">
+</mtable>
+</mrow>
+</mfenced>
+<mo class="MathClass-rel">
         =
        </mo>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              9
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              1
             </mn>
-           </mtd>
-          </mtr>
-          <!--c
+</mtd>
+</mtr>
+<!--c
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-       <mo class="MathClass-punc">
+</mtable>
+</mrow>
+</mfenced>
+<mo class="MathClass-punc">
         .
        </mo>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 154
+</mrow>
+</math>
+</p>
+<!--l. 154
 -->
-    <p class="noindent">
+<p class="noindent">
      The following Task will act as useful revision of the Gaussian elimination procedure.
     </p>
-    <!--l. 156
+<!--l. 156
 -->
-    <h5 class="likesubsubsectionHead">
-     <a class="btn btn-primary" href="#x4-80001" id="x4-80001">
+<h5 class="likesubsubsectionHead">
+<a class="btn btn-primary" href="#x4-80001" id="x4-80001">
       Task!
      </a>
-    </h5>
-    <!--l. 157
+</h5>
+<!--l. 157
 -->
-    <p class="noindent">
+<p class="noindent">
      Carry out row operations to reduce the matrix
     </p>
-    <!--l. 158
+<!--l. 158
 -->
-    <p class="noindent">
-     <!--l. 158
+<p class="noindent">
+<!--l. 158
 -->
-     <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-       <mspace class="qquad" width="2em">
-       </mspace>
-       <mfenced close="]" open="[" separators="">
-        <mrow>
-         <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              2
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              1
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
              4
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              3
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              1
             </mn>
-           </mtd>
-          </mtr>
-          <mtr>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              6
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
              8
             </mn>
-           </mtd>
-           <mtd class="array" columnalign="center">
-            <mo class="MathClass-bin">
-             &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+             −
             </mo>
-            <mn>
+<mn>
              2
             </mn>
-           </mtd>
-          </mtr>
-          <!--ccc
+</mtd>
+</mtr>
+<!--ccc
 -->
-         </mtable>
-        </mrow>
-       </mfenced>
-      </mrow>
-     </math>
-    </p>
-    <!--l. 165
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 165
 -->
-    <p class="noindent">
+<p class="noindent">
      into upper triangular form.
     </p>
-    <!--l. 202
+<!--l. 202
 -->
-    <h5 class="likesubsubsectionHead">
-     <button aria-controls="x4-90001" aria-expanded="false" class="btn btn-success" data-target="#x4-90001" data-toggle="collapse" role="button">
+<h5 class="likesubsubsectionHead">
+<button aria-controls="x4-90001" aria-expanded="false" class="btn btn-success" data-target="#x4-90001" data-toggle="collapse" role="button">
       Answer
      </button>
-    </h5>
-    <div class="collapse" id="x4-90001">
-     <!--l. 202
+</h5>
+<div class="collapse" id="x4-90001">
+<!--l. 202
 -->
-     <p class="noindent">
+<p class="noindent">
       The row operations required to eliminate the non-zeros below the diagonal in the first column are as follows
      </p>
-     <!--l. 202
+<!--l. 202
 -->
-     <p class="noindent">
-      <!--l. 202
+<p class="noindent">
+<!--l. 202
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mfenced close="]" open="[" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               2
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               1
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               4
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               4
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               3
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               1
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               6
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               8
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               2
              </mn>
-            </mtd>
-           </mtr>
-           <!--ccc
+</mtd>
+</mtr>
+<!--ccc
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-        <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-         <mtr>
-          <mtd class="array" columnalign="left">
-          </mtd>
-         </mtr>
-         <mtr>
-          <mtd class="array" columnalign="left">
-           <mi>
+</mtable>
+</mrow>
+</mfenced>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             2
            </mn>
-           <mo class="MathClass-bin">
-            &minus;
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mn>
+<mn>
             2
            </mn>
-           <mo class="MathClass-bin">
-            &times;
+<mo class="MathClass-bin">
+            ×
            </mo>
-           <mi>
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             1
            </mn>
-          </mtd>
-         </mtr>
-         <mtr>
-          <mtd class="array" columnalign="left">
-           <mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             3
            </mn>
-           <mo class="MathClass-bin">
+<mo class="MathClass-bin">
             +
            </mo>
-           <mn>
+<mn>
             3
            </mn>
-           <mo class="MathClass-bin">
-            &times;
+<mo class="MathClass-bin">
+            ×
            </mo>
-           <mi>
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             1
            </mn>
-          </mtd>
-         </mtr>
-         <!--l
+</mtd>
+</mtr>
+<!--l
 -->
-        </mtable>
-        <mo class="MathClass-rel">
-         &rArr;
+</mtable>
+<mo class="MathClass-rel">
+         ⇒
         </mo>
-        <mfenced close="]" open="[" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               2
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               1
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               4
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               5
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               9
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               5
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               10
              </mn>
-            </mtd>
-           </mtr>
-           <!--ccc
+</mtd>
+</mtr>
+<!--ccc
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 202
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 202
 -->
-     <p class="noindent">
+<p class="noindent">
       Next we use the 5 on the diagonal to eliminate the 5 below it:
      </p>
-     <!--l. 202
+<!--l. 202
 -->
-     <p class="noindent">
-      <!--l. 202
+<p class="noindent">
+<!--l. 202
 -->
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-       <mrow>
-        <mspace class="qquad" width="2em">
-        </mspace>
-        <mfenced close="]" open="[" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mspace class="qquad" width="2em">
+</mspace>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               2
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               1
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               4
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               5
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               9
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               5
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               10
              </mn>
-            </mtd>
-           </mtr>
-           <!--ccc
+</mtd>
+</mtr>
+<!--ccc
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-        <mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
-         <mtr>
-          <mtd class="array" columnalign="left">
-          </mtd>
-         </mtr>
-         <mtr>
-          <mtd class="array" columnalign="left">
-          </mtd>
-         </mtr>
-         <mtr>
-          <mtd class="array" columnalign="left">
-           <mi>
+</mtable>
+</mrow>
+</mfenced>
+<mtable align="axis" class="array" columnlines="" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="left">
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             3
            </mn>
-           <mo class="MathClass-bin">
-            &minus;
+<mo class="MathClass-bin">
+            −
            </mo>
-           <mi>
+<mi>
             R
            </mi>
-           <mn>
+<mn>
             2
            </mn>
-          </mtd>
-         </mtr>
-         <!--l
+</mtd>
+</mtr>
+<!--l
 -->
-        </mtable>
-        <mo class="MathClass-rel">
-         &rArr;
+</mtable>
+<mo class="MathClass-rel">
+         ⇒
         </mo>
-        <mfenced close="]" open="[" separators="">
-         <mrow>
-          <mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+<mfenced close="]" open="[" separators="">
+<mrow>
+<mtable align="axis" class="array" columnlines="none none" equalcolumns="false" equalrows="false" style="">
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               2
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               1
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               4
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               5
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mo class="MathClass-bin">
-              &minus;
+</mtd>
+<mtd class="array" columnalign="center">
+<mo class="MathClass-bin">
+              −
              </mo>
-             <mn>
+<mn>
               9
              </mn>
-            </mtd>
-           </mtr>
-           <mtr>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               0
              </mn>
-            </mtd>
-            <mtd class="array" columnalign="center">
-             <mn>
+</mtd>
+<mtd class="array" columnalign="center">
+<mn>
               19
              </mn>
-            </mtd>
-           </mtr>
-           <!--ccc
+</mtd>
+</mtr>
+<!--ccc
 -->
-          </mtable>
-         </mrow>
-        </mfenced>
-       </mrow>
-      </math>
-     </p>
-     <!--l. 202
+</mtable>
+</mrow>
+</mfenced>
+</mrow>
+</math>
+</p>
+<!--l. 202
 -->
-     <p class="noindent">
+<p class="noindent">
       which is in the required upper triangular form.
      </p>
-    </div>
-   </main>
-   <footer>
-    <hr/>
+</div>
+</main>
+<footer>
+<hr/>
     Original work was created by
     <a href="https://www.lboro.ac.uk/departments/mlsc/student-resources/helm-workbooks/consortium-members/">
      the HELM consortium.
     </a>
-    <br/>
+<br/>
     This work is licensed under a
     <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">
      Creative Commons Attribution-NonCommercial 4.0 International License
     </a>
-   </footer>
-   <nav aria-labelledby="botnav">
-    <div id="botnav">
+</footer>
+<nav aria-labelledby="botnav">
+<div id="botnav">
      [
      <a href="30_2_gauss_elim-webse2.html">
       next
@@ -2235,9 +2236,9 @@
      </a>
      ]
     </div>
-   </nav>
-   <a id="tail30_2_gauss_elim-webse1.html">
-   </a>
-  </div>
- </body>
+</nav>
+<a id="tail30_2_gauss_elim-webse1.html">
+</a>
+</div>
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "45c34618a8294826b85725434b26e3db"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics --></body>
 </html>
